@@ -15,9 +15,17 @@ class CampaignListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupTableView()
         getCampaigns()
     }
 
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 200
+        CampaignListCell.registerNibToTableView(tableView: tableView)
+    }
+    
     func getCampaigns() {
         let campaignService = CampaignService()
         campaignService.getCampaignList(success: { (campaignsList) in

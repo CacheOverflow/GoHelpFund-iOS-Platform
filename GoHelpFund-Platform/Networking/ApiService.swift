@@ -41,7 +41,7 @@ extension API: TargetType {
     public var path: String {
         switch self {
         case .getCampaignList:
-            return "5b361081340000b50bf8885b"
+            return "5b3637bc3400002d0df88918"
         case .getCampaignDetails(_):
             return "5b34e3b22f00001a04376103"
         }

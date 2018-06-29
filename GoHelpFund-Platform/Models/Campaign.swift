@@ -19,6 +19,7 @@ public struct Campaign: Codable {
     let raisedTotal: Double
     let backers: Int
     
+    let category: Category
     let currency: Currency
     let resourcesUrl: ResourcesUrl
     let author: User
@@ -48,4 +49,25 @@ enum Currency: String, Codable {
     case euro = "euro"
     case eth = "eth"
     case help = "help"
+}
+
+enum Category: String, Codable {
+    case medical
+    case volunteer
+    case emergencies
+    case education
+    case memorials
+    case sports
+    case animals
+    case wishes
+    case competitions
+    case charity
+    case newlyweds
+    case faith
+    case travel
+    case creative
+    case community
+    case events
+    case business
+    case family
 }

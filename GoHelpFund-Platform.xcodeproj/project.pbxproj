@@ -21,6 +21,7 @@
 		504F47D120E631E9005FF749 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D020E631E9005FF749 /* BaseCell.swift */; };
 		504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D220E6323D005FF749 /* CampaignListCell.swift */; };
 		504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504F47D320E6323D005FF749 /* CampaignListCell.xib */; };
+		504F47D720E6735F005FF749 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D620E6735F005FF749 /* DateHelper.swift */; };
 		802F8BD56057EFDE3678F6AE /* Pods_GoHelpFund_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		504F47D020E631E9005FF749 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		504F47D220E6323D005FF749 /* CampaignListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignListCell.swift; sourceTree = "<group>"; };
 		504F47D320E6323D005FF749 /* CampaignListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampaignListCell.xib; sourceTree = "<group>"; };
+		504F47D620E6735F005FF749 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoHelpFund_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				504F47D020E631E9005FF749 /* BaseCell.swift */,
+				504F47D620E6735F005FF749 /* DateHelper.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				504F47B920E3DA7C005FF749 /* CampaignService.swift in Sources */,
 				5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */,
 				504F47D120E631E9005FF749 /* BaseCell.swift in Sources */,
+				504F47D720E6735F005FF749 /* DateHelper.swift in Sources */,
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
 				504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */,
