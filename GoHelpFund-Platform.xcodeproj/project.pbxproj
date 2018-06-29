@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5040F0A920D7EA970030183D /* AppDelegate.swift */; };
-		5040F0AC20D7EA970030183D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5040F0AB20D7EA970030183D /* ViewController.swift */; };
-		5040F0AF20D7EA970030183D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0AD20D7EA970030183D /* Main.storyboard */; };
+		5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0AD20D7EA970030183D /* Dashboard.storyboard */; };
 		5040F0B120D7EA970030183D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0B020D7EA970030183D /* Assets.xcassets */; };
 		5040F0B420D7EA970030183D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0B220D7EA970030183D /* LaunchScreen.storyboard */; };
 		5040F0BF20D7EA970030183D /* GoHelpFund_PlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5040F0BE20D7EA970030183D /* GoHelpFund_PlatformTests.swift */; };
+		504F47B720E3D4B8005FF749 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47B620E3D4B8005FF749 /* ApiService.swift */; };
+		504F47B920E3DA7C005FF749 /* CampaignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47B820E3DA7C005FF749 /* CampaignService.swift */; };
+		504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47BB20E4EE1B005FF749 /* Campaign.swift */; };
+		504F47C420E62DEC005FF749 /* CampaignListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47C220E62DEC005FF749 /* CampaignListVC.swift */; };
+		504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47C620E62EAC005FF749 /* CampaignDetailsVC.swift */; };
+		504F47C920E62F0D005FF749 /* DashboardTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47C820E62F0D005FF749 /* DashboardTabController.swift */; };
+		504F47D120E631E9005FF749 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D020E631E9005FF749 /* BaseCell.swift */; };
+		504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D220E6323D005FF749 /* CampaignListCell.swift */; };
+		504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504F47D320E6323D005FF749 /* CampaignListCell.xib */; };
 		802F8BD56057EFDE3678F6AE /* Pods_GoHelpFund_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,14 +39,22 @@
 		48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.debug.xcconfig"; sourceTree = "<group>"; };
 		5040F0A620D7EA970030183D /* GoHelpFund-Platform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoHelpFund-Platform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5040F0A920D7EA970030183D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5040F0AB20D7EA970030183D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5040F0AE20D7EA970030183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5040F0AE20D7EA970030183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		5040F0B020D7EA970030183D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5040F0B320D7EA970030183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5040F0B520D7EA970030183D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5040F0BA20D7EA970030183D /* GoHelpFund-PlatformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GoHelpFund-PlatformTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5040F0BE20D7EA970030183D /* GoHelpFund_PlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoHelpFund_PlatformTests.swift; sourceTree = "<group>"; };
 		5040F0C020D7EA970030183D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504F47B620E3D4B8005FF749 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		504F47B820E3DA7C005FF749 /* CampaignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignService.swift; sourceTree = "<group>"; };
+		504F47BB20E4EE1B005FF749 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
+		504F47C220E62DEC005FF749 /* CampaignListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignListVC.swift; sourceTree = "<group>"; };
+		504F47C620E62EAC005FF749 /* CampaignDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDetailsVC.swift; sourceTree = "<group>"; };
+		504F47C820E62F0D005FF749 /* DashboardTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabController.swift; sourceTree = "<group>"; };
+		504F47D020E631E9005FF749 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		504F47D220E6323D005FF749 /* CampaignListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignListCell.swift; sourceTree = "<group>"; };
+		504F47D320E6323D005FF749 /* CampaignListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampaignListCell.xib; sourceTree = "<group>"; };
 		77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoHelpFund_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,9 +109,12 @@
 		5040F0A820D7EA970030183D /* GoHelpFund-Platform */ = {
 			isa = PBXGroup;
 			children = (
+				504F47CF20E631D6005FF749 /* BaseClasses */,
+				504F47C520E62E17005FF749 /* Storyboards */,
+				504F47BA20E4EE03005FF749 /* Models */,
+				504F47B520E3D495005FF749 /* Networking */,
+				504F47BD20E62D84005FF749 /* Screens */,
 				5040F0A920D7EA970030183D /* AppDelegate.swift */,
-				5040F0AB20D7EA970030183D /* ViewController.swift */,
-				5040F0AD20D7EA970030183D /* Main.storyboard */,
 				5040F0B020D7EA970030183D /* Assets.xcassets */,
 				5040F0B220D7EA970030183D /* LaunchScreen.storyboard */,
 				5040F0B520D7EA970030183D /* Info.plist */,
@@ -110,6 +129,115 @@
 				5040F0C020D7EA970030183D /* Info.plist */,
 			);
 			path = "GoHelpFund-PlatformTests";
+			sourceTree = "<group>";
+		};
+		504F47B520E3D495005FF749 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				504F47B620E3D4B8005FF749 /* ApiService.swift */,
+				504F47B820E3DA7C005FF749 /* CampaignService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		504F47BA20E4EE03005FF749 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				504F47BB20E4EE1B005FF749 /* Campaign.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		504F47BD20E62D84005FF749 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				504F47CD20E6312C005FF749 /* Campaigns */,
+				504F47CA20E62FEA005FF749 /* Discover */,
+				504F47CB20E62FEB005FF749 /* Profile */,
+				504F47CC20E62FEB005FF749 /* Trending */,
+				504F47C320E62DEC005FF749 /* Tab Controller */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		504F47C020E62DEC005FF749 /* Campaign Details */ = {
+			isa = PBXGroup;
+			children = (
+				504F47C620E62EAC005FF749 /* CampaignDetailsVC.swift */,
+			);
+			path = "Campaign Details";
+			sourceTree = "<group>";
+		};
+		504F47C120E62DEC005FF749 /* Campaign List */ = {
+			isa = PBXGroup;
+			children = (
+				504F47CE20E6317E005FF749 /* CampaignList Cell */,
+				504F47C220E62DEC005FF749 /* CampaignListVC.swift */,
+			);
+			path = "Campaign List";
+			sourceTree = "<group>";
+		};
+		504F47C320E62DEC005FF749 /* Tab Controller */ = {
+			isa = PBXGroup;
+			children = (
+				504F47C820E62F0D005FF749 /* DashboardTabController.swift */,
+			);
+			path = "Tab Controller";
+			sourceTree = "<group>";
+		};
+		504F47C520E62E17005FF749 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5040F0AD20D7EA970030183D /* Dashboard.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		504F47CA20E62FEA005FF749 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		504F47CB20E62FEB005FF749 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		504F47CC20E62FEB005FF749 /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trending;
+			sourceTree = "<group>";
+		};
+		504F47CD20E6312C005FF749 /* Campaigns */ = {
+			isa = PBXGroup;
+			children = (
+				504F47C120E62DEC005FF749 /* Campaign List */,
+				504F47C020E62DEC005FF749 /* Campaign Details */,
+			);
+			path = Campaigns;
+			sourceTree = "<group>";
+		};
+		504F47CE20E6317E005FF749 /* CampaignList Cell */ = {
+			isa = PBXGroup;
+			children = (
+				504F47D220E6323D005FF749 /* CampaignListCell.swift */,
+				504F47D320E6323D005FF749 /* CampaignListCell.xib */,
+			);
+			path = "CampaignList Cell";
+			sourceTree = "<group>";
+		};
+		504F47CF20E631D6005FF749 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				504F47D020E631E9005FF749 /* BaseCell.swift */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 		D551E72CA4F45E813C0D462A /* Frameworks */ = {
@@ -133,6 +261,7 @@
 				5040F0A420D7EA970030183D /* Resources */,
 				5CDF0387E3E27CA8A799C64F /* [CP] Embed Pods Frameworks */,
 				244B31A3CA276EE7309D62D0 /* [CP] Copy Pods Resources */,
+				5040F0C920D8F8920030183D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,8 +336,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5040F0B420D7EA970030183D /* LaunchScreen.storyboard in Resources */,
+				504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */,
 				5040F0B120D7EA970030183D /* Assets.xcassets in Resources */,
-				5040F0AF20D7EA970030183D /* Main.storyboard in Resources */,
+				5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +385,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5040F0C920D8F8920030183D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 42891bbf1bc6faa20fe4da4d1eadce19bba1c30d fe90748f6166fabed032c3908f2472961237bf193442fe759e4d65213ac31179";
+		};
 		5CDF0387E3E27CA8A799C64F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,8 +433,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5040F0AC20D7EA970030183D /* ViewController.swift in Sources */,
+				504F47C420E62DEC005FF749 /* CampaignListVC.swift in Sources */,
+				504F47C920E62F0D005FF749 /* DashboardTabController.swift in Sources */,
+				504F47B920E3DA7C005FF749 /* CampaignService.swift in Sources */,
 				5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */,
+				504F47D120E631E9005FF749 /* BaseCell.swift in Sources */,
+				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
+				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
+				504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */,
+				504F47B720E3D4B8005FF749 /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,12 +464,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5040F0AD20D7EA970030183D /* Main.storyboard */ = {
+		5040F0AD20D7EA970030183D /* Dashboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5040F0AE20D7EA970030183D /* Base */,
 			);
-			name = Main.storyboard;
+			name = Dashboard.storyboard;
 			sourceTree = "<group>";
 		};
 		5040F0B220D7EA970030183D /* LaunchScreen.storyboard */ = {
@@ -446,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = N5N9SFP2NP;
 				INFOPLIST_FILE = "GoHelpFund-Platform/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

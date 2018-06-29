@@ -4,6 +4,7 @@ target 'GoHelpFund-Platform' do
   pod 'SDWebImage'
   pod 'ImageScrollView'
   pod 'UIWindowTransitions'
-  
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
 
