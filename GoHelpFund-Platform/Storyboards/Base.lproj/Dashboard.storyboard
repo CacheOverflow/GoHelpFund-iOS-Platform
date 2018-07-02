@@ -97,7 +97,7 @@
         <scene sceneID="5CA-Ww-vt0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vO7-Vg-IYR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Campaigns" id="Rca-hN-ANf"/>
+                    <tabBarItem key="tabBarItem" title="Campaigns" image="campaign" id="Rca-hN-ANf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="65E-Oz-XiQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -116,7 +116,7 @@
         <scene sceneID="UGB-Vj-onx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q6x-ad-7om" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trending" id="g9X-Ie-F7F"/>
+                    <tabBarItem key="tabBarItem" title="Trending" image="trending" id="g9X-Ie-F7F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1oU-K3-GqN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -167,7 +167,7 @@
         <scene sceneID="u3P-gT-b9O">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gje-SD-bGa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" id="1br-26-Pzm"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="funnel" id="1br-26-Pzm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uUU-1u-RBG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -186,7 +186,7 @@
         <scene sceneID="KV6-lS-peU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="87e-1i-fry" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="rL7-QT-jEf"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="rL7-QT-jEf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xeD-Rh-8e8">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -202,4 +202,10 @@
             <point key="canvasLocation" x="-142.40000000000001" y="1817.9910044977512"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="campaign" width="32" height="32"/>
+        <image name="funnel" width="32" height="32"/>
+        <image name="profile" width="32" height="32"/>
+        <image name="trending" width="32" height="32"/>
+    </resources>
 </document>

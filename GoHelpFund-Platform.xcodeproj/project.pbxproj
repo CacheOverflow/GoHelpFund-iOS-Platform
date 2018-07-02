@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C5C20EA347F0079575D /* HelpCircleImageView.swift */; };
 		5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5040F0A920D7EA970030183D /* AppDelegate.swift */; };
 		5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0AD20D7EA970030183D /* Dashboard.storyboard */; };
 		5040F0B120D7EA970030183D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0B020D7EA970030183D /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.release.xcconfig"; sourceTree = "<group>"; };
 		48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.debug.xcconfig"; sourceTree = "<group>"; };
+		50394C5C20EA347F0079575D /* HelpCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCircleImageView.swift; sourceTree = "<group>"; };
 		5040F0A620D7EA970030183D /* GoHelpFund-Platform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoHelpFund-Platform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5040F0A920D7EA970030183D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5040F0AE20D7EA970030183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		504F47CF20E631D6005FF749 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				50394C5C20EA347F0079575D /* HelpCircleImageView.swift */,
 				504F47D020E631E9005FF749 /* BaseCell.swift */,
 				504F47D620E6735F005FF749 /* DateHelper.swift */,
 			);
@@ -445,6 +448,7 @@
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
 				504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */,
+				50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */,
 				504F47B720E3D4B8005FF749 /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

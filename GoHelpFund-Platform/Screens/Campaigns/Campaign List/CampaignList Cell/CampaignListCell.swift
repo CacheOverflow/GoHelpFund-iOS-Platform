@@ -29,6 +29,7 @@ class CampaignListCell: BaseTableViewCell {
             let url = URL(string: imageString)
             imageView1.sd_setImage(with: url, completed: nil)
         }
+        categoryImageView.image = UIImage.init(named: campaign.category.rawValue)
         
         titleLabel.text = campaign.title
         authorLabel.text = campaign.author.name
@@ -37,7 +38,7 @@ class CampaignListCell: BaseTableViewCell {
         numberOfBackersLabel.text = String(campaign.backers)
         
         let percentage = (campaign.raisedTotal / campaign.raisedGoal) * 100
-        raisedPercentageLabel.text = String(percentage) + "%"
+        raisedPercentageLabel.text = String(percentage) + "%" + " Raised"
         
     }
     
