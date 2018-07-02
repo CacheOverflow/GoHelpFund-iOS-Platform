@@ -6,5 +6,6 @@ target 'GoHelpFund-Platform' do
   pod 'UIWindowTransitions'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'SwiftDate'
 end
 
