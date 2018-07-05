@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="rOd-eH-Wwl">
@@ -51,7 +56,7 @@
                     <navigationItem key="navigationItem" id="hgF-RU-Kt8"/>
                     <connections>
                         <outlet property="tableView" destination="NmH-Om-4FO" id="PR3-ay-faU"/>
-                        <segue destination="rpJ-Yz-IsD" kind="show" id="wic-mA-gvL"/>
+                        <segue destination="rpJ-Yz-IsD" kind="show" identifier="details" id="wic-mA-gvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcn-Ac-afE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,9 +70,41 @@
                     <view key="view" contentMode="scaleToFill" id="bJo-pi-VjF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YRw-Rs-WNC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="494"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50y-V9-rzi" customClass="HelpButton" customModule="GoHelpFund_Platform" customModuleProvider="target">
+                                <rect key="frame" x="10" y="558" width="355" height="50"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.66666666669999997" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HW3-gS-jgE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="DONATE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapDonate:" destination="rpJ-Yz-IsD" eventType="touchUpInside" id="h9m-iQ-x1g"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="50y-V9-rzi" firstAttribute="top" secondItem="YRw-Rs-WNC" secondAttribute="bottom" id="9hG-Pc-ctq"/>
+                            <constraint firstItem="N7u-jE-qEm" firstAttribute="leading" secondItem="50y-V9-rzi" secondAttribute="leading" constant="-10" id="EUQ-Yv-vKe"/>
+                            <constraint firstItem="N7u-jE-qEm" firstAttribute="bottom" secondItem="50y-V9-rzi" secondAttribute="bottom" constant="10" id="GJB-qg-Gew"/>
+                            <constraint firstItem="YRw-Rs-WNC" firstAttribute="leading" secondItem="N7u-jE-qEm" secondAttribute="leading" id="KbF-BT-g7s"/>
+                            <constraint firstItem="N7u-jE-qEm" firstAttribute="trailing" secondItem="50y-V9-rzi" secondAttribute="trailing" constant="10" id="TOT-89-Myz"/>
+                            <constraint firstItem="N7u-jE-qEm" firstAttribute="trailing" secondItem="YRw-Rs-WNC" secondAttribute="trailing" id="Wv3-Qe-SbK"/>
+                            <constraint firstItem="YRw-Rs-WNC" firstAttribute="top" secondItem="N7u-jE-qEm" secondAttribute="top" id="yWZ-Yf-0Tq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="N7u-jE-qEm"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="YRw-Rs-WNC" id="Sdz-h6-c7q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3h-If-b1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

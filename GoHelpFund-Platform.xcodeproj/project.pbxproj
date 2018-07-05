@@ -7,7 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5032D88420EE188A00B259BA /* GaleryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88320EE188A00B259BA /* GaleryVM.swift */; };
+		5032D88620EE18A100B259BA /* CampaignDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */; };
+		5032D88820EE18AF00B259BA /* AuthorDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */; };
+		5032D88C20EE24C000B259BA /* GalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D88A20EE24C000B259BA /* GalleryCell.xib */; };
+		5032D88D20EE24C000B259BA /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88B20EE24C000B259BA /* GalleryCell.swift */; };
+		5032D89020EE254000B259BA /* CampaignDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88E20EE254000B259BA /* CampaignDescriptionCell.swift */; };
+		5032D89120EE254000B259BA /* CampaignDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D88F20EE254000B259BA /* CampaignDescriptionCell.xib */; };
+		5032D89420EE269400B259BA /* CampaignDetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D89220EE269400B259BA /* CampaignDetailedCell.swift */; };
+		5032D89520EE269400B259BA /* CampaignDetailedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D89320EE269400B259BA /* CampaignDetailedCell.xib */; };
+		5032D89820EE26B400B259BA /* AuthorDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D89620EE26B400B259BA /* AuthorDetailsCell.swift */; };
+		5032D89920EE26B400B259BA /* AuthorDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D89720EE26B400B259BA /* AuthorDetailsCell.xib */; };
 		50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C5C20EA347F0079575D /* HelpCircleImageView.swift */; };
+		50394C5F20EA463A0079575D /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C5E20EA463A0079575D /* HelpButton.swift */; };
+		50394C6520EA49D50079575D /* GaleryParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C6420EA49D50079575D /* GaleryParentVC.swift */; };
+		50394C6720EA4A660079575D /* GaleryChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C6620EA4A660079575D /* GaleryChildVC.swift */; };
 		5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5040F0A920D7EA970030183D /* AppDelegate.swift */; };
 		5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0AD20D7EA970030183D /* Dashboard.storyboard */; };
 		5040F0B120D7EA970030183D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0B020D7EA970030183D /* Assets.xcassets */; };
@@ -39,7 +53,21 @@
 /* Begin PBXFileReference section */
 		37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.release.xcconfig"; sourceTree = "<group>"; };
 		48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.debug.xcconfig"; sourceTree = "<group>"; };
+		5032D88320EE188A00B259BA /* GaleryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryVM.swift; sourceTree = "<group>"; };
+		5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDetailsVM.swift; sourceTree = "<group>"; };
+		5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsVM.swift; sourceTree = "<group>"; };
+		5032D88A20EE24C000B259BA /* GalleryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryCell.xib; sourceTree = "<group>"; };
+		5032D88B20EE24C000B259BA /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		5032D88E20EE254000B259BA /* CampaignDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDescriptionCell.swift; sourceTree = "<group>"; };
+		5032D88F20EE254000B259BA /* CampaignDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampaignDescriptionCell.xib; sourceTree = "<group>"; };
+		5032D89220EE269400B259BA /* CampaignDetailedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDetailedCell.swift; sourceTree = "<group>"; };
+		5032D89320EE269400B259BA /* CampaignDetailedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampaignDetailedCell.xib; sourceTree = "<group>"; };
+		5032D89620EE26B400B259BA /* AuthorDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsCell.swift; sourceTree = "<group>"; };
+		5032D89720EE26B400B259BA /* AuthorDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorDetailsCell.xib; sourceTree = "<group>"; };
 		50394C5C20EA347F0079575D /* HelpCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCircleImageView.swift; sourceTree = "<group>"; };
+		50394C5E20EA463A0079575D /* HelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
+		50394C6420EA49D50079575D /* GaleryParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryParentVC.swift; sourceTree = "<group>"; };
+		50394C6620EA4A660079575D /* GaleryChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryChildVC.swift; sourceTree = "<group>"; };
 		5040F0A620D7EA970030183D /* GoHelpFund-Platform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoHelpFund-Platform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5040F0A920D7EA970030183D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5040F0AE20D7EA970030183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
@@ -88,6 +116,31 @@
 				37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5032D88220EE186A00B259BA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5032D88320EE188A00B259BA /* GaleryVM.swift */,
+				5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */,
+				5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5032D88920EE24C000B259BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5032D88B20EE24C000B259BA /* GalleryCell.swift */,
+				5032D88A20EE24C000B259BA /* GalleryCell.xib */,
+				5032D88E20EE254000B259BA /* CampaignDescriptionCell.swift */,
+				5032D88F20EE254000B259BA /* CampaignDescriptionCell.xib */,
+				5032D89220EE269400B259BA /* CampaignDetailedCell.swift */,
+				5032D89320EE269400B259BA /* CampaignDetailedCell.xib */,
+				5032D89620EE26B400B259BA /* AuthorDetailsCell.swift */,
+				5032D89720EE26B400B259BA /* AuthorDetailsCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5040F09D20D7EA970030183D = {
@@ -167,7 +220,11 @@
 		504F47C020E62DEC005FF749 /* Campaign Details */ = {
 			isa = PBXGroup;
 			children = (
+				5032D88920EE24C000B259BA /* Cells */,
+				5032D88220EE186A00B259BA /* ViewModels */,
 				504F47C620E62EAC005FF749 /* CampaignDetailsVC.swift */,
+				50394C6420EA49D50079575D /* GaleryParentVC.swift */,
+				50394C6620EA4A660079575D /* GaleryChildVC.swift */,
 			);
 			path = "Campaign Details";
 			sourceTree = "<group>";
@@ -242,6 +299,7 @@
 				50394C5C20EA347F0079575D /* HelpCircleImageView.swift */,
 				504F47D020E631E9005FF749 /* BaseCell.swift */,
 				504F47D620E6735F005FF749 /* DateHelper.swift */,
+				50394C5E20EA463A0079575D /* HelpButton.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -341,10 +399,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5032D89120EE254000B259BA /* CampaignDescriptionCell.xib in Resources */,
 				5040F0B420D7EA970030183D /* LaunchScreen.storyboard in Resources */,
 				504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */,
 				5040F0B120D7EA970030183D /* Assets.xcassets in Resources */,
+				5032D88C20EE24C000B259BA /* GalleryCell.xib in Resources */,
 				5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */,
+				5032D89520EE269400B259BA /* CampaignDetailedCell.xib in Resources */,
+				5032D89920EE26B400B259BA /* AuthorDetailsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,14 +503,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5032D88420EE188A00B259BA /* GaleryVM.swift in Sources */,
+				5032D88620EE18A100B259BA /* CampaignDetailsVM.swift in Sources */,
+				5032D89020EE254000B259BA /* CampaignDescriptionCell.swift in Sources */,
+				5032D89820EE26B400B259BA /* AuthorDetailsCell.swift in Sources */,
+				5032D88820EE18AF00B259BA /* AuthorDetailsVM.swift in Sources */,
 				504F47C420E62DEC005FF749 /* CampaignListVC.swift in Sources */,
 				504F47C920E62F0D005FF749 /* DashboardTabController.swift in Sources */,
 				504F47B920E3DA7C005FF749 /* CampaignService.swift in Sources */,
 				5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */,
+				50394C5F20EA463A0079575D /* HelpButton.swift in Sources */,
 				504F47D120E631E9005FF749 /* BaseCell.swift in Sources */,
 				504F47D720E6735F005FF749 /* DateHelper.swift in Sources */,
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
+				5032D89420EE269400B259BA /* CampaignDetailedCell.swift in Sources */,
+				50394C6520EA49D50079575D /* GaleryParentVC.swift in Sources */,
+				50394C6720EA4A660079575D /* GaleryChildVC.swift in Sources */,
+				5032D88D20EE24C000B259BA /* GalleryCell.swift in Sources */,
 				504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */,
 				50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */,
 				504F47B720E3D4B8005FF749 /* ApiService.swift in Sources */,
