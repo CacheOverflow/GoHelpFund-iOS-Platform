@@ -23,6 +23,13 @@ public struct Campaign: Codable {
     let currency: Currency
     let resourcesUrl: ResourcesUrl
     let author: User
+    let locationDisplayed: String?
+    let locationCoordinates: Location?
+}
+
+struct Location: Codable {
+    let latitude: Float
+    let longitude: Float
 }
 
 struct ResourcesUrl: Codable {

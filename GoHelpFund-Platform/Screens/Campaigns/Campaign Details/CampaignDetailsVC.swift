@@ -10,6 +10,7 @@ import UIKit
 
 
 class CampaignDetailsVC: UIViewController {
+    var campaign: Campaign!
     
     enum Section: Int {
         case galery
@@ -41,7 +42,7 @@ class CampaignDetailsVC: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 160
+        //tableView.rowHeight = 160
         GalleryCell.registerNibToTableView(tableView: tableView)
         CampaignDescriptionCell.registerNibToTableView(tableView: tableView)
         AuthorDetailsCell.registerNibToTableView(tableView: tableView)
@@ -78,6 +79,7 @@ extension CampaignDetailsVC: UITableViewDelegate, UITableViewDataSource {
                 cell = tableView.dequeueReusableCell(withIdentifier: CampaignDescriptionCell.cellReuseIdentifier(), for: indexPath) as! CampaignDescriptionCell
             default:
                 cell = tableView.dequeueReusableCell(withIdentifier: CampaignDetailedCell.cellReuseIdentifier(), for: indexPath) as! CampaignDetailedCell
+                (cell as! CampaignDetailedCell).setupWithVM(vm: CampaignDetailsVM(campaign: campaign))
             }
         case .authorDetails:
             cell = tableView.dequeueReusableCell(withIdentifier: AuthorDetailsCell.cellReuseIdentifier(), for: indexPath) as! AuthorDetailsCell

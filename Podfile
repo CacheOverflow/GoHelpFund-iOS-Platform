@@ -6,6 +6,8 @@ target 'GoHelpFund-Platform' do
   pod 'UIWindowTransitions'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'SwiftDate'
+  pod 'SwiftDate', '~> 4.5.1'
+  pod 'LinearProgressBar'
+  
 end
 

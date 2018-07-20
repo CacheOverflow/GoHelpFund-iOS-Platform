@@ -10,10 +10,24 @@ import UIKit
 
 open class ImageScrollView: UIScrollView {
     
+    @objc public enum ContentMode: Int {
+        case aspectFill
+        case aspectFit
+        case widthFill
+        case heightFill
+    }
+    
+    @objc public enum Offset: Int {
+        case begining
+        case center
+    }
+    
     static let kZoomInFactorFromMinWhenDoubleTap: CGFloat = 2
     
-    public var landscapeAspectFill = true; // If TRUE, the ImageScrollView will have an 'aspect fill' behavior when in landscape orientation. Otherwise, it will be aspect fit, so that the image isn't zoomed in to fit the width of the display.
-    public private(set) var zoomView: UIImageView? = nil
+    @objc open var imageContentMode: ContentMode = .widthFill
+    @objc open var initialOffset: Offset = .begining
+    
+    @objc public private(set) var zoomView: UIImageView? = nil
 
     var imageSize: CGSize = CGSize.zero
     fileprivate var pointToCenterAfterResize: CGPoint = CGPoint.zero
@@ -60,7 +74,7 @@ open class ImageScrollView: UIScrollView {
         NotificationCenter.default.addObserver(self, selector: #selector(ImageScrollView.changeOrientationNotification), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    public func adjustFrameToCenter() {
+    @objc public func adjustFrameToCenter() {
         
         guard let unwrappedZoomView = zoomView else {
             return
@@ -138,7 +152,7 @@ open class ImageScrollView: UIScrollView {
 
     // MARK: - Display image
     
-    open func display(image: UIImage) {
+    @objc open func display(image: UIImage) {
 
         if let zoomView = zoomView {
             zoomView.removeFromSuperview()
@@ -160,18 +174,45 @@ open class ImageScrollView: UIScrollView {
         contentSize = imageSize
         setMaxMinZoomScalesForCurrentBounds()
         zoomScale = minimumZoomScale
-        contentOffset = CGPoint.zero
+        
+        switch initialOffset {
+        case .begining:
+            contentOffset =  CGPoint.zero
+        case .center:
+            let xOffset = contentSize.width < bounds.width ? 0 : (contentSize.width - bounds.width)/2
+            let yOffset = contentSize.height < bounds.height ? 0 : (contentSize.height - bounds.height)/2
+
+            switch imageContentMode {
+            case .aspectFit:
+                contentOffset =  CGPoint.zero
+            case .aspectFill:
+                contentOffset = CGPoint(x: xOffset, y: yOffset)
+            case .heightFill:
+                contentOffset = CGPoint(x: xOffset, y: 0)
+            case .widthFill:
+                contentOffset = CGPoint(x: 0, y: yOffset)
+            }
+        }
     }
     
     fileprivate func setMaxMinZoomScalesForCurrentBounds() {
         // calculate min/max zoomscale
         let xScale = bounds.width / imageSize.width    // the scale needed to perfectly fit the image width-wise
         let yScale = bounds.height / imageSize.height   // the scale needed to perfectly fit the image height-wise
+    
+        var minScale: CGFloat = 1
         
-        // fill width if the image and phone are both portrait or both landscape; otherwise take smaller scale
-        let imagePortrait = imageSize.height > imageSize.width
-        let phonePortrait = bounds.height >= bounds.width
-        var minScale = (imagePortrait == phonePortrait && self.landscapeAspectFill) ? xScale : min(xScale, yScale)
+        switch imageContentMode {
+        case .aspectFill:
+            minScale = max(xScale, yScale)
+        case .aspectFit:
+            minScale = min(xScale, yScale)
+        case .widthFill:
+            minScale = xScale
+        case .heightFill:
+            minScale = yScale
+        }
+        
         
         let maxScale = maxScaleFromMinScale*minScale
         

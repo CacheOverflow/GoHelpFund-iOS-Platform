@@ -54,6 +54,13 @@ extension CampaignListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "details", sender: nil)
+        let campaign = campaigns[indexPath.row]
+        let navigator = CampaignListNavigationFactory()
+        let nextVC = navigator.createCampaignDetails(campaign: campaign)
+        navigationController?.pushViewController(nextVC, animated: true)
     }
+}
+
+protocol CampaignListNavigation {
+    func createCampaignDetails(campaign: Campaign) -> CampaignDetailsVC
 }
