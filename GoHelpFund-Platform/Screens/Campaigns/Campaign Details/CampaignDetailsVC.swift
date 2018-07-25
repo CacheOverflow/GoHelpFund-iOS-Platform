@@ -42,6 +42,8 @@ class CampaignDetailsVC: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300
         //tableView.rowHeight = 160
         GalleryCell.registerNibToTableView(tableView: tableView)
         CampaignDescriptionCell.registerNibToTableView(tableView: tableView)
