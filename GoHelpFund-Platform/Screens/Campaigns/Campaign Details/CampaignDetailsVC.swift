@@ -56,6 +56,12 @@ class CampaignDetailsVC: UIViewController {
 
 extension CampaignDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == Section.galery.rawValue {
+            return 250
+        }
+        return UITableViewAutomaticDimension
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.count
     }
@@ -72,6 +78,8 @@ extension CampaignDetailsVC: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case .galery:
             cell = tableView.dequeueReusableCell(withIdentifier: GalleryCell.cellReuseIdentifier(), for: indexPath) as! GalleryCell
+            cell.setupWithVM(vm: GaleryVM(campaign: campaign))
+            
         case .campaignDetails:
             switch indexPath.row {
             case 0:
@@ -84,8 +92,17 @@ extension CampaignDetailsVC: UITableViewDelegate, UITableViewDataSource {
             }
         case .authorDetails:
             cell = tableView.dequeueReusableCell(withIdentifier: AuthorDetailsCell.cellReuseIdentifier(), for: indexPath) as! AuthorDetailsCell
+            (cell as! AuthorDetailsCell).delegate = self
             cell.setupWithVM(vm: AuthorDetailsVM(campaign: campaign))
         }
         return cell
+    }
+}
+
+extension CampaignDetailsVC: AuthorDetailsDelegate {
+    func didTapSocial(withLink link: URL) {
+        if UIApplication.shared.canOpenURL(link) {
+            UIApplication.shared.open(link, options: [:], completionHandler: nil)
+        }
     }
 }

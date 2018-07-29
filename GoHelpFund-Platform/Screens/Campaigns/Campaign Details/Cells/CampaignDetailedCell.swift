@@ -25,6 +25,12 @@ class CampaignDetailedCell: BaseTableViewCell {
         setupProgressBarLayout()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        titleLabel.sizeToFit()
+    }
+    
     func setupProgressBarLayout() {
         progressBar.barColorForValue = colorForProgress
         

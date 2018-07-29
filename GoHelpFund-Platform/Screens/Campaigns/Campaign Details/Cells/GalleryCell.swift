@@ -9,31 +9,75 @@
 import UIKit
 
 class GalleryCell: BaseTableViewCell {
-
-    @IBOutlet var scrollView: UIScrollView!
-    var images = [UIImage]()
     
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var pageControl: UIPageControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        images = [#imageLiteral(resourceName: "animals"), #imageLiteral(resourceName: "education"), #imageLiteral(resourceName: "charity")]
         setupScrollView()
+        setupPageControl()
     }
-
+    
     func setupScrollView() {
-        for i in 0..<images.count {
-            let imageView = UIImageView()
-            let x = contentView.frame.size.width * CGFloat(i)
-            imageView.frame = CGRect(x: x, y: 0, width: contentView.frame.width, height: contentView.frame.height)
-            imageView.contentMode = .scaleAspectFit
-            imageView.backgroundColor = UIColor.red
-            imageView.image = images[i]
-            
-            scrollView.contentSize.width = scrollView.frame.size.width * CGFloat(i + 1)
-            scrollView.addSubview(imageView)
+        scrollView.delegate = self
+        scrollView.isPagingEnabled = true
+        scrollView.bounces = false
+        scrollView.showsHorizontalScrollIndicator = false
+    }
+    
+    func setupPageControl() {
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor.blue
+        
+        pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: .valueChanged)
+    }
+    
+    override func setupWithVM(vm: Any) {
+        guard let vm = vm as? GaleryVM else { fatalError("wrong vm") }
+        
+        updateLayout(for: vm.imagesCount)
+        setup(with: vm)
+    }
+    
+    func updateLayout(for elementsCount: Int) {
+        scrollView.contentSize = CGSize(width: contentView.frame.size.width * CGFloat(elementsCount), height: contentView.frame.size.height)
+        pageControl.numberOfPages = elementsCount
+    }
+    
+    func setup(with vm: GaleryVM) {
+        vm.imagesUrls.enumerated().forEach { (offset, imageUrl) in
+            self.displayImage(imageUrl: imageUrl, for: offset)
         }
     }
+
+    func displayImage(imageUrl: URL?, `for` offset: Int) {
+        let imageView = self.imageView(for: offset)
+        imageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder.png"))
+        
+        scrollView.addSubview(imageView)
+    }
     
+    func imageView(`for` offset: Int) -> UIImageView {
+        let xOrigin = self.contentView.frame.size.width * CGFloat(offset)
+        let imageView = UIImageView(frame: CGRect(x: xOrigin, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height))
+        
+        imageView.contentMode = .scaleAspectFill
+        
+        return imageView
+    }
     
+    @objc func changePage(sender: AnyObject) {
+        let x = CGFloat(pageControl.currentPage) * scrollView.frame.size.width
+        scrollView.setContentOffset(CGPoint(x: x, y :0), animated: true)
+    }
 }
+
+extension GalleryCell: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = Int(pageNumber)
+    }
+}
+
