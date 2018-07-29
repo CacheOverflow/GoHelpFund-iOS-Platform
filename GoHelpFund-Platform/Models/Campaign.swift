@@ -41,18 +41,29 @@ struct User: Codable {
     let name: String
     let jobTitle: String
     let company: String
+    let imageUrl: String?
     let social: Social
     
 }
 
 struct Social: Codable {
-    let facebook: String
-    let twitter: String
-    let linkedin: String
+    let facebook: String?
+    let twitter: String?
+    let linkedin: String?
+    let website: String?
+    let other: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case twitter
+        case website
+        case linkedin
+        case facebook
+        case other
+    }
 }
 
 enum Currency: String, Codable {
-    case dolar = "dolar"
+    case dolar = "$"
     case euro = "euro"
     case eth = "eth"
     case help = "help"

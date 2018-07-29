@@ -25,4 +25,14 @@ class BaseTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
+    func setupWithVM(vm: Any) {}
 }
+
+//protocol ViewModelDisplay {}
+//protocol CellSetupable {
+//    func setupWithVMm(vm: ViewModelDisplay)
+//}
+//extension BaseTableViewCell: CellSetupable {
+//    func setupWithVMm(vm: ViewModelDisplay) {}
+//}
+

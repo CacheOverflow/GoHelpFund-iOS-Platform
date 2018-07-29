@@ -225,8 +225,7 @@
 				5032D88920EE24C000B259BA /* Cells */,
 				5032D88220EE186A00B259BA /* ViewModels */,
 				504F47C620E62EAC005FF749 /* CampaignDetailsVC.swift */,
-				50394C6420EA49D50079575D /* GaleryParentVC.swift */,
-				50394C6620EA4A660079575D /* GaleryChildVC.swift */,
+				509E0CCA2108CDF800827862 /* Galery */,
 			);
 			path = "Campaign Details";
 			sourceTree = "<group>";
@@ -305,6 +304,15 @@
 				50394C5E20EA463A0079575D /* HelpButton.swift */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		509E0CCA2108CDF800827862 /* Galery */ = {
+			isa = PBXGroup;
+			children = (
+				50394C6420EA49D50079575D /* GaleryParentVC.swift */,
+				50394C6620EA4A660079575D /* GaleryChildVC.swift */,
+			);
+			path = Galery;
 			sourceTree = "<group>";
 		};
 		D551E72CA4F45E813C0D462A /* Frameworks */ = {

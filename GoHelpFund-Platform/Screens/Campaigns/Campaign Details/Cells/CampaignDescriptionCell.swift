@@ -10,15 +10,20 @@ import UIKit
 
 class CampaignDescriptionCell: BaseTableViewCell {
 
+    @IBOutlet var amountRaisedLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func setupWithVM(vm: Any) {
+        guard let vm = vm as? CampaignDetailsVM else { fatalError("wrong vm")}
+        
+        amountRaisedLabel.text = vm.raisedTotalDisplayed
+        descriptionLabel.text = vm.description
     }
-    
 }

@@ -21,18 +21,46 @@ class CampaignDetailedCell: BaseTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupProgressBarLayout()
     }
     
-    func setupWithVM(vm: CampaignDetailsVM) {
+    func setupProgressBarLayout() {
+        progressBar.barColorForValue = colorForProgress
+        
+        progressBar.barColor = .green
+        progressBar.trackColor = .lightGray
+        progressBar.barThickness = 25
+        progressBar.barPadding = -12
+        progressBar.trackPadding = 0
+    }
+
+    func colorForProgress(value: Float) -> UIColor {
+        switch value {
+        case ..<20:
+            return .red
+        case 20..<60:
+            return .yellow
+        case 60...100:
+            return .green
+        default:
+            return .green
+        }
+    }
+    
+    override func setupWithVM(vm: Any) {
+        guard let vm = vm as? CampaignDetailsVM else { fatalError("wrong vm")}
+        
         titleLabel.text = vm.title
         startDateLabel.text = vm.startDate
         endDateLabel.text = vm.endDate
         locationLabel.text = vm.locationDisplayed
         progressLabel.text = vm.raisedPercentageDisplayed
-        
+
         //in order to use cgfloat, I have to import UIKit and i don't want to import it in the vm
         progressBar.progressValue = CGFloat(vm.raisedPercentageProgress)
+
+        progressLabel.textColor = colorForProgress(value: Float(vm.raisedPercentageProgress))
     }
-    
+
 }

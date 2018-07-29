@@ -42,9 +42,6 @@ class CampaignDetailsVC: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 300
-        //tableView.rowHeight = 160
         GalleryCell.registerNibToTableView(tableView: tableView)
         CampaignDescriptionCell.registerNibToTableView(tableView: tableView)
         AuthorDetailsCell.registerNibToTableView(tableView: tableView)
@@ -70,7 +67,7 @@ extension CampaignDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let section = Section(rawValue: indexPath.section) else { fatalError("Unexpected Section") }
-        let cell: UITableViewCell
+        let cell: BaseTableViewCell
         
         switch section {
         case .galery:
@@ -78,14 +75,16 @@ extension CampaignDetailsVC: UITableViewDelegate, UITableViewDataSource {
         case .campaignDetails:
             switch indexPath.row {
             case 0:
-                cell = tableView.dequeueReusableCell(withIdentifier: CampaignDescriptionCell.cellReuseIdentifier(), for: indexPath) as! CampaignDescriptionCell
-            default:
                 cell = tableView.dequeueReusableCell(withIdentifier: CampaignDetailedCell.cellReuseIdentifier(), for: indexPath) as! CampaignDetailedCell
-                (cell as! CampaignDetailedCell).setupWithVM(vm: CampaignDetailsVM(campaign: campaign))
+                cell.setupWithVM(vm: CampaignDetailsVM(campaign: campaign))
+                
+            default:
+                cell = tableView.dequeueReusableCell(withIdentifier: CampaignDescriptionCell.cellReuseIdentifier(), for: indexPath) as! CampaignDescriptionCell
+                cell.setupWithVM(vm: CampaignDetailsVM(campaign: campaign))
             }
         case .authorDetails:
             cell = tableView.dequeueReusableCell(withIdentifier: AuthorDetailsCell.cellReuseIdentifier(), for: indexPath) as! AuthorDetailsCell
-
+            cell.setupWithVM(vm: AuthorDetailsVM(campaign: campaign))
         }
         return cell
     }
