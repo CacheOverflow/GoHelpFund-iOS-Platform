@@ -30,7 +30,10 @@ class DashboardTabController: UITabBarController {
     }
     
     @objc func createCampaign() {
+        let navigator = CampaignListNavigationFactory(storyboard: UIStoryboard(name: StoryboardIds.createCampaignStoryboardId.rawValue, bundle: nil))
+        let nextVC = navigator.createCreateCampaign()
         
+        UIApplication.shared.keyWindow?.rootViewController = nextVC
     }
 
 }

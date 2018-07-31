@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.3)
   - Crashlytics (3.10.5):
     - Fabric (~> 1.7.9)
+  - Eureka (4.2.0)
   - Fabric (1.7.9)
   - ImageScrollView (1.5)
   - LinearProgressBar (1.0.1)
@@ -19,6 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - Crashlytics
+  - Eureka
   - Fabric
   - ImageScrollView
   - LinearProgressBar
@@ -30,6 +32,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
+  Eureka: 0748c7bbb2560130e43c7bfa83e99c98854a1f42
   Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   ImageScrollView: 22b3ad3f215a227403eee376fd226559516390b4
   LinearProgressBar: f6a74dbabed229dbb1a7978089e2e4317a3a0ee0
@@ -39,6 +42,6 @@ SPEC CHECKSUMS:
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   UIWindowTransitions: 95836d4d85b824227909ada40a2cbf885eb26c69
 
-PODFILE CHECKSUM: 271fb238cce90058fb307935d5dc224ef322ce3b
+PODFILE CHECKSUM: 1a516eec5bfc8251642cb4490851c2a0a9195ff8
 
 COCOAPODS: 1.3.1

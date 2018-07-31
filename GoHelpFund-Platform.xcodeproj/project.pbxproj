@@ -38,7 +38,7 @@
 		504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504F47D320E6323D005FF749 /* CampaignListCell.xib */; };
 		504F47D720E6735F005FF749 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D620E6735F005FF749 /* DateHelper.swift */; };
 		5050CA3A2110652C00015F31 /* CreateCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050CA392110652C00015F31 /* CreateCampaign.storyboard */; };
-		5050CA3D211065C500015F31 /* CampaignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050CA3C211065C500015F31 /* CampaignVC.swift */; };
+		5050CA3D211065C500015F31 /* CreateCampaignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050CA3C211065C500015F31 /* CreateCampaignVC.swift */; };
 		509E0CC9210234EA00827862 /* CampaignNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E0CC8210234EA00827862 /* CampaignNavigation.swift */; };
 		802F8BD56057EFDE3678F6AE /* Pods_GoHelpFund_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */; };
 /* End PBXBuildFile section */
@@ -91,7 +91,7 @@
 		504F47D320E6323D005FF749 /* CampaignListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampaignListCell.xib; sourceTree = "<group>"; };
 		504F47D620E6735F005FF749 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5050CA392110652C00015F31 /* CreateCampaign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateCampaign.storyboard; sourceTree = "<group>"; };
-		5050CA3C211065C500015F31 /* CampaignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignVC.swift; sourceTree = "<group>"; };
+		5050CA3C211065C500015F31 /* CreateCampaignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignVC.swift; sourceTree = "<group>"; };
 		509E0CC8210234EA00827862 /* CampaignNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignNavigation.swift; sourceTree = "<group>"; };
 		77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoHelpFund_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -315,7 +315,7 @@
 		5050CA3B211065A000015F31 /* CreateCampaign */ = {
 			isa = PBXGroup;
 			children = (
-				5050CA3C211065C500015F31 /* CampaignVC.swift */,
+				5050CA3C211065C500015F31 /* CreateCampaignVC.swift */,
 			);
 			path = CreateCampaign;
 			sourceTree = "<group>";
@@ -500,6 +500,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -511,6 +512,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -535,7 +537,7 @@
 				509E0CC9210234EA00827862 /* CampaignNavigation.swift in Sources */,
 				5032D88620EE18A100B259BA /* CampaignDetailsVM.swift in Sources */,
 				5032D89020EE254000B259BA /* CampaignDescriptionCell.swift in Sources */,
-				5050CA3D211065C500015F31 /* CampaignVC.swift in Sources */,
+				5050CA3D211065C500015F31 /* CreateCampaignVC.swift in Sources */,
 				5032D89820EE26B400B259BA /* AuthorDetailsCell.swift in Sources */,
 				5032D88820EE18AF00B259BA /* AuthorDetailsVM.swift in Sources */,
 				504F47C420E62DEC005FF749 /* CampaignListVC.swift in Sources */,

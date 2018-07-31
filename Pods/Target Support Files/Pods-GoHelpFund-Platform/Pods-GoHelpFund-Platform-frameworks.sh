@@ -103,6 +103,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
@@ -113,6 +114,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"

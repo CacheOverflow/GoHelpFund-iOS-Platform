@@ -8,6 +8,7 @@ target 'GoHelpFund-Platform' do
   pod 'Crashlytics'
   pod 'SwiftDate', '~> 4.5.1'
   pod 'LinearProgressBar'
+  pod 'Eureka'
   
 end
 

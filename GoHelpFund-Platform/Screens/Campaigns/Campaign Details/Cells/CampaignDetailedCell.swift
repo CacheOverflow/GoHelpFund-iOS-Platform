@@ -28,7 +28,7 @@ class CampaignDetailedCell: BaseTableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        titleLabel.sizeToFit()
+        //titleLabel.sizeToFit()
     }
     
     func setupProgressBarLayout() {

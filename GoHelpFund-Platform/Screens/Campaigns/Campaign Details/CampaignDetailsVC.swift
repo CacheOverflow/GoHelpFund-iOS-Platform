@@ -36,6 +36,7 @@ class CampaignDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Campaign Details"
         setupTableView()
     }
 
