@@ -12,24 +12,25 @@ class DashboardTabController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        guard let viewControllers = viewControllers else { return }
+        setupNavigationBars(for: viewControllers)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupNavigationBars(for viewControllers: [UIViewController]) {
+        for vc in viewControllers {
+            if let navVC = vc as? UINavigationController, let vc = navVC.viewControllers.first {
+                vc.navigationItem.setRightBarButton(barButton, animated: true)
+            }
+        }
     }
-    */
+    
+    var barButton: UIBarButtonItem {
+        return UIBarButtonItem(image: UIImage(named: "create")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(createCampaign))
+    }
+    
+    @objc func createCampaign() {
+        
+    }
 
 }

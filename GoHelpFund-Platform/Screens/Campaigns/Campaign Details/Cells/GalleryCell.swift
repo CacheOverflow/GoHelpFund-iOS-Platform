@@ -20,6 +20,11 @@ class GalleryCell: BaseTableViewCell {
         setupPageControl()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
+    
     func setupScrollView() {
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
@@ -42,7 +47,7 @@ class GalleryCell: BaseTableViewCell {
     }
     
     func updateLayout(for elementsCount: Int) {
-        scrollView.contentSize = CGSize(width: contentView.frame.size.width * CGFloat(elementsCount), height: contentView.frame.size.height)
+        scrollView.contentSize = CGSize(width: contentView.frame.size.width * CGFloat(elementsCount), height: scrollView.frame.size.height)
         pageControl.numberOfPages = elementsCount
     }
     
@@ -63,7 +68,7 @@ class GalleryCell: BaseTableViewCell {
         let xOrigin = self.contentView.frame.size.width * CGFloat(offset)
         let imageView = UIImageView(frame: CGRect(x: xOrigin, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height))
         
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         
         return imageView
     }

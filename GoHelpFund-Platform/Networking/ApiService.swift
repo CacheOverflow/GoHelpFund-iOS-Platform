@@ -38,6 +38,7 @@ public enum API {
 
 extension API: TargetType {
     public var baseURL: URL { return URL(string: "http://www.mocky.io/v2/")! }
+    
     public var path: String {
         switch self {
         case .getCampaignList:

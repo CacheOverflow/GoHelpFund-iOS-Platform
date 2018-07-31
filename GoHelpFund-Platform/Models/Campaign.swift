@@ -25,6 +25,12 @@ public struct Campaign: Codable {
     let author: User
     let locationDisplayed: String?
     let locationCoordinates: Location?
+    
+    func toJson() {
+        let encoder = JSONEncoder()
+        let data = try! encoder.encode(self)
+        print(String(data: data, encoding: .utf8)!)
+    }
 }
 
 struct Location: Codable {
