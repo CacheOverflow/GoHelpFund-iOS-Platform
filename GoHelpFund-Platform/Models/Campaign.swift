@@ -8,7 +8,48 @@
 
 import Foundation
 
-public struct Campaign: Codable {
+enum JSONErrors: Error {
+    case nilElement
+}
+
+protocol JSONable: Codable {
+    associatedtype Element
+    func toJsonString() -> String?
+    static func fromJSONListData<Element: Codable>(data: Data) throws -> [Element]
+    static func fromJSONData<Element: Codable>(data: Data) throws -> Element
+}
+
+extension JSONable {
+    static var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }
+    
+    func toJsonString() -> String? {
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(self)
+            return String(data: data, encoding: .utf8)
+        } catch {
+            return nil
+        }
+    }
+    
+    static func fromJSONData<Element: Codable>(data: Data) throws -> Element {
+        guard let elements = try? decoder.decode(Element.self, from: data) else { throw JSONErrors.nilElement }
+        return elements
+    }
+    
+    static func fromJSONListData<Element: Codable>(data: Data) throws -> [Element] {
+        guard let elements = try? decoder.decode([Element].self, from: data) else { throw JSONErrors.nilElement }
+        return elements
+    }
+}
+
+public struct Campaign: JSONable {
+    typealias Element = Campaign
+    
     let id: String
     let title: String
     let description: String
@@ -25,12 +66,6 @@ public struct Campaign: Codable {
     let author: User
     let locationDisplayed: String?
     let locationCoordinates: Location?
-    
-    func toJson() {
-        let encoder = JSONEncoder()
-        let data = try! encoder.encode(self)
-        print(String(data: data, encoding: .utf8)!)
-    }
 }
 
 struct Location: Codable {

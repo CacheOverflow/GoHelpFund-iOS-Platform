@@ -15,9 +15,7 @@ public struct CampaignService {
             switch result {
             case let .success(response):
                 do {
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .iso8601
-                    let campaigns = try decoder.decode([Campaign].self, from: response.data)
+                    let campaigns : [Campaign] = try Campaign.fromJSONListData(data: response.data)
                     success(campaigns)
                 } catch let error {
                     print(error)
