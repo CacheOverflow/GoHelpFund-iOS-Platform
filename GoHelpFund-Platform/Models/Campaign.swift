@@ -37,12 +37,13 @@ extension JSONable {
     }
     
     static func fromJSONData<Element: Codable>(data: Data) throws -> Element {
-        guard let elements = try? decoder.decode(Element.self, from: data) else { throw JSONErrors.nilElement }
+        // FIXME: - remove force try
+        let elements = try! decoder.decode(Element.self, from: data)
         return elements
     }
     
     static func fromJSONListData<Element: Codable>(data: Data) throws -> [Element] {
-        guard let elements = try? decoder.decode([Element].self, from: data) else { throw JSONErrors.nilElement }
+        let elements = try! decoder.decode([Element].self, from: data)
         return elements
     }
 }
@@ -103,30 +104,14 @@ struct Social: Codable {
     }
 }
 
+struct Category: Codable {
+    let title: String
+    let imageUrl: String
+}
+
 enum Currency: String, Codable {
     case dolar = "$"
     case euro = "euro"
     case eth = "eth"
     case help = "help"
-}
-
-enum Category: String, Codable {
-    case medical
-    case volunteer
-    case emergencies
-    case education
-    case memorials
-    case sports
-    case animals
-    case wishes
-    case competitions
-    case charity
-    case newlyweds
-    case faith
-    case travel
-    case creative
-    case community
-    case events
-    case business
-    case family
 }

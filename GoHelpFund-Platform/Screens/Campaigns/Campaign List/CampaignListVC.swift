@@ -49,7 +49,7 @@ extension CampaignListVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: CampaignListCell.cellReuseIdentifier(), for: indexPath) as! CampaignListCell
         let campaign = campaigns[indexPath.row]
         
-        cell.setupWithCampaign(campaign: campaign)
+        cell.setupWithVM(vm: CampaignDetailsVM(campaign: campaign))
         return cell
     }
     

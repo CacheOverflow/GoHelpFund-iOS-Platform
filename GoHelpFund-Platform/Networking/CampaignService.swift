@@ -11,7 +11,7 @@ import Foundation
 public struct CampaignService {
     
     public func getCampaignList(success: @escaping ([Campaign]) -> (), failure: @escaping () -> ()) {
-        apiProvider.request(API.getCampaignList()) { (result) in
+        apiProvider.request(API.getCampaigns()) { (result) in
             switch result {
             case let .success(response):
                 do {

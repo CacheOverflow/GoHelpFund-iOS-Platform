@@ -32,25 +32,25 @@ private extension String {
 }
 
 public enum API {
-    case getCampaignList()
-    case getCampaignDetails(String)
+    case getCampaigns()
+    case getCategories()
 }
 
 extension API: TargetType {
-    public var baseURL: URL { return URL(string: "http://www.mocky.io/v2/")! }
+    public var baseURL: URL { return URL(string: "http://demo0574725.mockable.io/")! }
     
     public var path: String {
         switch self {
-        case .getCampaignList:
-            return "5b5c3f963200006a004262ce"
-        case .getCampaignDetails(_):
-            return "5b34e3b22f00001a04376103"
+        case .getCampaigns:
+            return "getCampaigns"
+        case .getCategories():
+            return "getCategories"
         }
     }
     public var method: Moya.Method {
         switch self {
-        case .getCampaignDetails(_),
-             .getCampaignList():
+        case .getCategories(),
+             .getCampaigns():
             return .get
         default:
             return .post
@@ -59,10 +59,9 @@ extension API: TargetType {
     
     public var task: Task {
         switch self {
-        case .getCampaignList:
+        case .getCampaigns,
+             .getCategories():
             return .requestPlain
-        case .getCampaignDetails(let idCampaign):
-            return .requestParameters(parameters: ["id": idCampaign], encoding: URLEncoding.default)
         default:
             return .requestPlain
         }

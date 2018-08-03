@@ -351,6 +351,7 @@
 				5CDF0387E3E27CA8A799C64F /* [CP] Embed Pods Frameworks */,
 				244B31A3CA276EE7309D62D0 /* [CP] Copy Pods Resources */,
 				5040F0C920D8F8920030183D /* ShellScript */,
+				50572BEC211428C200E2CF84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -491,6 +492,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 42891bbf1bc6faa20fe4da4d1eadce19bba1c30d fe90748f6166fabed032c3908f2472961237bf193442fe759e4d65213ac31179";
+		};
+		50572BEC211428C200E2CF84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO|FIXME|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 		5CDF0387E3E27CA8A799C64F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
