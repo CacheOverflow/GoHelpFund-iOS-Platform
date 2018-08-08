@@ -28,7 +28,7 @@ class CampaignListVC: UIViewController {
     
     func getCampaigns() {
         let campaignService = CampaignService()
-        campaignService.getCampaignList(success: { (campaignsList) in
+        campaignService.getCampaigns(success: { (campaignsList) in
             self.campaigns = campaignsList
             self.tableView.reloadData()
             

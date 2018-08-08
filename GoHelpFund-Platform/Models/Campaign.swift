@@ -37,13 +37,12 @@ extension JSONable {
     }
     
     static func fromJSONData<Element: Codable>(data: Data) throws -> Element {
-        // FIXME: - remove force try
-        let elements = try! decoder.decode(Element.self, from: data)
+        let elements = try decoder.decode(Element.self, from: data)
         return elements
     }
     
     static func fromJSONListData<Element: Codable>(data: Data) throws -> [Element] {
-        let elements = try! decoder.decode([Element].self, from: data)
+        let elements = try decoder.decode([Element].self, from: data)
         return elements
     }
 }
@@ -104,7 +103,9 @@ struct Social: Codable {
     }
 }
 
-struct Category: Codable {
+public struct Category: JSONable {
+    typealias Element = Category
+    
     let title: String
     let imageUrl: String
 }
