@@ -76,9 +76,9 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let navigator = CampaignListNavigationFactory(storyboard: UIStoryboard(name: StoryboardIds.createCampaignStoryboardId.rawValue, bundle: nil))
+        let nextVC = navigator.createCreateCampaign()
         
+        navigationController?.pushViewController(nextVC, animated: true)
     }
-
- 
-
 }

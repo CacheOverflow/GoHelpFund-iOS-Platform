@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NibView: UIView {
+class NibView: UIView, StepValidator {
     var view: UIView!
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,10 +20,19 @@ class NibView: UIView {
         super.init(coder: aDecoder)
         xibSetup()
     }
+    
+    init() {
+        super.init(frame: CGRect.zero)
+    }
+}
+
+extension StepValidator {
+    var isValidStep: Bool {
+       return false
+    }
 }
 
 private extension NibView {
-    
     func xibSetup() {
         backgroundColor = UIColor.clear
         view = loadNib()

@@ -7,58 +7,59 @@
 //
 
 import UIKit
-import Eureka
 
-class CreateCampaignVC: FormViewController {
-
+class CreateCampaignVC: UIViewController {
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var previousButton: UIButton!
+    
+    let step1 = CreateCampaignStep1()
+    let step2 = CreateCampaignStep2()
+    let step3 = CreateCampaignStep3()
+    var views = [NibView]()
+    
+    var loadedViews = [UIView]()
+    
+    var step: Int = 0
+    var nrSteps: Int = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.hidesBackButton = true
+        
+        setupLoadedViews()
         setupNavigationBar()
-        createForm()
+        present(loadedView: loadedViews.first, viewToRemove: nil)
     }
     
-    func createForm() {
-        form +++ Section("User Data")
-            <<< TextRow(){ row in
-                row.title = "Full Name"
-                row.placeholder = "Please provide your full name"
-            }
-            <<< TextRow() {
-                $0.title = "Job Title"
-                $0.placeholder = "Please let us know what yo do"
-            }
-            <<< TextRow() {
-                $0.title = "Company"
-                $0.placeholder = "Company"
-            }
-        
-            +++ Section("Campaign Details")
-            
-            <<< TextRow() {
-                $0.title = "Title"
-                $0.placeholder = "Campaign Title"
-            }
-            <<< TextRow() {
-                $0.title = "Description"
-                $0.placeholder = "Campaign description"
-            }
-            <<< IntRow() {
-                $0.title = "Amount needed"
-                $0.placeholder = "Please provide how much do you need to raise"
-            }
-            
-            <<< DateRow() {
-                $0.title = "Start Date"
-                $0.value = Date(timeIntervalSinceReferenceDate: 0)
-            }
-            <<< DateRow() {
-                $0.title = "End Date"
-                $0.value = Date(timeIntervalSinceReferenceDate: 0)
-        }
-        
+    func setupLoadedViews() {
+        views = [step1, step2, step3]
+        loadedViews = views.map { $0.loadNib() }
     }
     
+    func present(loadedView: UIView?, viewToRemove: UIView?) {
+        guard let loadedView = loadedView else { return }
+        containerView.addSubview(loadedView)
+        
+        loadedView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loadedView.leftAnchor.constraint(equalTo: containerView.leftAnchor),
+            loadedView.rightAnchor.constraint(equalTo: containerView.rightAnchor),
+            loadedView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            loadedView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            ])
+        
+        
+        loadedView.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            loadedView.alpha = 1
+            viewToRemove?.alpha = 0
+        }, completion: { (completed: Bool) in
+            viewToRemove?.removeFromSuperview()
+        })
+    }
+
     func setupNavigationBar() {
         let barButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDone))
         navigationItem.setRightBarButton(barButton, animated: true)
@@ -70,5 +71,43 @@ class CreateCampaignVC: FormViewController {
         
         UIApplication.shared.keyWindow?.rootViewController = nextVC
     }
+    
+    @IBAction func tapPrevious(_ sender: Any) {
+        if step == 0 {
+            return
+        }
+        
+        step -= 1
+        present(loadedView: loadedViews[step], viewToRemove: loadedViews[step + 1])
+    }
+    
+    @IBAction func tapNext(_ sender: Any) {
+        valid(at: step)
+        
+        if step == nrSteps - 1 {
+            finishCreateCampaign()
+            return
+        }
+        
+        step += 1
+        present(loadedView: loadedViews[step], viewToRemove: loadedViews[step - 1])
+    }
+    
+    func valid(at step: Int) {
+        let v = CreateCampaignStep1()
+        print(v.isValidStep)
+        print(views[step].isValidStep)
+    }
+    
+    func retriveData() {
+        print(step1.title)
+    }
+    
+    func finishCreateCampaign() {
+        retriveData()
+    }
+}
 
+protocol StepValidator {
+    var isValidStep: Bool { get }
 }

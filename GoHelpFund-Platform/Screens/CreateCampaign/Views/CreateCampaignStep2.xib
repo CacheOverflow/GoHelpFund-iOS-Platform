@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCampaignStep2" customModule="GoHelpFund_Platform" customModuleProvider="target">
+            <connections>
+                <outlet property="endDateTextField" destination="oSc-xd-qED" id="ndg-OY-ZIP"/>
+                <outlet property="startDateTextField" destination="42M-uZ-wPd" id="Rq8-rs-aRg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.5" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42M-uZ-wPd" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                    <rect key="frame" x="57" y="140.5" width="262.5" height="39"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                            <color key="value" red="0.47640640029999998" green="1" blue="0.84476098310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                            <color key="value" red="0.28411138060000002" green="0.627162993" blue="0.86420512199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Start Date"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="ZC4-Tu-JWD"/>
+                        <outlet property="delegate" destination="-1" id="0aF-P3-CTN"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSc-xd-qED" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                    <rect key="frame" x="56.5" y="220.5" width="262.5" height="39"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                            <color key="value" red="0.47640640029999998" green="1" blue="0.84476098310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                            <color key="value" red="0.28411138060000002" green="0.627162993" blue="0.86420512199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="End Date"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="rKK-kW-pOk"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="0.97254901959999995" green="0.29411764709999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="oSc-xd-qED" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="1.2" id="48a-yE-QGG"/>
+                <constraint firstItem="oSc-xd-qED" firstAttribute="width" secondItem="42M-uZ-wPd" secondAttribute="width" id="9Bf-zV-NMT"/>
+                <constraint firstItem="42M-uZ-wPd" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.8" id="BWi-M7-flS"/>
+                <constraint firstItem="oSc-xd-qED" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ha0-aM-fax"/>
+                <constraint firstItem="42M-uZ-wPd" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="JMB-sY-zWA"/>
+                <constraint firstItem="42M-uZ-wPd" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="KXU-ac-3y8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>
