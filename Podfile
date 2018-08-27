@@ -11,6 +11,11 @@ target 'GoHelpFund-Platform' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'GrowingTextView', '~> 0.5'
   pod 'DateTimePicker'
+  pod 'YPImagePicker'
+  
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
   
 end
 

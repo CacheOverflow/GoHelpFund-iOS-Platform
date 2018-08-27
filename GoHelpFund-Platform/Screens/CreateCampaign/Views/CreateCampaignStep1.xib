@@ -23,10 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHD-0m-lKA" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="56.5" y="135" width="262.5" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="MV0-ZV-n2C"/>
-                    </constraints>
+                    <rect key="frame" x="56.5" y="100" width="262.5" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -62,8 +59,11 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k8g-55-5fJ" customClass="GrowingTextView" customModule="GrowingTextView">
-                    <rect key="frame" x="56" y="223.5" width="263" height="33"/>
+                    <rect key="frame" x="56" y="180" width="263" height="190"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="190" id="qa5-Dj-Sdm"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <userDefinedRuntimeAttributes>
@@ -77,13 +77,12 @@
                     </userDefinedRuntimeAttributes>
                 </textView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.66664659950000005" blue="0.433589536" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k8g-55-5fJ" secondAttribute="bottom" constant="20" id="1Dc-KX-QN6"/>
+                <constraint firstItem="WHD-0m-lKA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="89G-Ez-yAD"/>
                 <constraint firstItem="k8g-55-5fJ" firstAttribute="trailing" secondItem="WHD-0m-lKA" secondAttribute="trailing" id="8qG-60-yNb"/>
                 <constraint firstItem="WHD-0m-lKA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="Otc-Ja-Z3F"/>
-                <constraint firstItem="WHD-0m-lKA" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.8" id="YoW-AX-wDi"/>
-                <constraint firstItem="k8g-55-5fJ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="1.2" id="mkS-kN-1jI"/>
+                <constraint firstItem="k8g-55-5fJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WHD-0m-lKA" secondAttribute="bottom" constant="50" id="eBI-vw-IyT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k8g-55-5fJ" secondAttribute="bottom" constant="30" id="ffT-Zd-Avl"/>
                 <constraint firstItem="WHD-0m-lKA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="rC1-al-Ydg"/>
                 <constraint firstItem="k8g-55-5fJ" firstAttribute="leading" secondItem="WHD-0m-lKA" secondAttribute="leading" id="yxW-gR-6c2"/>
             </constraints>

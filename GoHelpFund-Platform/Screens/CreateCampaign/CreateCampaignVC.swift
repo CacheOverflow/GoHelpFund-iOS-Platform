@@ -13,12 +13,7 @@ class CreateCampaignVC: UIViewController {
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var previousButton: UIButton!
     
-    let step1 = CreateCampaignStep1()
-    let step2 = CreateCampaignStep2()
-    let step3 = CreateCampaignStep3()
-    var views = [NibView]()
-    
-    var loadedViews = [UIView]()
+    var loadedViews = [NibView]()
     
     var step: Int = 0
     var nrSteps: Int = 3
@@ -34,8 +29,11 @@ class CreateCampaignVC: UIViewController {
     }
     
     func setupLoadedViews() {
-        views = [step1, step2, step3]
-        loadedViews = views.map { $0.loadNib() }
+        let step1 = CreateCampaignStep1()
+        let step2 = CreateCampaignStep2(delegate: self)
+        let step3 = CreateCampaignStep3()
+        
+        loadedViews = [step1, step2, step3]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
@@ -96,15 +94,27 @@ class CreateCampaignVC: UIViewController {
     func valid(at step: Int) {
         let v = CreateCampaignStep1()
         print(v.isValidStep)
-        print(views[step].isValidStep)
+        print(loadedViews[step].isValidStep)
     }
     
     func retriveData() {
-        print(step1.title)
+        
     }
     
     func finishCreateCampaign() {
-        retriveData()
+        
+        let navigator = CampaignListNavigationFactory(storyboard: UIStoryboard(name: StoryboardIds.createCampaignStoryboardId.rawValue, bundle: nil))
+        let nextVC = navigator.createMediaPicker()
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+        //UIApplication.shared.keyWindow?.rootViewController = nextVC
+        
+    }
+}
+
+extension CreateCampaignVC: CreateCampaignStep2Delegate {
+    func didTapLocation() {
+        
     }
 }
 

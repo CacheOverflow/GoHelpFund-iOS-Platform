@@ -24,10 +24,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPJ-9o-jza" userLabel="Back">
-                                <rect key="frame" x="30" y="50" width="48" height="48"/>
+                                <rect key="frame" x="30" y="50" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PPJ-9o-jza" secondAttribute="height" id="B6l-vC-LZp"/>
-                                    <constraint firstAttribute="width" constant="48" id="Vw1-GK-Ljl"/>
+                                    <constraint firstAttribute="width" constant="40" id="Vw1-GK-Ljl"/>
                                 </constraints>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOf-Wb-OQV" userLabel="Next">
-                                <rect key="frame" x="297" y="50" width="48" height="48"/>
+                                <rect key="frame" x="305" y="50" width="40" height="40"/>
                                 <state key="normal" title="Next" image="right-arrow"/>
                                 <connections>
                                     <action selector="tapNext:" destination="Ovv-mw-TUf" eventType="touchUpInside" id="QgL-8F-IBG"/>
@@ -65,6 +65,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUL-7o-3Of" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1527" y="831"/>
+        </scene>
+        <!--Media PickerVC-->
+        <scene sceneID="744-qD-8N2">
+            <objects>
+                <viewController storyboardIdentifier="MediaPickerVC" id="bE6-ur-jK1" customClass="MediaPickerVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RAH-jV-zir">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hxt-ao-srR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQa-91-I7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="831"/>
         </scene>
         <!--CategoriesVC-->
         <scene sceneID="WR9-go-z7B">

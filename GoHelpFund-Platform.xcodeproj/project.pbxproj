@@ -39,6 +39,7 @@
 		504F47D720E6735F005FF749 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D620E6735F005FF749 /* DateHelper.swift */; };
 		5050CA3A2110652C00015F31 /* CreateCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050CA392110652C00015F31 /* CreateCampaign.storyboard */; };
 		5050CA3D211065C500015F31 /* CreateCampaignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050CA3C211065C500015F31 /* CreateCampaignVC.swift */; };
+		5053847A2121AD1C00D12BE4 /* MediaPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505384792121AD1C00D12BE4 /* MediaPickerVC.swift */; };
 		50572BEF2114638300E2CF84 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BEE2114638300E2CF84 /* CategoriesVC.swift */; };
 		50572BF12114656E00E2CF84 /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BF02114656E00E2CF84 /* CategoriesVM.swift */; };
 		509E0CC9210234EA00827862 /* CampaignNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E0CC8210234EA00827862 /* CampaignNavigation.swift */; };
@@ -103,6 +104,7 @@
 		504F47D620E6735F005FF749 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5050CA392110652C00015F31 /* CreateCampaign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateCampaign.storyboard; sourceTree = "<group>"; };
 		5050CA3C211065C500015F31 /* CreateCampaignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignVC.swift; sourceTree = "<group>"; };
+		505384792121AD1C00D12BE4 /* MediaPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaPickerVC.swift; path = "GoHelpFund-Platform/Screens/CreateCampaign/MediaPickerVC.swift"; sourceTree = SOURCE_ROOT; };
 		50572BEE2114638300E2CF84 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
 		50572BF02114656E00E2CF84 /* CategoriesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVM.swift; sourceTree = "<group>"; };
 		509E0CC8210234EA00827862 /* CampaignNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignNavigation.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				50CCDB54211B0F1200F7279E /* CreateCampaignStep2.xib */,
 				50CCDB58211B2A8A00F7279E /* CreateCampaignStep3.swift */,
 				50CCDB5A211B2A9700F7279E /* CreateCampaignStep3.xib */,
+				505384792121AD1C00D12BE4 /* MediaPickerVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -522,9 +525,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -588,11 +596,14 @@
 				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/UIWindowTransitions/UIWindowTransitions.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -602,11 +613,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIWindowTransitions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -642,6 +656,7 @@
 				50572BF12114656E00E2CF84 /* CategoriesVM.swift in Sources */,
 				50394C6520EA49D50079575D /* GaleryParentVC.swift in Sources */,
 				50394C6720EA4A660079575D /* GaleryChildVC.swift in Sources */,
+				5053847A2121AD1C00D12BE4 /* MediaPickerVC.swift in Sources */,
 				5032D88D20EE24C000B259BA /* GalleryCell.swift in Sources */,
 				50CCDB4A21146F9D00F7279E /* CategoryCell.swift in Sources */,
 				50CCDB57211B0F2700F7279E /* CreateCampaignStep2.swift in Sources */,

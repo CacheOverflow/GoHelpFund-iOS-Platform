@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCampaignStep2" customModule="GoHelpFund_Platform" customModuleProvider="target">
             <connections>
                 <outlet property="endDateTextField" destination="oSc-xd-qED" id="ndg-OY-ZIP"/>
+                <outlet property="locationTextField" destination="YPR-vm-n8G" id="Ffd-ex-rNT"/>
                 <outlet property="startDateTextField" destination="42M-uZ-wPd" id="Rq8-rs-aRg"/>
             </connections>
         </placeholder>
@@ -22,52 +23,75 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42M-uZ-wPd" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="57" y="140.5" width="262.5" height="39"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                            <color key="value" red="0.47640640029999998" green="1" blue="0.84476098310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                            <color key="value" red="0.28411138060000002" green="0.627162993" blue="0.86420512199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Start Date"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="ZC4-Tu-JWD"/>
-                        <outlet property="delegate" destination="-1" id="0aF-P3-CTN"/>
-                    </connections>
-                </textField>
-                <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSc-xd-qED" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="56.5" y="220.5" width="262.5" height="39"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                            <color key="value" red="0.47640640029999998" green="1" blue="0.84476098310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                            <color key="value" red="0.28411138060000002" green="0.627162993" blue="0.86420512199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="End Date"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="rKK-kW-pOk"/>
-                    </connections>
-                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OVg-I7-due">
+                    <rect key="frame" x="104" y="50" width="167" height="300"/>
+                    <subviews>
+                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42M-uZ-wPd" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="0.0" y="0.0" width="167" height="86.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                    <color key="value" red="0.47640640029999998" green="1" blue="0.84476098310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                    <color key="value" red="0.28411138060000002" green="0.627162993" blue="0.86420512199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Start Date"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="ZC4-Tu-JWD"/>
+                                <outlet property="delegate" destination="-1" id="0aF-P3-CTN"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSc-xd-qED" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="0.0" y="106.5" width="167" height="87"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                    <color key="value" red="0.47640640029999998" green="1" blue="0.84476098310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                    <color key="value" red="0.28411138060000002" green="0.627162993" blue="0.86420512199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="End Date"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="rKK-kW-pOk"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-vm-n8G" userLabel="Location" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="0.0" y="213.5" width="167" height="86.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                    <color key="value" red="0.47640640029999998" green="1" blue="0.84476098310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                    <color key="value" red="0.28411138060000002" green="0.627162993" blue="0.86420512199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Location"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="w5o-Uq-qqz"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="42M-uZ-wPd" firstAttribute="width" secondItem="OVg-I7-due" secondAttribute="width" multiplier="0.7" constant="50.050000000000011" id="BqK-f6-XWH"/>
+                        <constraint firstItem="oSc-xd-qED" firstAttribute="width" secondItem="42M-uZ-wPd" secondAttribute="width" id="rcN-WF-FzD"/>
+                    </constraints>
+                </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.97254901959999995" green="0.29411764709999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="oSc-xd-qED" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="1.2" id="48a-yE-QGG"/>
-                <constraint firstItem="oSc-xd-qED" firstAttribute="width" secondItem="42M-uZ-wPd" secondAttribute="width" id="9Bf-zV-NMT"/>
-                <constraint firstItem="42M-uZ-wPd" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.8" id="BWi-M7-flS"/>
-                <constraint firstItem="oSc-xd-qED" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ha0-aM-fax"/>
-                <constraint firstItem="42M-uZ-wPd" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="JMB-sY-zWA"/>
-                <constraint firstItem="42M-uZ-wPd" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="KXU-ac-3y8"/>
+                <constraint firstItem="OVg-I7-due" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="4vv-dR-jla"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OVg-I7-due" secondAttribute="bottom" constant="50" id="Ymh-Gm-0kL"/>
+                <constraint firstItem="OVg-I7-due" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="yAJ-CD-SwX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

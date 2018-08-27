@@ -70,5 +70,13 @@
             </dict>
         </dict>
     </dict>
+    
+    <key>NSCameraUsageDescription</key>
+    <string>GoHelpFund would like to access your camera in order to upload campaign photos</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>GoHelpFund would like to access your library in order to upload campaign photos</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>GoHelpFund would like to access your microphone in order to upload campaign videos</string>
+    
 </dict>
 </plist>

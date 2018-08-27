@@ -13,12 +13,31 @@ import SkyFloatingLabelTextField
 enum TextFieldType: Int {
     case startDate = 1
     case endDate = 2
+    case location = 3
+}
+
+protocol CreateCampaignStep2Delegate {
+    func didTapLocation()
 }
 
 class CreateCampaignStep2: NibView, DateTimePickerDelegate {
     @IBOutlet var startDateTextField: SkyFloatingLabelTextField!
     
     @IBOutlet var endDateTextField: SkyFloatingLabelTextField!
+    
+    @IBOutlet var locationTextField: SkyFloatingLabelTextField!
+    
+    let delegate: CreateCampaignStep2Delegate?
+    
+    init(delegate: CreateCampaignStep2Delegate) {
+        self.delegate = delegate
+        
+        super.init(frame: CGRect.zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     var startDate: Date {
         return Date()
@@ -46,13 +65,19 @@ class CreateCampaignStep2: NibView, DateTimePickerDelegate {
         picker.completionHandler = { date in
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm aa dd/MM/YYYY"
-            if tag == TextFieldType.startDate.rawValue {
-                self.startDateTextField.text = formatter.string(from: date)
-            } else {
-                self.endDateTextField.text = formatter.string(from: date)
-            }
             
+            if let fieldsEnum = TextFieldType(rawValue: tag) {
+                switch fieldsEnum {
+                case .startDate:
+                    self.startDateTextField.text = formatter.string(from: date)
+                case .endDate:
+                    self.endDateTextField.text = formatter.string(from: date)
+                case .location:
+                    break
+                }
+            }
         }
+        
         picker.delegate = self
         
         picker.show()
@@ -65,7 +90,15 @@ class CreateCampaignStep2: NibView, DateTimePickerDelegate {
 
 extension CreateCampaignStep2: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        presentCalendar(with: textField.tag)
+        if let fieldsEnum = TextFieldType(rawValue: textField.tag) {
+            if fieldsEnum == .location {
+                delegate?.didTapLocation()
+            } else {
+                presentCalendar(with: textField.tag)
+            }
+            
+        }
+        
         return false
     }
 }

@@ -44,4 +44,9 @@ extension CampaignListNavigationFactory: CampaignListNavigation {
         guard let vc = storyboard.instantiateViewController(withIdentifier: String(describing: CreateCampaignVC.self)) as? CreateCampaignVC else { fatalError() }
         return vc
     }
+    
+    func createMediaPicker() -> UIViewController {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: String(describing: MediaPickerVC.self)) as? MediaPickerVC else { fatalError() }
+        return vc
+    }
 }
