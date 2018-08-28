@@ -9,6 +9,7 @@
 import UIKit
 import DateTimePicker
 import SkyFloatingLabelTextField
+import GooglePlaces
 
 enum TextFieldType: Int {
     case startDate = 1
@@ -86,6 +87,10 @@ class CreateCampaignStep2: NibView, DateTimePickerDelegate {
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
         
     }
+    
+    func update(with location: String) {
+        locationTextField.text = location
+    }
 }
 
 extension CreateCampaignStep2: UITextFieldDelegate {
@@ -102,7 +107,7 @@ extension CreateCampaignStep2: UITextFieldDelegate {
         return false
     }
 }
-
+    
 extension CreateCampaignStep2 {
     var isValidStep: Bool {
         return true

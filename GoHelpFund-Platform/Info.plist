@@ -71,6 +71,9 @@
         </dict>
     </dict>
     
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Picking the created campaign location</string>
+    
     <key>NSCameraUsageDescription</key>
     <string>GoHelpFund would like to access your camera in order to upload campaign photos</string>
     <key>NSPhotoLibraryUsageDescription</key>

@@ -17,5 +17,7 @@ target 'GoHelpFund-Platform' do
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
   
+  pod 'IQKeyboardManagerSwift'
+  
 end
 

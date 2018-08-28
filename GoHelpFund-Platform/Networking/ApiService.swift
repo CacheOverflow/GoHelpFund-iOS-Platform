@@ -35,7 +35,7 @@ public enum API {
     case getCampaigns()
     case getCategories()
 }
-//AIzaSyAaa003esGMNtd1XsMy6B65HsqjCLQLVCA
+
 extension API: TargetType {
     public var baseURL: URL { return URL(string: "http://demo0574725.mockable.io/")! }
     

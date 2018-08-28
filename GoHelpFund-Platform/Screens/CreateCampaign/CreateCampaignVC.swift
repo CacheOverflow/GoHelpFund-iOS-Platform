@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class CreateCampaignVC: UIViewController {
+    let locationManager = CLLocationManager()
+    
     @IBOutlet var containerView: UIView!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var previousButton: UIButton!
@@ -23,6 +26,7 @@ class CreateCampaignVC: UIViewController {
 
         navigationItem.hidesBackButton = true
         
+        setupLocation()
         setupLoadedViews()
         setupNavigationBar()
         present(loadedView: loadedViews.first, viewToRemove: nil)
@@ -110,11 +114,101 @@ class CreateCampaignVC: UIViewController {
         //UIApplication.shared.keyWindow?.rootViewController = nextVC
         
     }
+    
+    func setupLocation() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func getCurrentPlace() {
+        GMSPlacesClient.shared().currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            if let placeLikelihoodList = placeLikelihoodList {
+                for likelihood in placeLikelihoodList.likelihoods {
+                    let place = likelihood.place
+                    print("Current Place name \(place.name) at likelihood \(likelihood.likelihood)")
+                    print("Current Place address \(place.formattedAddress)")
+                    print("Current Place attributions \(place.attributions)")
+                    print("Current PlaceID \(place.placeID)")
+                }
+            }
+        })
+    }
+}
+
+extension CreateCampaignVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .restricted, .denied:
+            // Disable your app's location features
+            //disableMyLocationBasedFeatures()
+            break
+            
+        case .authorizedWhenInUse:
+            // Enable only your app's when-in-use features.
+            //enableMyWhenInUseFeatures()
+            getCurrentPlace()
+            break
+            
+        case .authorizedAlways:
+            // Enable any of your app's location services.
+            //enableMyAlwaysFeatures()
+            break
+            
+        case .notDetermined:
+            break
+        }
+    }
 }
 
 extension CreateCampaignVC: CreateCampaignStep2Delegate {
     func didTapLocation() {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        present(autocompleteController, animated: true, completion: nil)
+    }
+}
+
+extension CreateCampaignVC: GMSAutocompleteViewControllerDelegate {
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        print("Place name: \(place.name)")
         
+        print(place.coordinate)
+        
+        if let step2 = loadedViews[1] as? CreateCampaignStep2 {
+            if let address = place.formattedAddress {
+                step2.update(with: address)
+            }
+        }
+        
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
 

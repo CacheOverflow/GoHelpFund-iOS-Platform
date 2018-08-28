@@ -7,10 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 class CreateCampaignStep3: NibView {
     var isValidStep: Bool {
         return true
+    }
+    
+    override init() {
+        super.init(frame: CGRect.zero)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup() {
+        
     }
 }
 
