@@ -22,13 +22,13 @@ class CampaignListVC: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 200
+        tableView.rowHeight = 160
         CampaignListCell.registerNibToTableView(tableView: tableView)
     }
     
     func getCampaigns() {
         let campaignService = CampaignService()
-        campaignService.getCampaignList(success: { (campaignsList) in
+        campaignService.getCampaigns(success: { (campaignsList) in
             self.campaigns = campaignsList
             self.tableView.reloadData()
             
@@ -49,7 +49,18 @@ extension CampaignListVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: CampaignListCell.cellReuseIdentifier(), for: indexPath) as! CampaignListCell
         let campaign = campaigns[indexPath.row]
         
-        cell.setupWithCampaign(campaign: campaign)
+        cell.setupWithVM(vm: CampaignDetailsVM(campaign: campaign))
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let campaign = campaigns[indexPath.row]
+        let navigator = CampaignListNavigationFactory()
+        let nextVC = navigator.createCampaignDetails(campaign: campaign)
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+
+protocol CampaignListNavigation {
+    func createCampaignDetails(campaign: Campaign) -> CampaignDetailsVC
 }
