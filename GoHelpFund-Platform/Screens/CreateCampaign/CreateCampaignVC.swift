@@ -37,8 +37,8 @@ class CreateCampaignVC: UIViewController {
         let step2 = CreateCampaignStep2()
         let step3 = CreateCampaignStep3(delegate: self)
         
-        //loadedViews = [step1, step2, step3]
-        loadedViews = [step3]
+        loadedViews = [step1, step2, step3]
+        //loadedViews = [step3]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
