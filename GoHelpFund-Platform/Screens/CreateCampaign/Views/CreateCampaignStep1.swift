@@ -8,11 +8,17 @@
 
 import UIKit
 import SkyFloatingLabelTextField
-import GrowingTextView
+import UITextView_Placeholder
+
+enum InvalidFields {
+    case title
+    case description
+    case titleAndDescription
+}
 
 class CreateCampaignStep1: NibView {
     @IBOutlet var titleTextField: SkyFloatingLabelTextField!
-    @IBOutlet var descriptionTextView: GrowingTextView!
+    @IBOutlet var descriptionTextView: UITextView!
     
     
     override init() {
@@ -26,26 +32,77 @@ class CreateCampaignStep1: NibView {
     }
     
     private func setup() {
+        descriptionTextView.layer.borderWidth = 1
+        descriptionTextView.layer.borderColor = UIColor.black.cgColor
+        
         titleTextField.delegate = self
-        titleTextField.placeholder = "Titleee"
+        descriptionTextView.delegate = self
     }
     
     var title: String? {
         return titleTextField.text
     }
     
-    var descriptionCampaign: String? {
+    var descriptionCampaign: String {
         return descriptionTextView.text
     }
     
-    var isValidStep: Bool {
-        guard let _ = title, let _ = descriptionCampaign else { return false }
-        return true
+    override var isValidStep: Bool {
+        if !isValidTitle() && !isValidDescription() {
+            handleUnvalidState(invalidFields: .titleAndDescription)
+            return false
+        } else if !isValidTitle() {
+            handleUnvalidState(invalidFields: .title)
+            return false
+        } else if !isValidDescription() {
+            handleUnvalidState(invalidFields: .description)
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func isValidTitle() -> Bool {
+        let nonOptionalTitle = title ?? ""
+        return !(nonOptionalTitle.isEmpty) && nonOptionalTitle.containsNonWhitespace
+    }
+    
+    func isValidDescription() -> Bool {
+        return !(descriptionCampaign.isEmpty) && descriptionCampaign.containsNonWhitespace
+    }
+    
+    func handleUnvalidState(invalidFields: InvalidFields) {
+        switch invalidFields {
+        case .titleAndDescription:
+            invalidTitle()
+            invalidDescription()
+        case .title:
+            invalidTitle()
+        case .description:
+            invalidDescription()
+        }
+    }
+    
+    func invalidTitle() {
+        titleTextField.errorMessage = "Title is required"
+        titleTextField.text = ""
+    }
+    
+    func invalidDescription() {
+        descriptionTextView.placeholderColor = .red
+        descriptionTextView.placeholder = "Description is required"
     }
 }
 
 extension CreateCampaignStep1: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        titleTextField.errorMessage = ""
+        return true
+    }
+}
+
+extension CreateCampaignStep1: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return true
     }
 }

@@ -34,10 +34,11 @@ class CreateCampaignVC: UIViewController {
     
     func setupLoadedViews() {
         let step1 = CreateCampaignStep1()
-        let step2 = CreateCampaignStep2(delegate: self)
-        let step3 = CreateCampaignStep3()
+        let step2 = CreateCampaignStep2()
+        let step3 = CreateCampaignStep3(delegate: self)
         
-        loadedViews = [step1, step2, step3]
+        //loadedViews = [step1, step2, step3]
+        loadedViews = [step3]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
@@ -64,6 +65,7 @@ class CreateCampaignVC: UIViewController {
 
     func setupNavigationBar() {
         let barButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDone))
+        //barButton.isEnabled = false
         navigationItem.setRightBarButton(barButton, animated: true)
     }
     
@@ -84,7 +86,7 @@ class CreateCampaignVC: UIViewController {
     }
     
     @IBAction func tapNext(_ sender: Any) {
-        valid(at: step)
+        if !valid(at: step) { return }
         
         if step == nrSteps - 1 {
             finishCreateCampaign()
@@ -95,10 +97,8 @@ class CreateCampaignVC: UIViewController {
         present(loadedView: loadedViews[step], viewToRemove: loadedViews[step - 1])
     }
     
-    func valid(at step: Int) {
-        let v = CreateCampaignStep1()
-        print(v.isValidStep)
-        print(loadedViews[step].isValidStep)
+    func valid(at step: Int) -> Bool {
+        return loadedViews[step].isValidStep
     }
     
     func retriveData() {
@@ -182,7 +182,7 @@ extension CreateCampaignVC: GMSAutocompleteViewControllerDelegate {
         
         print(place.coordinate)
         
-        if let step2 = loadedViews[1] as? CreateCampaignStep2 {
+        if let step2 = loadedViews[2] as? CreateCampaignStep3 {
             if let address = place.formattedAddress {
                 step2.update(with: address)
             }
@@ -210,8 +210,4 @@ extension CreateCampaignVC: GMSAutocompleteViewControllerDelegate {
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
-}
-
-protocol StepValidator {
-    var isValidStep: Bool { get }
 }

@@ -14,7 +14,6 @@ PODS:
     - GooglePlaces (= 2.7.0)
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
-  - GrowingTextView (0.5.6)
   - ImageScrollView (1.5)
   - IQKeyboardManagerSwift (6.1.0)
   - LinearProgressBar (1.0.1)
@@ -31,6 +30,7 @@ PODS:
   - SkyFloatingLabelTextField (3.5.1)
   - SteviaLayout (4.2.0)
   - SwiftDate (4.5.1)
+  - UITextView+Placeholder (1.2.1)
   - UIWindowTransitions (0.1.1)
   - YPImagePicker (3.3.1):
     - PryntTrimmerView (~> 2.0)
@@ -43,7 +43,6 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
-  - GrowingTextView (~> 0.5)
   - ImageScrollView
   - IQKeyboardManagerSwift
   - LinearProgressBar
@@ -51,6 +50,7 @@ DEPENDENCIES:
   - SDWebImage
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftDate (~> 4.5.1)
+  - UITextView+Placeholder
   - UIWindowTransitions
   - YPImagePicker
 
@@ -62,7 +62,6 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
-  GrowingTextView: 8958f4fb7419de58dd622021b2d0696487e00e70
   ImageScrollView: 22b3ad3f215a227403eee376fd226559516390b4
   IQKeyboardManagerSwift: f5004f5860d9a8ed23a7ef7a156ae168828eb018
   LinearProgressBar: f6a74dbabed229dbb1a7978089e2e4317a3a0ee0
@@ -73,9 +72,10 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
+  UITextView+Placeholder: 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   UIWindowTransitions: 95836d4d85b824227909ada40a2cbf885eb26c69
   YPImagePicker: b711992e87904056112795c3bc17af87e2585b71
 
-PODFILE CHECKSUM: 698d4f794bdc617a45d5a0397895468113bcad78
+PODFILE CHECKSUM: e8642d2db31fb6ce970ce07eb4c9ac5e03f6fbaa
 
 COCOAPODS: 1.3.1
