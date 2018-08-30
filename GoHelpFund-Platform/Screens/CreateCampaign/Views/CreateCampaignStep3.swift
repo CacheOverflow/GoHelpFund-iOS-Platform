@@ -30,7 +30,9 @@ class CreateCampaignStep3: NibView {
     var endDate: Date? = nil
     
     var location: String? {
-        return locationTextField.text
+        guard let location = locationTextField.text else { return nil }
+        if location.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return nil }
+        return location
     }
     
     let delegate: CreateCampaignStep2Delegate?
@@ -55,7 +57,7 @@ class CreateCampaignStep3: NibView {
         picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
         picker.darkColor = .darkGray
         picker.doneButtonTitle = "DONE"
-        picker.doneBackgroundColor = .green
+        picker.doneBackgroundColor = UIColor.greenHelp
         picker.completionHandler = { date in
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/YYYY"
@@ -64,9 +66,11 @@ class CreateCampaignStep3: NibView {
                 switch fieldsEnum {
                 case .startDate:
                     self.startDateTextField.text = formatter.string(from: date)
+                    self.startDateTextField.errorMessage = ""
                     self.startDate = date
                 case .endDate:
                     self.endDateTextField.text = formatter.string(from: date)
+                    self.endDateTextField.errorMessage = ""
                     self.endDate = date
                 case .location:
                     break
@@ -79,12 +83,38 @@ class CreateCampaignStep3: NibView {
     
     func update(with location: String) {
         locationTextField.text = location
+        locationTextField.errorMessage = ""
     }
     
     override var isValidStep: Bool {
-        guard let _ = startDate, let _ = endDate, let _ = location else { return false }
-        return true
+        var valid = true
+        if startDate == nil {
+            invalidStartDate()
+            valid = false
+        }
+        if endDate == nil {
+            invalidEndDate()
+            valid = false
+        }
+        if location == nil {
+            invalidLocation()
+            valid = false
+        }
+        return valid
     }
+    
+    func invalidStartDate() {
+        startDateTextField.errorMessage = "Start date is required"
+    }
+
+    func invalidEndDate() {
+        endDateTextField.errorMessage = "End date is required"
+    }
+    
+    func invalidLocation() {
+        locationTextField.errorMessage = "Location is required"
+    }
+    
 }
 
 extension CreateCampaignStep3: UITextFieldDelegate {

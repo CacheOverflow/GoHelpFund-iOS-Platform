@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OVg-I7-due">
-                    <rect key="frame" x="56.5" y="50" width="262.5" height="200"/>
+                    <rect key="frame" x="56.5" y="50" width="262.5" height="180"/>
                     <subviews>
                         <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42M-uZ-wPd" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                             <rect key="frame" x="0.0" y="0.0" width="262.5" height="39"/>
@@ -46,7 +46,7 @@
                             </connections>
                         </textField>
                         <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSc-xd-qED" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="0.0" y="80.5" width="262.5" height="39"/>
+                            <rect key="frame" x="0.0" y="70.5" width="262.5" height="39"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -64,7 +64,7 @@
                             </connections>
                         </textField>
                         <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-vm-n8G" userLabel="Location" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="0.0" y="161" width="262.5" height="39"/>
+                            <rect key="frame" x="0.0" y="141" width="262.5" height="39"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -82,12 +82,14 @@
                             </connections>
                         </textField>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="7EH-lG-ffN"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="OVg-I7-due" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="4vv-dR-jla"/>
                 <constraint firstItem="OVg-I7-due" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="YNp-hD-Js1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OVg-I7-due" secondAttribute="bottom" constant="150" id="Ymh-Gm-0kL"/>
                 <constraint firstItem="OVg-I7-due" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="yAJ-CD-SwX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

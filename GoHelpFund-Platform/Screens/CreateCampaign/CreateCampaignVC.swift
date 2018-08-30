@@ -23,7 +23,7 @@ class CreateCampaignVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationItem.hidesBackButton = true
         
         setupLocation()
@@ -37,8 +37,8 @@ class CreateCampaignVC: UIViewController {
         let step2 = CreateCampaignStep2()
         let step3 = CreateCampaignStep3(delegate: self)
         
-        loadedViews = [step1, step2, step3]
-        //loadedViews = [step3]
+        //loadedViews = [step1, step2, step3]
+        loadedViews = [step3]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
@@ -62,7 +62,7 @@ class CreateCampaignVC: UIViewController {
             viewToRemove?.removeFromSuperview()
         })
     }
-
+    
     func setupNavigationBar() {
         let barButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDone))
         //barButton.isEnabled = false
@@ -120,48 +120,45 @@ class CreateCampaignVC: UIViewController {
         locationManager.requestWhenInUseAuthorization()
     }
     
-    func getCurrentPlace() {
-        GMSPlacesClient.shared().currentPlace(callback: { (placeLikelihoodList, error) -> Void in
-            if let error = error {
-                print("Pick Place error: \(error.localizedDescription)")
+    func updateWithLocation(location: String) {
+        if let step3 = loadedViews[0] as? CreateCampaignStep3 {
+            step3.update(with: location)
+        }
+    }
+    
+    func getCurrentLocation() {
+        guard let latitude: CLLocationDegrees = locationManager.location?.coordinate.latitude else { return }
+        guard let longitude: CLLocationDegrees = locationManager.location?.coordinate.longitude else { return }
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+            guard let placemark = placemarks?.first else { return }
+            guard let city = placemark.locality else {
+                if let country = placemark.country {
+                    self.updateWithLocation(location: country)
+                }
                 return
             }
             
-            if let placeLikelihoodList = placeLikelihoodList {
-                for likelihood in placeLikelihoodList.likelihoods {
-                    let place = likelihood.place
-                    print("Current Place name \(place.name) at likelihood \(likelihood.likelihood)")
-                    print("Current Place address \(place.formattedAddress)")
-                    print("Current Place attributions \(place.attributions)")
-                    print("Current PlaceID \(place.placeID)")
+            guard let country = placemark.country else {
+                if let city = placemark.locality {
+                    self.updateWithLocation(location: city)
                 }
+                return
             }
+            
+            let location = city + ", " + country
+            self.updateWithLocation(location: location)
         })
     }
 }
 
-extension CreateCampaignVC: CLLocationManagerDelegate {
+extension CreateCampaignVC: CLLocationManagerDelegate {    
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
-        
         switch status {
-        case .restricted, .denied:
-            // Disable your app's location features
-            //disableMyLocationBasedFeatures()
-            break
-            
-        case .authorizedWhenInUse:
-            // Enable only your app's when-in-use features.
-            //enableMyWhenInUseFeatures()
-            getCurrentPlace()
-            break
-            
-        case .authorizedAlways:
-            // Enable any of your app's location services.
-            //enableMyAlwaysFeatures()
-            break
-            
-        case .notDetermined:
+        case .authorizedWhenInUse, .authorizedAlways:
+            getCurrentLocation()
+        default:
             break
         }
     }
@@ -178,17 +175,9 @@ extension CreateCampaignVC: CreateCampaignStep2Delegate {
 extension CreateCampaignVC: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        print("Place name: \(place.name)")
-        
-        print(place.coordinate)
-        
-        if let step2 = loadedViews[2] as? CreateCampaignStep3 {
-            if let address = place.formattedAddress {
-                step2.update(with: address)
-            }
+        if let address = place.formattedAddress {
+            updateWithLocation(location: address)
         }
-        
-        
         dismiss(animated: true, completion: nil)
     }
     
