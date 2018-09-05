@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5019AD33213FC1D9009F07E3 /* UploadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019AD32213FC1D9009F07E3 /* UploadInfo.swift */; };
+		502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */; };
 		5032D88420EE188A00B259BA /* GaleryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88320EE188A00B259BA /* GaleryVM.swift */; };
 		5032D88620EE18A100B259BA /* CampaignDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */; };
 		5032D88820EE18AF00B259BA /* AuthorDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */; };
@@ -54,6 +56,8 @@
 		50CCDB59211B2A8A00F7279E /* CreateCampaignStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */; };
 		50CCDB5B211B2A9700F7279E /* CreateCampaignStep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */; };
 		50E231972137DA4F00E202DA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231962137DA4F00E202DA /* ColorExtensions.swift */; };
+		50E231992137F7A400E202DA /* CreateCampaignStep4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231982137F7A400E202DA /* CreateCampaignStep4.swift */; };
+		50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */; };
 		802F8BD56057EFDE3678F6AE /* Pods_GoHelpFund_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,8 @@
 /* Begin PBXFileReference section */
 		37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.release.xcconfig"; sourceTree = "<group>"; };
 		48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.debug.xcconfig"; sourceTree = "<group>"; };
+		5019AD32213FC1D9009F07E3 /* UploadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadInfo.swift; sourceTree = "<group>"; };
+		502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignVM.swift; sourceTree = "<group>"; };
 		5032D88320EE188A00B259BA /* GaleryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryVM.swift; sourceTree = "<group>"; };
 		5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDetailsVM.swift; sourceTree = "<group>"; };
 		5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsVM.swift; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 		50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep2.swift; sourceTree = "<group>"; };
 		50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep2.xib; sourceTree = "<group>"; };
 		50E231962137DA4F00E202DA /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		50E231982137F7A400E202DA /* CreateCampaignStep4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep4.swift; sourceTree = "<group>"; };
+		50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep4.xib; sourceTree = "<group>"; };
 		77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoHelpFund_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -235,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				504F47BB20E4EE1B005FF749 /* Campaign.swift */,
+				5019AD32213FC1D9009F07E3 /* UploadInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +402,7 @@
 		50CCDB4E211B01B800F7279E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -402,10 +412,12 @@
 			children = (
 				50CCDB50211B028B00F7279E /* CreateCampaignStep1.swift */,
 				50CCDB52211B02AF00F7279E /* CreateCampaignStep1.xib */,
-				50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */,
-				50CCDB54211B0F1200F7279E /* CreateCampaignStep3.xib */,
 				50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */,
 				50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */,
+				50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */,
+				50CCDB54211B0F1200F7279E /* CreateCampaignStep3.xib */,
+				50E231982137F7A400E202DA /* CreateCampaignStep4.swift */,
+				50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */,
 				505384792121AD1C00D12BE4 /* MediaPickerVC.swift */,
 			);
 			path = Views;
@@ -519,6 +531,7 @@
 				5032D88C20EE24C000B259BA /* GalleryCell.xib in Resources */,
 				5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */,
 				5032D89520EE269400B259BA /* CampaignDetailedCell.xib in Resources */,
+				50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */,
 				5032D89920EE26B400B259BA /* AuthorDetailsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,10 +617,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONDecoder-Keypath/JSONDecoder_Keypath.framework",
 				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
@@ -622,10 +640,15 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONDecoder_Keypath.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
@@ -666,6 +689,8 @@
 				50394C5F20EA463A0079575D /* HelpButton.swift in Sources */,
 				50572BEF2114638300E2CF84 /* CategoriesVC.swift in Sources */,
 				504F47D120E631E9005FF749 /* BaseCell.swift in Sources */,
+				50E231992137F7A400E202DA /* CreateCampaignStep4.swift in Sources */,
+				502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */,
 				504F47D720E6735F005FF749 /* DateHelper.swift in Sources */,
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
@@ -680,6 +705,7 @@
 				50CCDB57211B0F2700F7279E /* CreateCampaignStep3.swift in Sources */,
 				50CCDB4D211AFC7600F7279E /* NibView.swift in Sources */,
 				504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */,
+				5019AD33213FC1D9009F07E3 /* UploadInfo.swift in Sources */,
 				50CCDB51211B028B00F7279E /* CreateCampaignStep1.swift in Sources */,
 				50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */,
 				504F47B720E3D4B8005FF749 /* ApiService.swift in Sources */,

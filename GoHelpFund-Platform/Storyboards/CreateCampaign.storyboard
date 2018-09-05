@@ -60,6 +60,8 @@
                     <navigationItem key="navigationItem" id="PiS-ny-n6k"/>
                     <connections>
                         <outlet property="containerView" destination="qUL-VU-kwe" id="4t5-Xo-ySU"/>
+                        <outlet property="nextButton" destination="fOf-Wb-OQV" id="Yi8-Me-6YM"/>
+                        <outlet property="previousButton" destination="PPJ-9o-jza" id="zbY-V9-LyI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUL-7o-3Of" userLabel="First Responder" sceneMemberID="firstResponder"/>

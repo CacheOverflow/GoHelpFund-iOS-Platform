@@ -19,16 +19,19 @@ enum InvalidFields {
 class CreateCampaignStep1: NibView {
     @IBOutlet var titleTextField: SkyFloatingLabelTextField!
     @IBOutlet var descriptionTextView: UITextView!
+    var vm: CreateCampaignVM
+    //step1VM
+    //observe
     
-    
-    override init() {
+    init(vm: CreateCampaignVM) {
+        self.vm = vm
         super.init(frame: CGRect.zero)
+        
         setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+        fatalError("init not implemented")
     }
     
     private func setup() {
@@ -58,6 +61,10 @@ class CreateCampaignStep1: NibView {
             handleUnvalidState(invalidFields: .description)
             return false
         } else {
+            //valid step => we can extract the valid data
+            if let title = title {
+                vm.updateForStep1(title: title, description: description)
+            }
             return true
         }
     }

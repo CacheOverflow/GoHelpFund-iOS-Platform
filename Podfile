@@ -19,5 +19,10 @@ target 'GoHelpFund-Platform' do
   
   pod 'IQKeyboardManagerSwift'
   
+  pod 'JSONDecoder-Keypath'
+  
+  pod 'AWSS3', '~> 2.6.13'   # For file transfers
+  pod 'AWSMobileClient', '~> 2.6.13'
+  
 end
 

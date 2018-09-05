@@ -13,9 +13,12 @@ import UITextView_Placeholder
 class CreateCampaignStep2: NibView {
     @IBOutlet var amountNeededTextField: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet var expensesDescriptionTextView: UITextView!
+    var vm: CreateCampaignVM
     
-    override init() {
+    init(vm: CreateCampaignVM) {
+        self.vm = vm
         super.init(frame: CGRect.zero)
+        
         setup()
     }
     
@@ -53,6 +56,9 @@ class CreateCampaignStep2: NibView {
             handleUnvalidState(invalidFields: .description)
             return false
         } else {
+            if let amount = amount {
+                vm.updateForStep2(amount: amount, expensesDescription: descriptionExpense)
+            }
             return true
         }
     }

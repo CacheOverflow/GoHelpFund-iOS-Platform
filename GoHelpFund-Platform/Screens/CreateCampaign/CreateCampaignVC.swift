@@ -8,9 +8,15 @@
 
 import UIKit
 import GooglePlaces
+import YPImagePicker
+import AVFoundation
+import AVKit
+import AWSS3
 
 class CreateCampaignVC: UIViewController {
     let locationManager = CLLocationManager()
+    let vm = CreateCampaignVM()
+    var selectedItems = [YPMediaItem]()
     
     @IBOutlet var containerView: UIView!
     @IBOutlet var nextButton: UIButton!
@@ -18,27 +24,56 @@ class CreateCampaignVC: UIViewController {
     
     var loadedViews = [NibView]()
     
-    var step: Int = 0
-    var nrSteps: Int = 3
+    var uploadInfo: UploadInfo! = nil
+    
+    @objc dynamic var step: Int = 0
+    var stepObserver: NSKeyValueObservation!
+    
+    var nrSteps: Int = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        getUploadData()
+        
         navigationItem.hidesBackButton = true
+        self.previousButton.isEnabled = false
         
         setupLocation()
         setupLoadedViews()
         setupNavigationBar()
+        setupKVO()
         present(loadedView: loadedViews.first, viewToRemove: nil)
     }
     
+    func setupKVO() {
+        stepObserver = observe(\.step, options: [.new, .old], changeHandler: { (_, change) in
+            if let nextStep = change.newValue {
+                if nextStep == self.nrSteps - 1 {
+                    self.finishCreateCampaign()
+                    self.nextButton.isEnabled = false
+                } else {
+                    self.nextButton.isEnabled = true
+                }
+                
+                if nextStep == 0 {
+                    self.previousButton.isEnabled = false
+                } else {
+                    self.previousButton.isEnabled = true
+                }
+            }
+        })
+    }
+    
     func setupLoadedViews() {
-        let step1 = CreateCampaignStep1()
-        let step2 = CreateCampaignStep2()
+        let step1 = CreateCampaignStep1(vm: vm)
+        let step2 = CreateCampaignStep2(vm: vm)
         let step3 = CreateCampaignStep3(delegate: self)
+        let step4 = CreateCampaignStep4(delegate: self)
         
-        //loadedViews = [step1, step2, step3]
-        loadedViews = [step3]
+        //loadedViews = [step1, step2, step3, step4]
+        loadedViews = [step4]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
@@ -64,12 +99,30 @@ class CreateCampaignVC: UIViewController {
     }
     
     func setupNavigationBar() {
-        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDone))
-        //barButton.isEnabled = false
-        navigationItem.setRightBarButton(barButton, animated: true)
+        let barButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(tapDone))
+        navigationItem.title = "CREATE CAMPAIGN"
+        navigationItem.rightBarButtonItems = [barButton]
+    }
+    
+    func changeBarButtonTitle(title: String) {
+        navigationItem.rightBarButtonItem?.title = title
     }
     
     @objc func tapDone() {
+        if navigationItem.rightBarButtonItem?.title == "Cancel" {
+            presentDashboard()
+        } else {
+            //present campaign details
+            presentDashboard()
+        }
+
+    }
+    
+    func presentCampaignDetails() {
+        
+    }
+    
+    func presentDashboard() {
         let navigator = CampaignListNavigationFactory()
         let nextVC = navigator.createDashboard()
         
@@ -106,13 +159,7 @@ class CreateCampaignVC: UIViewController {
     }
     
     func finishCreateCampaign() {
-        
-        let navigator = CampaignListNavigationFactory(storyboard: UIStoryboard(name: StoryboardIds.createCampaignStoryboardId.rawValue, bundle: nil))
-        let nextVC = navigator.createMediaPicker()
-        
-        navigationController?.pushViewController(nextVC, animated: true)
-        //UIApplication.shared.keyWindow?.rootViewController = nextVC
-        
+        changeBarButtonTitle(title: "Finish")
     }
     
     func setupLocation() {
@@ -121,8 +168,14 @@ class CreateCampaignVC: UIViewController {
     }
     
     func updateWithLocation(location: String) {
-        if let step3 = loadedViews[0] as? CreateCampaignStep3 {
+        if let step3 = loadedViews[2] as? CreateCampaignStep3 {
             step3.update(with: location)
+        }
+    }
+    
+    func updateWithMediaCount(count: Int) {
+        if let step4 = loadedViews[0] as? CreateCampaignStep4 {
+            step4.updateItems(count: count)
         }
     }
     
@@ -150,6 +203,63 @@ class CreateCampaignVC: UIViewController {
             self.updateWithLocation(location: location)
         })
     }
+    
+    func getUploadData() {
+        let service = CampaignService()
+        service.getMediaUploadData(success: { (uploadInfo) in
+            self.uploadInfo = uploadInfo
+        }) {
+            
+        }
+    }
+    
+    func uploadImage(image: UIImage) {
+        //AWSStaticCredentialsProvider *credentialsProvider = [AWSStaticCredentialsProvider credentialsWithAccessKey:@"YourAccessKey" secretKey:@"YourSecretKey"];
+        let credentialsProvider = AWSStaticCredentialsProvider(accessKey: uploadInfo.accessKeyID, secretKey: uploadInfo.secretAccessKey)
+        
+        let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
+        let fileManager = FileManager.default
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("test3.jpeg")
+        let imageData = UIImageJPEGRepresentation(image, 0)
+        fileManager.createFile(atPath: path as String, contents: imageData, attributes: nil)
+        
+        let fileUrl = NSURL(fileURLWithPath: path)
+        let uploadRequest = AWSS3TransferManagerUploadRequest()
+        uploadRequest?.bucket = uploadInfo.bucketName
+        uploadRequest?.key = "test3.jpeg"
+        //fix content type
+        uploadRequest?.contentType = "image/jpeg"
+        uploadRequest?.body = fileUrl as URL!
+        uploadRequest?.acl = .publicRead
+        
+        //uploadRequest?.serverSideEncryption = .
+        uploadRequest?.uploadProgress = { (bytesSent, totalBytesSent, totalBytesExpectedToSend) -> Void in
+            DispatchQueue.main.async(execute: {
+            })
+        }
+        
+        let transferManager = AWSS3TransferManager.default()
+        transferManager.upload(uploadRequest!).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask<AnyObject>) -> Any? in
+            
+            if task.result != nil {
+                let url = AWSS3.default().configuration.endpoint.url
+                let publicURL = url?.appendingPathComponent((uploadRequest?.bucket!)!).appendingPathComponent((uploadRequest?.key!)!)
+                print("Uploaded to:\(publicURL)")
+            }
+            
+            if task.error != nil {
+                // Error.
+                print("error")
+            } else {
+                // Do something with your result.
+                print("No error Upload Done")
+            }
+            return nil
+        })
+    }
 }
 
 extension CreateCampaignVC: CLLocationManagerDelegate {    
@@ -169,6 +279,73 @@ extension CreateCampaignVC: CreateCampaignStep2Delegate {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
+    }
+}
+
+extension CreateCampaignVC: CreateCampaignStep4Delegate {
+    
+    func didTapSkip() {
+        presentDashboard()
+    }
+    
+    func didTapUploadMedia() {
+        showPicker()
+    }
+    
+    func didTapShowSelected() {
+        let gallery = YPSelectionsGalleryVC.initWith(items: selectedItems) { g, _ in
+            g.dismiss(animated: true, completion: nil)
+        }
+        let navC = UINavigationController(rootViewController: gallery)
+        self.present(navC, animated: true, completion: nil)
+    }
+    
+    // MARK: - Configuration
+    func showPicker() {
+        var config = YPImagePickerConfiguration()
+        config.library.mediaType = .photoAndVideo
+        config.albumName = "Go Help Fund"
+        config.startOnScreen = .library
+        config.screens = [.library, .photo]
+        config.video.libraryTimeLimit = 300.0
+        config.wordings.libraryTitle = "Gallery"
+        config.hidesStatusBar = false
+        config.library.maxNumberOfItems = 4
+        //config.library.skipSelectionsGallery = true
+
+        let picker = YPImagePicker(configuration: config)
+
+        /* Multiple media implementation */
+        picker.didFinishPicking { [unowned picker] items, cancelled in
+            if cancelled {
+                picker.dismiss(animated: true, completion: nil)
+                return
+            }
+            
+            self.selectedItems = items
+            if let firstItem = items.first {
+                switch firstItem {
+                case .photo(let photo):
+                    
+                    self.uploadImage(image: photo.image)
+                    
+                    self.updateWithMediaCount(count: items.count)
+                    self.finishCreateCampaign()
+                    picker.dismiss(animated: true, completion: nil)
+                case .video(let video):
+                    self.updateWithMediaCount(count: items.count)
+                    let assetURL = video.url
+                    let playerVC = AVPlayerViewController()
+                    let player = AVPlayer(playerItem: AVPlayerItem(url:assetURL))
+                    playerVC.player = player
+                    
+                    picker.dismiss(animated: true, completion: { [weak self] in
+                        self?.present(playerVC, animated: true, completion: nil)
+                    })
+                }
+            }
+        }
+        present(picker, animated: true, completion: nil)
     }
 }
 

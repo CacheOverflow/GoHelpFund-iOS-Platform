@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 class NibView: UIView, StepValidator {
-    //var isValidStep: Bool
-    
-    var isValidStep: Bool { return false }
+    var isValidStep: Bool { return true }
     
     var view: UIView!
     override init(frame: CGRect) {
@@ -28,19 +26,11 @@ class NibView: UIView, StepValidator {
     init() {
         super.init(frame: CGRect.zero)
     }
-    
-    
 }
 
 protocol StepValidator {
     var isValidStep: Bool { get }
 }
-
-//extension StepValidator {
-//    var isValidStep: Bool {
-//       return false
-//    }
-//}
 
 private extension NibView {
     func xibSetup() {

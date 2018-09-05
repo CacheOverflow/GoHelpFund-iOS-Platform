@@ -34,23 +34,29 @@ private extension String {
 public enum API {
     case getCampaigns()
     case getCategories()
+    case getMediaUploadInfo()
 }
 
 extension API: TargetType {
-    public var baseURL: URL { return URL(string: "http://demo0574725.mockable.io/")! }
+    //api.gohelpfund.com:5555/v1/categories
+    //http://demo0574725.mockable.io/
+    public var baseURL: URL { return URL(string: "http://api.gohelpfund.com:5555/v1/")! }
     
     public var path: String {
         switch self {
         case .getCampaigns:
-            return "getCampaigns"
+            return "campaigns"
         case .getCategories():
-            return "getCategories"
+            return "categories"
+        case .getMediaUploadInfo():
+            return "upload"
         }
     }
     public var method: Moya.Method {
         switch self {
-        case .getCategories(),
-             .getCampaigns():
+        case .getCategories,
+             .getCampaigns,
+             .getMediaUploadInfo:
             return .get
         default:
             return .post
@@ -60,7 +66,8 @@ extension API: TargetType {
     public var task: Task {
         switch self {
         case .getCampaigns,
-             .getCategories():
+             .getCategories,
+             .getMediaUploadInfo:
             return .requestPlain
         default:
             return .requestPlain
@@ -76,7 +83,7 @@ extension API: TargetType {
     }
     
     public var headers: [String: String]? {
-        return nil
+        return ["Accept": "application/json", "Accept-Language": "", "Content-Type": "application/json"]
     }
 }
 

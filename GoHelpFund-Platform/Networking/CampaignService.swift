@@ -15,7 +15,9 @@ public struct CampaignService {
             switch result {
             case let .success(response):
                 do {
+                    //_embedded".categoryList
                     let campaigns : [Campaign] = try Campaign.fromJSONListData(data: response.data)
+                    //Campaign.from
                     success(campaigns)
                 } catch let error {
                     print(error)
@@ -33,8 +35,26 @@ public struct CampaignService {
             switch result {
             case let .success(response):
                 do {
-                    let categories : [Category] = try Category.fromJSONListData(data: response.data)
+                    let categories : [Category] = try Category.fromJSONListData(data: response.data, keyPath: "content")
                     success(categories)
+                } catch let error {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print(error)
+                failure()
+            }
+        }
+    }
+    
+    public func getMediaUploadData(success: @escaping (UploadInfo) -> (), failure: @escaping () -> ()) {
+        apiProvider.request(API.getMediaUploadInfo()) { (result) in
+            switch result {
+            case let .success(response):
+                do {
+                    let uploadInfo : UploadInfo = try UploadInfo.fromJSONData(data: response.data)
+                    success(uploadInfo)
                 } catch let error {
                     print(error)
                 }
