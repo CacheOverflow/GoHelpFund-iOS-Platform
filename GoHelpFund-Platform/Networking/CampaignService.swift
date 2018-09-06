@@ -10,13 +10,20 @@ import Foundation
 
 public struct CampaignService {
     
-    public func getCampaigns(success: @escaping ([Campaign]) -> (), failure: @escaping () -> ()) {
+    func createCampaign(campaign: Campaign, success: @escaping () -> (), failure: @escaping () -> ()) {
+        apiProvider.request(API.createCampaign(campaign)) { (result) in
+            
+            
+        }
+    }
+    
+    func getCampaigns(success: @escaping ([Campaign]) -> (), failure: @escaping () -> ()) {
         apiProvider.request(API.getCampaigns()) { (result) in
             switch result {
             case let .success(response):
                 do {
                     //_embedded".categoryList
-                    let campaigns : [Campaign] = try Campaign.fromJSONListData(data: response.data)
+                    let campaigns : [Campaign] = try Campaign.fromJSONListData(data: response.data, keyPath: "content")
                     //Campaign.from
                     success(campaigns)
                 } catch let error {
@@ -30,7 +37,7 @@ public struct CampaignService {
         }
     }
     
-    public func getCategories(success: @escaping ([Category]) -> (), failure: @escaping () -> ()) {
+    func getCategories(success: @escaping ([Category]) -> (), failure: @escaping () -> ()) {
         apiProvider.request(API.getCategories()) { (result) in
             switch result {
             case let .success(response):

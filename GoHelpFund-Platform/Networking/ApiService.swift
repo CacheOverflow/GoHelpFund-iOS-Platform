@@ -35,6 +35,7 @@ public enum API {
     case getCampaigns()
     case getCategories()
     case getMediaUploadInfo()
+    case createCampaign(Campaign)
 }
 
 extension API: TargetType {
@@ -44,7 +45,7 @@ extension API: TargetType {
     
     public var path: String {
         switch self {
-        case .getCampaigns:
+        case .getCampaigns, .createCampaign(_):
             return "campaigns"
         case .getCategories():
             return "categories"
@@ -58,6 +59,8 @@ extension API: TargetType {
              .getCampaigns,
              .getMediaUploadInfo:
             return .get
+        case .createCampaign(_):
+            return .post
         default:
             return .post
         }
@@ -69,6 +72,11 @@ extension API: TargetType {
              .getCategories,
              .getMediaUploadInfo:
             return .requestPlain
+        case .createCampaign(let campaign):
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
+            return .requestCustomJSONEncodable(campaign, encoder: encoder)
+            
         default:
             return .requestPlain
         }
@@ -85,6 +93,7 @@ extension API: TargetType {
     public var headers: [String: String]? {
         return ["Accept": "application/json", "Accept-Language": "", "Content-Type": "application/json"]
     }
+    
 }
 
 public func url(_ route: TargetType) -> String {

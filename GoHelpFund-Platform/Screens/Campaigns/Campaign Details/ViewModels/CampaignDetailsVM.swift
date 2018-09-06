@@ -48,26 +48,26 @@ struct CampaignDetailsVM {
     }
     
     var raisedTotalDisplayed: String {
-        return campaign.currency.rawValue + String(campaign.raisedTotal) + " Raised"
+        return "$" + String(campaign.raisedTotal) + " Raised"
     }
     
     var description: String {
         return campaign.description
     }
     
-    var authorName: String {
-        return campaign.author.name
+    var authorName: String? {
+        return campaign.author?.name
     }
     
     var firstImageUrl: URL? {
-        guard let imageString = campaign.resourcesUrl.images.first else { return nil }
+        guard let imageString = campaign.mediaResources.first?.url else { return nil }
         return URL(string: imageString)
     }
     
     var remainingTime: String? {
         let currentDate = Date()
         guard let remainingDays = Calendar.current.dateComponents([.day], from: currentDate, to: campaign.endDate).day else { return nil }
-        return String(remainingDays) + "days left"
+        return String(remainingDays) + " days left"
     }
     
     var displayedBackersCount: String {

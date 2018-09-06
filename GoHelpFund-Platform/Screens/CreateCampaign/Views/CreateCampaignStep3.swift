@@ -17,7 +17,7 @@ enum TextFieldType: Int {
     case location = 3
 }
 
-protocol CreateCampaignStep2Delegate {
+protocol CreateCampaignStep3Delegate {
     func didTapLocation()
 }
 
@@ -29,16 +29,19 @@ class CreateCampaignStep3: NibView {
     var startDate: Date? = nil
     var endDate: Date? = nil
     
+    var vm: CreateCampaignVM
+    
     var location: String? {
         guard let location = locationTextField.text else { return nil }
         if location.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return nil }
         return location
     }
     
-    let delegate: CreateCampaignStep2Delegate?
+    let delegate: CreateCampaignStep3Delegate?
     
-    init(delegate: CreateCampaignStep2Delegate) {
+    init(delegate: CreateCampaignStep3Delegate, vm: CreateCampaignVM) {
         self.delegate = delegate
+        self.vm = vm
         
         super.init(frame: CGRect.zero)
     }
@@ -100,6 +103,11 @@ class CreateCampaignStep3: NibView {
             invalidLocation()
             valid = false
         }
+        if valid {
+            //safely force unwrapping because I'm checking for nil before
+            vm.updateForStep3(startDate: startDate!, endDate: endDate!, location: location!)
+        }
+        
         return valid
     }
     

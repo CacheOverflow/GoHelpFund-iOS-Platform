@@ -15,7 +15,7 @@ import AWSS3
 
 class CreateCampaignVC: UIViewController {
     let locationManager = CLLocationManager()
-    let vm = CreateCampaignVM()
+    var vm = CreateCampaignVM()
     var selectedItems = [YPMediaItem]()
     
     @IBOutlet var containerView: UIView!
@@ -69,11 +69,11 @@ class CreateCampaignVC: UIViewController {
     func setupLoadedViews() {
         let step1 = CreateCampaignStep1(vm: vm)
         let step2 = CreateCampaignStep2(vm: vm)
-        let step3 = CreateCampaignStep3(delegate: self)
+        let step3 = CreateCampaignStep3(delegate: self, vm: vm)
         let step4 = CreateCampaignStep4(delegate: self)
         
-        //loadedViews = [step1, step2, step3, step4]
-        loadedViews = [step4]
+        loadedViews = [step1, step2, step3, step4]
+        //loadedViews = [step4]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
@@ -174,7 +174,7 @@ class CreateCampaignVC: UIViewController {
     }
     
     func updateWithMediaCount(count: Int) {
-        if let step4 = loadedViews[0] as? CreateCampaignStep4 {
+        if let step4 = loadedViews[3] as? CreateCampaignStep4 {
             step4.updateItems(count: count)
         }
     }
@@ -213,9 +213,19 @@ class CreateCampaignVC: UIViewController {
         }
     }
     
+    func finishCreatingCampaign() {
+        let campaign = Campaign(vm: vm)
+        let service = CampaignService()
+        service.createCampaign(campaign: campaign, success: {
+            
+        }) {
+            
+        }
+        
+    }
+    
     func uploadImage(image: UIImage) {
-        //AWSStaticCredentialsProvider *credentialsProvider = [AWSStaticCredentialsProvider credentialsWithAccessKey:@"YourAccessKey" secretKey:@"YourSecretKey"];
-        let credentialsProvider = AWSStaticCredentialsProvider(accessKey: uploadInfo.accessKeyID, secretKey: uploadInfo.secretAccessKey)
+        let credentialsProvider = AWSStaticCredentialsProvider(accessKey: uploadInfo.accessKeyID, secretKey: uploadInfo.accessKeySecret)
         
         let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider:credentialsProvider)
         
@@ -235,7 +245,6 @@ class CreateCampaignVC: UIViewController {
         uploadRequest?.body = fileUrl as URL!
         uploadRequest?.acl = .publicRead
         
-        //uploadRequest?.serverSideEncryption = .
         uploadRequest?.uploadProgress = { (bytesSent, totalBytesSent, totalBytesExpectedToSend) -> Void in
             DispatchQueue.main.async(execute: {
             })
@@ -247,7 +256,11 @@ class CreateCampaignVC: UIViewController {
             if task.result != nil {
                 let url = AWSS3.default().configuration.endpoint.url
                 let publicURL = url?.appendingPathComponent((uploadRequest?.bucket!)!).appendingPathComponent((uploadRequest?.key!)!)
-                print("Uploaded to:\(publicURL)")
+                
+                print("Uploaded to:\(publicURL!)")
+                self.vm.updateForStep4(name: uploadRequest!.key!, url: publicURL!, type: "image", format: "jpeg")
+                
+                self.finishCreatingCampaign()
             }
             
             if task.error != nil {
@@ -274,7 +287,7 @@ extension CreateCampaignVC: CLLocationManagerDelegate {
     }
 }
 
-extension CreateCampaignVC: CreateCampaignStep2Delegate {
+extension CreateCampaignVC: CreateCampaignStep3Delegate {
     func didTapLocation() {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self

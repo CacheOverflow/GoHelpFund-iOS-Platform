@@ -63,7 +63,7 @@ class CreateCampaignStep1: NibView {
         } else {
             //valid step => we can extract the valid data
             if let title = title {
-                vm.updateForStep1(title: title, description: description)
+                vm.updateForStep1(title: title, description: descriptionCampaign)
             }
             return true
         }

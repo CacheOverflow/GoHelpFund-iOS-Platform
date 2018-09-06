@@ -9,21 +9,16 @@
 import Foundation
 
 class CreateCampaignVM {
-    var title: String? = nil
-    var description: String?
-    var expensesDescription: String?
-    var startDate: Date?
-    var endDate: Date?
-    var raisedGoal: Double?
-    var raisedTotal: Double?
-    var backers: Int?
+    var title: String!
+    var description: String!
+    var expensesDescription: String!
+    var startDate: Date!
+    var endDate: Date!
+    var raisedGoal: Double!
     
-    var category: Category?
-    var currency: Currency?
-    var resourcesUrl: ResourcesUrl?
-    var author: User?
-    var locationDisplayed: String?
-    var locationCoordinates: Location?
+    var category: Category!
+    var resourcesUrl = [MediaResource]()
+    var locationDisplayed: String!
     
     func updateForStep1(title: String, description: String) {
         self.title = title
@@ -35,6 +30,15 @@ class CreateCampaignVM {
         self.expensesDescription = expensesDescription
     }
     
-    //func updateForStep3(startDate)
+    func updateForStep3(startDate: Date, endDate: Date, location: String) {
+        self.startDate = startDate
+        self.endDate = endDate
+        self.locationDisplayed = location
+    }
+    
+    func updateForStep4(name: String, url: URL, type: String, format: String) {
+        let mediaResource = MediaResource(name: name, url: url.absoluteString, type: type, format: format)
+        resourcesUrl.append(mediaResource)
+    }
     
 }

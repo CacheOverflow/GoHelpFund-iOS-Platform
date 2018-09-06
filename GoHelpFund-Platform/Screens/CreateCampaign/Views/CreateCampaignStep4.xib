@@ -34,7 +34,7 @@
                         <action selector="tapUploadMedia:" destination="-1" eventType="touchUpInside" id="PIa-Br-91W"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-dv-tRY">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-dv-tRY">
                     <rect key="frame" x="40" y="230" width="295" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="dds-Vp-raN"/>
@@ -44,6 +44,12 @@
                             <attributes>
                                 <font key="NSFont" size="18" name=".SFNSText"/>
                                 <font key="NSOriginalFont" size="18" name=".SFNSText"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" UPLOAD AND CREATE CAMPAIGN">
+                            <attributes>
+                                <font key="NSFont" size="18" name=".SFNSText"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>

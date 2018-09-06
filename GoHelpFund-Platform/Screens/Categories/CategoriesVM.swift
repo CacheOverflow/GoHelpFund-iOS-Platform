@@ -26,8 +26,11 @@ public class CategoriesVM {
     }
  
     func cellVM(at index: Int) -> CategoryCellVM {
-        let category = categories[index]
-        return CategoryCellVM(category: category)
+        return CategoryCellVM(category: category(at: index))
+    }
+    
+    func category(at index: Int) -> Category {
+        return categories[index]
     }
 }
 
@@ -39,10 +42,10 @@ public class CategoryCellVM {
     }
     
     var imageUrl: URL? {
-        return URL(string: category.imageUrl)
+        return URL(string: category.imageURL)
     }
     
     var title: String {
-        return category.title
+        return category.name
     }
 }
