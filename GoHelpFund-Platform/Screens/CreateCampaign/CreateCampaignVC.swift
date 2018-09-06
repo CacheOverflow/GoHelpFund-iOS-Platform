@@ -12,6 +12,8 @@ import YPImagePicker
 import AVFoundation
 import AVKit
 import AWSS3
+import SwiftSpinner
+
 
 class CreateCampaignVC: UIViewController {
     let locationManager = CLLocationManager()
@@ -74,8 +76,8 @@ class CreateCampaignVC: UIViewController {
         let step3 = CreateCampaignStep3(delegate: self, vm: vm)
         let step4 = CreateCampaignStep4(delegate: self)
         
-        //loadedViews = [step1, step2, step3, step4]
-        loadedViews = [step4]
+        loadedViews = [step1, step2, step3, step4]
+        //loadedViews = [step4]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
@@ -198,8 +200,10 @@ class CreateCampaignVC: UIViewController {
     
     @IBAction func tapFinish(_ sender: Any) {
         if selectedImages.count > 0 {
+            SwiftSpinner.show("Uploading images and creating the campaign...")
             uploadSelectedImages()
         } else {
+            SwiftSpinner.show("Creating the campaign...")
             finishCreatingCampaign()
         }
     }
@@ -231,8 +235,11 @@ class CreateCampaignVC: UIViewController {
         let campaign = Campaign(vm: vm)
         let service = CampaignService()
         service.createCampaign(campaign: campaign, success: { (campaign) in
+            SwiftSpinner.hide()
             self.presentCampaignDetails(campaign: campaign)
         }) {
+            SwiftSpinner.hide()
+            
             //handle error creating campaign
         }
     }
@@ -247,19 +254,14 @@ class CreateCampaignVC: UIViewController {
         let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider:credentialsProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
         
-        //let randomPath = "offerImage" + String.random(ofLength: 5)
-        
-        //let urlImgOfferDir = URL(fileURLWithPath: NSTemporaryDirectory().appending(randomPath))
-        
-        
         let uuid = UUID().uuidString
         let fileManager = FileManager.default
         let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(uuid).jpeg")
         let imageData = UIImageJPEGRepresentation(image, 0)
         fileManager.createFile(atPath: path as String, contents: imageData, attributes: nil)
         
-        //let fileUrl = NSURL(fileURLWithPath: path)
-        let fileUrl =  URL(fileURLWithPath: NSTemporaryDirectory().appending("\(uuid).jpeg"))
+        let fileUrl = NSURL(fileURLWithPath: path)
+        //let fileUrl =  URL(fileURLWithPath: NSTemporaryDirectory().appending("\(uuid).jpeg"))
        
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest?.bucket = uploadInfo.bucketName
@@ -315,7 +317,13 @@ extension CreateCampaignVC: CreateCampaignStep4Delegate {
     }
     
     func didTapUploadMedia() {
+        clearExistingMediaAssets()
         showPicker()
+    }
+    
+    func clearExistingMediaAssets() {
+        selectedImages.removeAll()
+        vm.resourcesUrl.removeAll()
     }
     
     func didTapShowSelected() {

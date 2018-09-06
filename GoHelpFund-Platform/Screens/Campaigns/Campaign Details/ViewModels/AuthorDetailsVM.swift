@@ -25,11 +25,11 @@ struct AuthorDetailsVM {
     }
     
     var company: String? {
-        return campaign.author?.company
+        return campaign.author?.professional.companyName
     }
     
     var jobTitle: String? {
-        return campaign.author?.jobTitle
+        return campaign.author?.professional.jobTitle
     }
     
     var websiteUrl: URL? {

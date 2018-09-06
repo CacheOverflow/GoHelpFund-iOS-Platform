@@ -24,6 +24,7 @@ class CategoriesVC: UIViewController {
     }
     
     func setupNavigationBar() {
+        navigationItem.title = "CATEGORIES"
         let barButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDone))
         navigationItem.setRightBarButton(barButton, animated: true)
     }

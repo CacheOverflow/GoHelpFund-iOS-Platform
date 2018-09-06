@@ -18,11 +18,10 @@ public struct CampaignService {
                     let campaign : Campaign = try Campaign.fromJSONData(data: response.data)
                     success(campaign)
                 } catch let error {
-                    print(error)
+                    failure()
                 }
                 
             case .failure(let error):
-                print(error)
                 failure()
             }
         }
@@ -38,11 +37,12 @@ public struct CampaignService {
                     
                     success(campaigns)
                 } catch let error {
-                    print(error)
+                    failure()
+                    
                 }
                 
             case .failure(let error):
-                print(error)
+                
                 failure()
             }
         }
@@ -56,11 +56,11 @@ public struct CampaignService {
                     let categories : [Category] = try Category.fromJSONListData(data: response.data, keyPath: "content")
                     success(categories)
                 } catch let error {
-                    print(error)
+                    failure()
                 }
                 
             case .failure(let error):
-                print(error)
+
                 failure()
             }
         }
@@ -74,11 +74,11 @@ public struct CampaignService {
                     let uploadInfo : UploadInfo = try UploadInfo.fromJSONData(data: response.data)
                     success(uploadInfo)
                 } catch let error {
-                    print(error)
+                    failure()
                 }
                 
             case .failure(let error):
-                print(error)
+                
                 failure()
             }
         }

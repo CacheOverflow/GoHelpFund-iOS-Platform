@@ -93,6 +93,7 @@ public struct Campaign: JSONable {
         self.description = vm.description
         self.raisedGoal = vm.raisedGoal
         self.expensesDescription = vm.expensesDescription
+        self.locationDisplayed = vm.locationDisplayed
         self.startDate = vm.startDate
         self.endDate = vm.endDate
         self.category = vm.category
@@ -123,17 +124,27 @@ struct User: Codable {
     var name: String = ""
     var age: Int = 0
     var profileImageURL: String? = nil
-    var status = ""
-    var jobTitle = ""
-    var company = ""
-
     
+    let professional: Professional = Professional()
     var social: Social = Social()
     
     enum CodingKeys: String, CodingKey {
         case id, name, age
         case profileImageURL = "profile_image_url"
-        case status, social, jobTitle, company
+        case social, professional
+    }
+}
+
+struct Professional: Codable {
+    let jobDescription: String? = nil
+    let companyURL: String? = nil
+    let jobTitle: String? = nil
+    let companyName: String? = nil
+    
+    enum CodingKeys: String, CodingKey {
+        case jobDescription
+        case companyURL = "companyUrl"
+        case jobTitle, companyName
     }
 }
 
