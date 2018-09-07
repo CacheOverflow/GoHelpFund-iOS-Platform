@@ -22,7 +22,7 @@ class CampaignListVC: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 160
+        tableView.rowHeight = 185
         CampaignListCell.registerNibToTableView(tableView: tableView)
     }
     

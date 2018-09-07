@@ -20,10 +20,11 @@ class CampaignListCell: BaseTableViewCell {
     @IBOutlet var timeLeftLabel: UILabel!
     @IBOutlet var numberOfBackersLabel: UILabel!
     @IBOutlet var raisedPercentageLabel: UILabel!
-
+    
     override func setupWithVM(vm: Any) {
         guard let vm = vm as? CampaignDetailsVM else { return }
         imageView1.sd_setImage(with: vm.firstImageUrl, completed: nil)
+        categoryImageView.sd_setImage(with: vm.categoryImageUrl, completed: nil)
         titleLabel.text = vm.title
         authorLabel.text = vm.authorName
         descriptionLabel.text = vm.description

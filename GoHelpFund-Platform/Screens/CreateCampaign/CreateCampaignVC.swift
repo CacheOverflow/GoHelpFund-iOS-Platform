@@ -113,7 +113,13 @@ class CreateCampaignVC: UIViewController {
     }
     
     func presentCampaignDetails(campaign: Campaign) {
+        let navigator = CampaignListNavigationFactory()
+        let nextVC = navigator.createCampaignDetails(campaign: campaign)
+        nextVC.isPresentedModally = true
         
+        let nav = UINavigationController(rootViewController: nextVC)
+        
+        navigationController?.present(nav, animated: true, completion: nil)
     }
     
     func presentDashboard() {
@@ -159,7 +165,7 @@ class CreateCampaignVC: UIViewController {
     }
     
     func updateWithMediaCount(count: Int) {
-        if let step4 = loadedViews[0] as? CreateCampaignStep4 {
+        if let step4 = loadedViews[3] as? CreateCampaignStep4 {
             step4.updateItems(count: count)
         }
     }

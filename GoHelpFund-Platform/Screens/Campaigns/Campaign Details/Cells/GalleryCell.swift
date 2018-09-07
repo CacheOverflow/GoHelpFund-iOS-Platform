@@ -52,6 +52,10 @@ class GalleryCell: BaseTableViewCell {
     }
     
     func setup(with vm: GaleryVM) {
+        if vm.imagesCount == 0 {
+            displayImage(imageUrl: nil, for: 0)
+            return
+        }
         vm.imagesUrls.enumerated().forEach { (offset, imageUrl) in
             self.displayImage(imageUrl: imageUrl, for: offset)
         }
@@ -59,7 +63,7 @@ class GalleryCell: BaseTableViewCell {
 
     func displayImage(imageUrl: URL?, `for` offset: Int) {
         let imageView = self.imageView(for: offset)
-        imageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder.png"))
+        imageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "charity"))
         
         scrollView.addSubview(imageView)
     }

@@ -33,10 +33,9 @@ struct CampaignDetailsVM {
     var endDate: String {
         return "End: " + dateFormatter.string(from: campaign.endDate)
     }
-    
-    // FIXME: Remove mockup
+
     var locationDisplayed: String {
-        return "Location: " + (campaign.locationDisplayed ?? "Mockup Location")
+        return "Location: " + (campaign.locationDisplayed ?? "Unknown Location")
     }
     
     var raisedPercentageDisplayed: String {
@@ -62,6 +61,14 @@ struct CampaignDetailsVM {
     var firstImageUrl: URL? {
         guard let imageString = campaign.mediaResources.first?.url else { return nil }
         return URL(string: imageString)
+    }
+    
+    var categoryImageUrl: URL? {
+        return URL(string: campaign.category.imageURL)
+    }
+    
+    var categoryTitleDisplayed: String? {
+        return "Category: " + campaign.category.name
     }
     
     var remainingTime: String? {
