@@ -1,2 +1,2 @@
-# gohelpfund-ios
-# fundraising platform, https://gohelpfund.com
+# Go Help Fund
+# https://gohelpfund.com
