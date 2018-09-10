@@ -17,7 +17,7 @@
 			<key>Default</key>
 			<dict>
 				<key>Region</key>
-				<string>us-east-1</string>
+				<string>eu-central-1</string>
 			</dict>
 		</dict>
 	</dict>
@@ -38,7 +38,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

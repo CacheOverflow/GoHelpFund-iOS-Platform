@@ -77,7 +77,6 @@ class CreateCampaignVC: UIViewController {
         let step4 = CreateCampaignStep4(delegate: self)
         
         loadedViews = [step1, step2, step3, step4]
-        //loadedViews = [step4]
     }
     
     func present(loadedView: UIView?, viewToRemove: UIView?) {
@@ -103,12 +102,13 @@ class CreateCampaignVC: UIViewController {
     }
     
     func setupNavigationBar() {
-        let barButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(tapCancel))
+        let barButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(tapBarButtons))
         navigationItem.title = "CREATE CAMPAIGN"
-        navigationItem.rightBarButtonItems = [barButton]
+        
+        navigationItem.leftBarButtonItems = [barButton]
     }
 
-    @objc func tapCancel() {
+    @objc func tapBarButtons() {
         presentDashboard()
     }
     
@@ -118,7 +118,6 @@ class CreateCampaignVC: UIViewController {
         nextVC.isPresentedModally = true
         
         let nav = UINavigationController(rootViewController: nextVC)
-        
         navigationController?.present(nav, animated: true, completion: nil)
     }
     

@@ -39,8 +39,6 @@ public enum API {
 }
 
 extension API: TargetType {
-    //api.gohelpfund.com:5555/v1/categories
-    //http://demo0574725.mockable.io/
     public var baseURL: URL { return URL(string: "http://api.gohelpfund.com:5555/v1/")! }
     
     public var path: String {
@@ -98,17 +96,5 @@ extension API: TargetType {
 
 public func url(_ route: TargetType) -> String {
     return route.baseURL.appendingPathComponent(route.path).absoluteString
-}
-
-// MARK: - Response Handlers
-
-extension Moya.Response {
-    func mapNSArray() throws -> NSArray {
-        let any = try self.mapJSON()
-        guard let array = any as? NSArray else {
-            throw MoyaError.jsonMapping(self)
-        }
-        return array
-    }
 }
 
