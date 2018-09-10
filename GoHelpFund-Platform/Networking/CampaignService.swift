@@ -10,37 +10,75 @@ import Foundation
 
 public struct CampaignService {
     
-    public func getCampaigns(success: @escaping ([Campaign]) -> (), failure: @escaping () -> ()) {
-        apiProvider.request(API.getCampaigns()) { (result) in
+    func createCampaign(campaign: Campaign, success: @escaping (Campaign) -> (), failure: @escaping () -> ()) {
+        apiProvider.request(API.createCampaign(campaign)) { (result) in
             switch result {
             case let .success(response):
                 do {
-                    let campaigns : [Campaign] = try Campaign.fromJSONListData(data: response.data)
-                    success(campaigns)
+                    let campaign : Campaign = try Campaign.fromJSONData(data: response.data)
+                    success(campaign)
                 } catch let error {
-                    print(error)
+                    failure()
                 }
                 
             case .failure(let error):
-                print(error)
                 failure()
             }
         }
     }
     
-    public func getCategories(success: @escaping ([Category]) -> (), failure: @escaping () -> ()) {
+    func getCampaigns(success: @escaping ([Campaign]) -> (), failure: @escaping () -> ()) {
+        apiProvider.request(API.getCampaigns()) { (result) in
+            switch result {
+            case let .success(response):
+                do {
+                    
+                    let campaigns : [Campaign] = try Campaign.fromJSONListData(data: response.data, keyPath: "content")
+                    
+                    success(campaigns)
+                } catch let error {
+                    failure()
+                    
+                }
+                
+            case .failure(let error):
+                
+                failure()
+            }
+        }
+    }
+    
+    func getCategories(success: @escaping ([Category]) -> (), failure: @escaping () -> ()) {
         apiProvider.request(API.getCategories()) { (result) in
             switch result {
             case let .success(response):
                 do {
-                    let categories : [Category] = try Category.fromJSONListData(data: response.data)
+                    let categories : [Category] = try Category.fromJSONListData(data: response.data, keyPath: "content")
                     success(categories)
                 } catch let error {
-                    print(error)
+                    failure()
                 }
                 
             case .failure(let error):
-                print(error)
+
+                failure()
+            }
+        }
+    }
+    
+    public func getMediaUploadData(success: @escaping (UploadInfo) -> (), failure: @escaping () -> ()) {
+        apiProvider.request(API.getMediaUploadInfo()) { (result) in
+            switch result {
+            case let .success(response):
+                do {
+                    let uploadInfo : UploadInfo = try UploadInfo.fromJSONData(data: response.data)
+                    success(uploadInfo)
+                } catch let error {
+                    failure()
+                }
+                
+            case .failure(let error):
+                
                 failure()
             }
         }

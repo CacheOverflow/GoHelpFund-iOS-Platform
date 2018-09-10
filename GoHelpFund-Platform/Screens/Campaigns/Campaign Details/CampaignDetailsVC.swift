@@ -11,6 +11,7 @@ import UIKit
 
 class CampaignDetailsVC: UIViewController {
     var campaign: Campaign!
+    var isPresentedModally: Bool = false
     
     enum Section: Int {
         case galery
@@ -36,8 +37,29 @@ class CampaignDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Campaign Details"
+        if isPresentedModally {
+            setupNavigationBarForModal()
+        } else {
+            title = "Campaign Details"
+        }
+        
         setupTableView()
+    }
+    
+    func setupNavigationBarForModal() {
+        let barButton = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(tapDone))
+        navigationItem.rightBarButtonItems = [barButton]
+    }
+    
+    @objc func tapDone() {
+        presentDashboard()
+    }
+    
+    func presentDashboard() {
+        let navigator = CampaignListNavigationFactory()
+        let nextVC = navigator.createDashboard()
+        
+        UIApplication.shared.keyWindow?.rootViewController = nextVC
     }
 
     func setupTableView() {

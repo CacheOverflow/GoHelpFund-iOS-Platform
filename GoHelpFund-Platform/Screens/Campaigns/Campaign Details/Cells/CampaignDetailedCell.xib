@@ -83,18 +83,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpO-Ka-DfK" userLabel="View2">
                                         <rect key="frame" x="0.0" y="30" width="304" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location: Iasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt1-f2-WFQ">
-                                                <rect key="frame" x="0.0" y="6.5" width="294" height="17.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BeL-sr-8av">
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location: Iasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt1-f2-WFQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="30"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Medical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sw9-Yz-oc4">
+                                                        <rect key="frame" x="147" y="0.0" width="147" height="30"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="xt1-f2-WFQ" firstAttribute="centerY" secondItem="UpO-Ka-DfK" secondAttribute="centerY" id="Mlc-9q-KiH"/>
-                                            <constraint firstItem="xt1-f2-WFQ" firstAttribute="leading" secondItem="UpO-Ka-DfK" secondAttribute="leading" id="uJF-qN-F4G"/>
-                                            <constraint firstAttribute="trailing" secondItem="xt1-f2-WFQ" secondAttribute="trailing" constant="10" id="uOh-bz-8gd"/>
+                                            <constraint firstAttribute="bottom" secondItem="BeL-sr-8av" secondAttribute="bottom" id="7D2-fg-96Y"/>
+                                            <constraint firstItem="BeL-sr-8av" firstAttribute="leading" secondItem="UpO-Ka-DfK" secondAttribute="leading" id="85D-oQ-1wY"/>
+                                            <constraint firstItem="BeL-sr-8av" firstAttribute="top" secondItem="UpO-Ka-DfK" secondAttribute="top" id="Cep-E4-YOX"/>
+                                            <constraint firstAttribute="trailing" secondItem="BeL-sr-8av" secondAttribute="trailing" constant="10" id="Gv4-0C-RPR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -178,6 +190,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="categoryLabel" destination="sw9-Yz-oc4" id="Esf-Pa-npx"/>
                 <outlet property="endDateLabel" destination="Te1-jy-YAJ" id="iwp-Uh-d6D"/>
                 <outlet property="locationLabel" destination="xt1-f2-WFQ" id="DEC-90-dgG"/>
                 <outlet property="progressBar" destination="0HT-pY-0uj" id="5dD-yj-kLT"/>

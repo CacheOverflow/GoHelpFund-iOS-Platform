@@ -16,6 +16,7 @@ class CampaignDetailedCell: BaseTableViewCell {
     @IBOutlet var endDateLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     
+    @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var progressBar: LinearProgressBar!
     
@@ -62,6 +63,7 @@ class CampaignDetailedCell: BaseTableViewCell {
         endDateLabel.text = vm.endDate
         locationLabel.text = vm.locationDisplayed
         progressLabel.text = vm.raisedPercentageDisplayed
+        categoryLabel.text = vm.categoryTitleDisplayed
 
         //in order to use cgfloat, I have to import UIKit and i don't want to import it in the vm
         progressBar.progressValue = CGFloat(vm.raisedPercentageProgress)

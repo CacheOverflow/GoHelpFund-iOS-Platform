@@ -9,7 +9,7 @@ target 'GoHelpFund-Platform' do
   pod 'SwiftDate', '~> 4.5.1'
   pod 'LinearProgressBar'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
-  pod 'GrowingTextView', '~> 0.5'
+  pod 'UITextView+Placeholder'
   pod 'DateTimePicker'
   pod 'YPImagePicker'
   
@@ -19,5 +19,11 @@ target 'GoHelpFund-Platform' do
   
   pod 'IQKeyboardManagerSwift'
   
+  pod 'JSONDecoder-Keypath'
+  
+  pod 'AWSS3', '~> 2.6.13'   # For file transfers
+  pod 'AWSMobileClient', '~> 2.6.13'
+  
+  pod 'SwiftSpinner'
 end
 

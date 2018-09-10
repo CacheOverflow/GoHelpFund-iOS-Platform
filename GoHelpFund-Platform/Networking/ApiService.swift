@@ -34,24 +34,31 @@ private extension String {
 public enum API {
     case getCampaigns()
     case getCategories()
+    case getMediaUploadInfo()
+    case createCampaign(Campaign)
 }
 
 extension API: TargetType {
-    public var baseURL: URL { return URL(string: "http://demo0574725.mockable.io/")! }
+    public var baseURL: URL { return URL(string: "http://api.gohelpfund.com:5555/v1/")! }
     
     public var path: String {
         switch self {
-        case .getCampaigns:
-            return "getCampaigns"
+        case .getCampaigns, .createCampaign(_):
+            return "campaigns"
         case .getCategories():
-            return "getCategories"
+            return "categories"
+        case .getMediaUploadInfo():
+            return "upload"
         }
     }
     public var method: Moya.Method {
         switch self {
-        case .getCategories(),
-             .getCampaigns():
+        case .getCategories,
+             .getCampaigns,
+             .getMediaUploadInfo:
             return .get
+        case .createCampaign(_):
+            return .post
         default:
             return .post
         }
@@ -60,8 +67,14 @@ extension API: TargetType {
     public var task: Task {
         switch self {
         case .getCampaigns,
-             .getCategories():
+             .getCategories,
+             .getMediaUploadInfo:
             return .requestPlain
+        case .createCampaign(let campaign):
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
+            return .requestCustomJSONEncodable(campaign, encoder: encoder)
+            
         default:
             return .requestPlain
         }
@@ -76,23 +89,12 @@ extension API: TargetType {
     }
     
     public var headers: [String: String]? {
-        return nil
+        return ["Accept": "application/json", "Accept-Language": "", "Content-Type": "application/json"]
     }
+    
 }
 
 public func url(_ route: TargetType) -> String {
     return route.baseURL.appendingPathComponent(route.path).absoluteString
-}
-
-// MARK: - Response Handlers
-
-extension Moya.Response {
-    func mapNSArray() throws -> NSArray {
-        let any = try self.mapJSON()
-        guard let array = any as? NSArray else {
-            throw MoyaError.jsonMapping(self)
-        }
-        return array
-    }
 }
 

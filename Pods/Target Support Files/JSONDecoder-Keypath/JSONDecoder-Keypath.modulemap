@@ -1,0 +1,6 @@
+framework module JSONDecoder_Keypath {
+  umbrella header "JSONDecoder-Keypath-umbrella.h"
+
+  export *
+  module * { export * }
+}

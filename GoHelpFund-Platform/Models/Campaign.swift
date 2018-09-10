@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSONDecoder_Keypath
 
 enum JSONErrors: Error {
     case nilElement
@@ -15,8 +16,8 @@ enum JSONErrors: Error {
 protocol JSONable: Codable {
     associatedtype Element
     func toJsonString() -> String?
-    static func fromJSONListData<Element: Codable>(data: Data) throws -> [Element]
-    static func fromJSONData<Element: Codable>(data: Data) throws -> Element
+    static func fromJSONListData<Element: Codable>(data: Data, keyPath: String?) throws -> [Element]
+    static func fromJSONData<Element: Codable>(data: Data, keyPath: String?) throws -> Element
 }
 
 extension JSONable {
@@ -28,6 +29,7 @@ extension JSONable {
     
     func toJsonString() -> String? {
         let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
         do {
             let data = try encoder.encode(self)
             return String(data: data, encoding: .utf8)
@@ -36,12 +38,20 @@ extension JSONable {
         }
     }
     
-    static func fromJSONData<Element: Codable>(data: Data) throws -> Element {
+    static func fromJSONData<Element: Codable>(data: Data, keyPath: String? = nil) throws -> Element {
+        if let path = keyPath {
+            let elements = try decoder.decode(Element.self, from: data, keyPath: path)
+            return elements
+        }
         let elements = try decoder.decode(Element.self, from: data)
         return elements
     }
     
-    static func fromJSONListData<Element: Codable>(data: Data) throws -> [Element] {
+    static func fromJSONListData<Element: Codable>(data: Data, keyPath: String? = nil) throws -> [Element] {
+        if let path = keyPath {
+            let elements = try decoder.decode([Element].self, from: data, keyPath: path)
+            return elements
+        }
         let elements = try decoder.decode([Element].self, from: data)
         return elements
     }
@@ -50,49 +60,101 @@ extension JSONable {
 public struct Campaign: JSONable {
     typealias Element = Campaign
     
-    let id: String
-    let title: String
-    let description: String
-    let expensesDescription: String
-    let startDate: Date
-    let endDate: Date
-    let raisedGoal: Double
-    let raisedTotal: Double
-    let backers: Int
+    var id: String? = nil
+    var title: String = ""
+    var description: String = ""
+    var expensesDescription: String = ""
+    var startDate: Date = Date()
+    var endDate: Date = Date()
+    var raisedGoal: Double = 0
+    var raisedTotal: Double = 0
+    var backers: Int = 0
     
-    let category: Category
-    let currency: Currency
-    let resourcesUrl: ResourcesUrl
-    let author: User
-    let locationDisplayed: String?
-    let locationCoordinates: Location?
+    var category: Category = Category()
+    var mediaResources: [MediaResource] = [MediaResource]()
+    var author: User? = nil
+    var locationDisplayed: String? = nil
+    var locationCoordinates: Location? = nil
+    
+    enum CodingKeys: String, CodingKey {
+        case raisedGoal = "amount_goal"
+        case raisedTotal = "amount_raised"
+        case expensesDescription = "expenses_description"
+        case startDate = "start_date"
+        case endDate = "end_date"
+        case locationDisplayed = "location"
+        case mediaResources = "media_resources"
+        case author = "fundraiser"
+        case id, title, description, backers, category, locationCoordinates
+    }
+    
+    init(vm: CreateCampaignVM) {
+        self.title = vm.title
+        self.description = vm.description
+        self.raisedGoal = vm.raisedGoal
+        self.expensesDescription = vm.expensesDescription
+        self.locationDisplayed = vm.locationDisplayed
+        self.startDate = vm.startDate
+        self.endDate = vm.endDate
+        self.category = vm.category
+        self.mediaResources = vm.resourcesUrl
+    }
 }
 
 struct Location: Codable {
-    let latitude: Float
-    let longitude: Float
+    var latitude: Float
+    var longitude: Float
 }
 
-struct ResourcesUrl: Codable {
-    let videos: [String]
-    let images: [String]
+struct MediaResource: Codable {
+    var id: String? = nil
+    var status: String? = nil
+    var name, url, type, format: String
+    
+    init(name: String, url: String, type: String, format: String) {
+        self.name = name
+        self.url = url
+        self.type = type
+        self.format = format
+    }
 }
 
 struct User: Codable {
-    let name: String
-    let jobTitle: String
-    let company: String
-    let imageUrl: String?
-    let social: Social
+    var id = ""
+    var name: String = ""
+    var age: Int = 0
+    var profileImageURL: String? = nil
     
+    let professional: Professional = Professional()
+    var social: Social = Social()
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, age
+        case profileImageURL = "profile_image_url"
+        case social, professional
+    }
+}
+
+struct Professional: Codable {
+    let jobDescription: String? = nil
+    let companyURL: String? = nil
+    let jobTitle: String? = nil
+    let companyName: String? = nil
+    
+    enum CodingKeys: String, CodingKey {
+        case jobDescription
+        case companyURL = "companyUrl"
+        case jobTitle, companyName
+    }
 }
 
 struct Social: Codable {
-    let facebook: String?
-    let twitter: String?
-    let linkedin: String?
-    let website: String?
-    let other: String?
+    var facebook: String? = nil
+    var twitter: String? = nil
+    var linkedin: String? = nil
+    var website: String? = nil
+    var other: String? = nil
+    
     
     enum CodingKeys: String, CodingKey {
         case twitter
@@ -103,11 +165,19 @@ struct Social: Codable {
     }
 }
 
-public struct Category: JSONable {
+struct Category: JSONable {
     typealias Element = Category
     
-    let title: String
-    let imageUrl: String
+    var id = ""
+    var imageURL = ""
+    var name = ""
+    var description = ""
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case imageURL = "image_url"
+        case name, description
+    }
 }
 
 enum Currency: String, Codable {

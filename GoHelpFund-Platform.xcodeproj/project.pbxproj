@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5019AD33213FC1D9009F07E3 /* UploadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019AD32213FC1D9009F07E3 /* UploadInfo.swift */; };
+		502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */; };
 		5032D88420EE188A00B259BA /* GaleryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88320EE188A00B259BA /* GaleryVM.swift */; };
 		5032D88620EE18A100B259BA /* CampaignDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */; };
 		5032D88820EE18AF00B259BA /* AuthorDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */; };
@@ -42,16 +44,20 @@
 		5053847A2121AD1C00D12BE4 /* MediaPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505384792121AD1C00D12BE4 /* MediaPickerVC.swift */; };
 		50572BEF2114638300E2CF84 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BEE2114638300E2CF84 /* CategoriesVC.swift */; };
 		50572BF12114656E00E2CF84 /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BF02114656E00E2CF84 /* CategoriesVM.swift */; };
+		5084C8DA2136E69B00B56720 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084C8D92136E69B00B56720 /* StringExtensions.swift */; };
 		509E0CC9210234EA00827862 /* CampaignNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E0CC8210234EA00827862 /* CampaignNavigation.swift */; };
 		50CCDB4A21146F9D00F7279E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB4821146F9C00F7279E /* CategoryCell.swift */; };
 		50CCDB4B21146F9D00F7279E /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB4921146F9C00F7279E /* CategoryCell.xib */; };
 		50CCDB4D211AFC7600F7279E /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB4C211AFC7600F7279E /* NibView.swift */; };
 		50CCDB51211B028B00F7279E /* CreateCampaignStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB50211B028B00F7279E /* CreateCampaignStep1.swift */; };
 		50CCDB53211B02AF00F7279E /* CreateCampaignStep1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB52211B02AF00F7279E /* CreateCampaignStep1.xib */; };
-		50CCDB55211B0F1200F7279E /* CreateCampaignStep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB54211B0F1200F7279E /* CreateCampaignStep2.xib */; };
-		50CCDB57211B0F2700F7279E /* CreateCampaignStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB56211B0F2700F7279E /* CreateCampaignStep2.swift */; };
-		50CCDB59211B2A8A00F7279E /* CreateCampaignStep3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB58211B2A8A00F7279E /* CreateCampaignStep3.swift */; };
-		50CCDB5B211B2A9700F7279E /* CreateCampaignStep3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB5A211B2A9700F7279E /* CreateCampaignStep3.xib */; };
+		50CCDB55211B0F1200F7279E /* CreateCampaignStep3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB54211B0F1200F7279E /* CreateCampaignStep3.xib */; };
+		50CCDB57211B0F2700F7279E /* CreateCampaignStep3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */; };
+		50CCDB59211B2A8A00F7279E /* CreateCampaignStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */; };
+		50CCDB5B211B2A9700F7279E /* CreateCampaignStep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */; };
+		50E231972137DA4F00E202DA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231962137DA4F00E202DA /* ColorExtensions.swift */; };
+		50E231992137F7A400E202DA /* CreateCampaignStep4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231982137F7A400E202DA /* CreateCampaignStep4.swift */; };
+		50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */; };
 		802F8BD56057EFDE3678F6AE /* Pods_GoHelpFund_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +74,8 @@
 /* Begin PBXFileReference section */
 		37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.release.xcconfig"; sourceTree = "<group>"; };
 		48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.debug.xcconfig"; sourceTree = "<group>"; };
+		5019AD32213FC1D9009F07E3 /* UploadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadInfo.swift; sourceTree = "<group>"; };
+		502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignVM.swift; sourceTree = "<group>"; };
 		5032D88320EE188A00B259BA /* GaleryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryVM.swift; sourceTree = "<group>"; };
 		5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignDetailsVM.swift; sourceTree = "<group>"; };
 		5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsVM.swift; sourceTree = "<group>"; };
@@ -107,16 +115,20 @@
 		505384792121AD1C00D12BE4 /* MediaPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaPickerVC.swift; path = "GoHelpFund-Platform/Screens/CreateCampaign/MediaPickerVC.swift"; sourceTree = SOURCE_ROOT; };
 		50572BEE2114638300E2CF84 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
 		50572BF02114656E00E2CF84 /* CategoriesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVM.swift; sourceTree = "<group>"; };
+		5084C8D92136E69B00B56720 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		509E0CC8210234EA00827862 /* CampaignNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignNavigation.swift; sourceTree = "<group>"; };
 		50CCDB4821146F9C00F7279E /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		50CCDB4921146F9C00F7279E /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		50CCDB4C211AFC7600F7279E /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		50CCDB50211B028B00F7279E /* CreateCampaignStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep1.swift; sourceTree = "<group>"; };
 		50CCDB52211B02AF00F7279E /* CreateCampaignStep1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep1.xib; sourceTree = "<group>"; };
-		50CCDB54211B0F1200F7279E /* CreateCampaignStep2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep2.xib; sourceTree = "<group>"; };
-		50CCDB56211B0F2700F7279E /* CreateCampaignStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep2.swift; sourceTree = "<group>"; };
-		50CCDB58211B2A8A00F7279E /* CreateCampaignStep3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep3.swift; sourceTree = "<group>"; };
-		50CCDB5A211B2A9700F7279E /* CreateCampaignStep3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep3.xib; sourceTree = "<group>"; };
+		50CCDB54211B0F1200F7279E /* CreateCampaignStep3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep3.xib; sourceTree = "<group>"; };
+		50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep3.swift; sourceTree = "<group>"; };
+		50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep2.swift; sourceTree = "<group>"; };
+		50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep2.xib; sourceTree = "<group>"; };
+		50E231962137DA4F00E202DA /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		50E231982137F7A400E202DA /* CreateCampaignStep4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep4.swift; sourceTree = "<group>"; };
+		50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep4.xib; sourceTree = "<group>"; };
 		77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoHelpFund_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -231,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				504F47BB20E4EE1B005FF749 /* Campaign.swift */,
+				5019AD32213FC1D9009F07E3 /* UploadInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,6 +342,7 @@
 		504F47CF20E631D6005FF749 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				5084C8D82136E68D00B56720 /* Extensions */,
 				50394C5C20EA347F0079575D /* HelpCircleImageView.swift */,
 				50CCDB4C211AFC7600F7279E /* NibView.swift */,
 				504F47D020E631E9005FF749 /* BaseCell.swift */,
@@ -358,6 +372,15 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		5084C8D82136E68D00B56720 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5084C8D92136E69B00B56720 /* StringExtensions.swift */,
+				50E231962137DA4F00E202DA /* ColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		509E0CCA2108CDF800827862 /* Galery */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +402,7 @@
 		50CCDB4E211B01B800F7279E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -388,10 +412,12 @@
 			children = (
 				50CCDB50211B028B00F7279E /* CreateCampaignStep1.swift */,
 				50CCDB52211B02AF00F7279E /* CreateCampaignStep1.xib */,
-				50CCDB56211B0F2700F7279E /* CreateCampaignStep2.swift */,
-				50CCDB54211B0F1200F7279E /* CreateCampaignStep2.xib */,
-				50CCDB58211B2A8A00F7279E /* CreateCampaignStep3.swift */,
-				50CCDB5A211B2A9700F7279E /* CreateCampaignStep3.xib */,
+				50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */,
+				50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */,
+				50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */,
+				50CCDB54211B0F1200F7279E /* CreateCampaignStep3.xib */,
+				50E231982137F7A400E202DA /* CreateCampaignStep4.swift */,
+				50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */,
 				505384792121AD1C00D12BE4 /* MediaPickerVC.swift */,
 			);
 			path = Views;
@@ -493,10 +519,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CCDB5B211B2A9700F7279E /* CreateCampaignStep3.xib in Resources */,
+				50CCDB5B211B2A9700F7279E /* CreateCampaignStep2.xib in Resources */,
 				5032D89120EE254000B259BA /* CampaignDescriptionCell.xib in Resources */,
 				5050CA3A2110652C00015F31 /* CreateCampaign.storyboard in Resources */,
-				50CCDB55211B0F1200F7279E /* CreateCampaignStep2.xib in Resources */,
+				50CCDB55211B0F1200F7279E /* CreateCampaignStep3.xib in Resources */,
 				5040F0B420D7EA970030183D /* LaunchScreen.storyboard in Resources */,
 				504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */,
 				50CCDB53211B02AF00F7279E /* CreateCampaignStep1.xib in Resources */,
@@ -505,6 +531,7 @@
 				5032D88C20EE24C000B259BA /* GalleryCell.xib in Resources */,
 				5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */,
 				5032D89520EE269400B259BA /* CampaignDetailedCell.xib in Resources */,
+				50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */,
 				5032D89920EE26B400B259BA /* AuthorDetailsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,11 +617,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONDecoder-Keypath/JSONDecoder_Keypath.framework",
 				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
@@ -603,16 +634,22 @@
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 				"${BUILT_PRODUCTS_DIR}/UIWindowTransitions/UIWindowTransitions.framework",
 				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONDecoder_Keypath.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
@@ -621,6 +658,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIWindowTransitions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 			);
@@ -639,7 +678,7 @@
 				5032D88420EE188A00B259BA /* GaleryVM.swift in Sources */,
 				509E0CC9210234EA00827862 /* CampaignNavigation.swift in Sources */,
 				5032D88620EE18A100B259BA /* CampaignDetailsVM.swift in Sources */,
-				50CCDB59211B2A8A00F7279E /* CreateCampaignStep3.swift in Sources */,
+				50CCDB59211B2A8A00F7279E /* CreateCampaignStep2.swift in Sources */,
 				5032D89020EE254000B259BA /* CampaignDescriptionCell.swift in Sources */,
 				5050CA3D211065C500015F31 /* CreateCampaignVC.swift in Sources */,
 				5032D89820EE26B400B259BA /* AuthorDetailsCell.swift in Sources */,
@@ -647,10 +686,13 @@
 				504F47C420E62DEC005FF749 /* CampaignListVC.swift in Sources */,
 				504F47C920E62F0D005FF749 /* DashboardTabController.swift in Sources */,
 				504F47B920E3DA7C005FF749 /* CampaignService.swift in Sources */,
+				50E231972137DA4F00E202DA /* ColorExtensions.swift in Sources */,
 				5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */,
 				50394C5F20EA463A0079575D /* HelpButton.swift in Sources */,
 				50572BEF2114638300E2CF84 /* CategoriesVC.swift in Sources */,
 				504F47D120E631E9005FF749 /* BaseCell.swift in Sources */,
+				50E231992137F7A400E202DA /* CreateCampaignStep4.swift in Sources */,
+				502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */,
 				504F47D720E6735F005FF749 /* DateHelper.swift in Sources */,
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
@@ -660,10 +702,12 @@
 				50394C6720EA4A660079575D /* GaleryChildVC.swift in Sources */,
 				5053847A2121AD1C00D12BE4 /* MediaPickerVC.swift in Sources */,
 				5032D88D20EE24C000B259BA /* GalleryCell.swift in Sources */,
+				5084C8DA2136E69B00B56720 /* StringExtensions.swift in Sources */,
 				50CCDB4A21146F9D00F7279E /* CategoryCell.swift in Sources */,
-				50CCDB57211B0F2700F7279E /* CreateCampaignStep2.swift in Sources */,
+				50CCDB57211B0F2700F7279E /* CreateCampaignStep3.swift in Sources */,
 				50CCDB4D211AFC7600F7279E /* NibView.swift in Sources */,
 				504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */,
+				5019AD33213FC1D9009F07E3 /* UploadInfo.swift in Sources */,
 				50CCDB51211B028B00F7279E /* CreateCampaignStep1.swift in Sources */,
 				50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */,
 				504F47B720E3D4B8005FF749 /* ApiService.swift in Sources */,
@@ -823,9 +867,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = N5N9SFP2NP;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "GoHelpFund-Platform/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.cacheOverflow.GoHelpFund-Platform";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gohelpfund.GoHelpFund;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -839,9 +884,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N5N9SFP2NP;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "GoHelpFund-Platform/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.cacheOverflow.GoHelpFund-Platform";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gohelpfund.GoHelpFund;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

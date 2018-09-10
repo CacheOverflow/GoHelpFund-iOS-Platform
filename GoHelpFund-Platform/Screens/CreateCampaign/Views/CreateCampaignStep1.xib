@@ -23,7 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHD-0m-lKA" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="56.5" y="100" width="262.5" height="30"/>
+                    <rect key="frame" x="56.5" y="50" width="262.5" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="KSp-xw-p3a"/>
+                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -58,12 +61,9 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k8g-55-5fJ" customClass="GrowingTextView" customModule="GrowingTextView">
-                    <rect key="frame" x="56" y="180" width="263" height="190"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k8g-55-5fJ" customClass="UIViewText">
+                    <rect key="frame" x="56" y="124" width="263" height="226"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="190" id="qa5-Dj-Sdm"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <userDefinedRuntimeAttributes>
@@ -71,18 +71,15 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                             <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textView>
             </subviews>
             <constraints>
-                <constraint firstItem="WHD-0m-lKA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="89G-Ez-yAD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k8g-55-5fJ" secondAttribute="bottom" constant="50" id="3Gt-ti-oz0"/>
+                <constraint firstItem="WHD-0m-lKA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="89G-Ez-yAD"/>
                 <constraint firstItem="k8g-55-5fJ" firstAttribute="trailing" secondItem="WHD-0m-lKA" secondAttribute="trailing" id="8qG-60-yNb"/>
                 <constraint firstItem="WHD-0m-lKA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="Otc-Ja-Z3F"/>
-                <constraint firstItem="k8g-55-5fJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WHD-0m-lKA" secondAttribute="bottom" constant="50" id="eBI-vw-IyT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k8g-55-5fJ" secondAttribute="bottom" constant="30" id="ffT-Zd-Avl"/>
+                <constraint firstItem="k8g-55-5fJ" firstAttribute="top" secondItem="WHD-0m-lKA" secondAttribute="bottom" constant="30" id="eBI-vw-IyT"/>
                 <constraint firstItem="WHD-0m-lKA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="rC1-al-Ydg"/>
                 <constraint firstItem="k8g-55-5fJ" firstAttribute="leading" secondItem="WHD-0m-lKA" secondAttribute="leading" id="yxW-gR-6c2"/>
             </constraints>

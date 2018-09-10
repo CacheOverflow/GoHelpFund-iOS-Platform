@@ -40,8 +40,11 @@ extension CampaignListNavigationFactory: CampaignListNavigation {
         return storyboard.instantiateInitialViewController()
     }
     
-    func createCreateCampaign() -> UIViewController {
+    func createCreateCampaign(category: Category) -> UIViewController {
         guard let vc = storyboard.instantiateViewController(withIdentifier: String(describing: CreateCampaignVC.self)) as? CreateCampaignVC else { fatalError() }
+        let vm = CreateCampaignVM()
+        vm.category = category
+        vc.vm = vm
         return vc
     }
     

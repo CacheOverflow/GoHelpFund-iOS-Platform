@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Create CampaignVC-->
         <scene sceneID="vdG-7Z-ahI">
@@ -41,45 +46,50 @@
                                     <action selector="tapNext:" destination="Ovv-mw-TUf" eventType="touchUpInside" id="QgL-8F-IBG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcR-i3-9OC" customClass="HelpButton" customModule="GoHelpFund_Platform" customModuleProvider="target">
+                                <rect key="frame" x="4" y="597" width="355" height="50"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.66666666669999997" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YSa-2E-p1i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="FINISH">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapFinish:" destination="Ovv-mw-TUf" eventType="touchUpInside" id="y4o-Sf-XD3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fOf-Wb-OQV" firstAttribute="height" secondItem="PPJ-9o-jza" secondAttribute="height" id="2A7-B1-tvm"/>
                             <constraint firstItem="b0c-Mm-Ipo" firstAttribute="bottom" secondItem="qUL-VU-kwe" secondAttribute="bottom" constant="100" id="6Qq-YR-0mZ"/>
                             <constraint firstItem="PPJ-9o-jza" firstAttribute="leading" secondItem="b0c-Mm-Ipo" secondAttribute="leading" constant="30" id="AHi-RB-kxc"/>
+                            <constraint firstItem="wcR-i3-9OC" firstAttribute="top" secondItem="qUL-VU-kwe" secondAttribute="bottom" constant="30" id="Gd5-UD-Xf2"/>
                             <constraint firstItem="PPJ-9o-jza" firstAttribute="top" secondItem="b0c-Mm-Ipo" secondAttribute="top" constant="30" id="JNK-Il-0Nu"/>
                             <constraint firstItem="qUL-VU-kwe" firstAttribute="leading" secondItem="b0c-Mm-Ipo" secondAttribute="leading" id="ZWY-5O-GXL"/>
                             <constraint firstItem="qUL-VU-kwe" firstAttribute="centerY" secondItem="b0c-Mm-Ipo" secondAttribute="centerY" id="b3m-gs-e4d"/>
                             <constraint firstItem="fOf-Wb-OQV" firstAttribute="centerY" secondItem="PPJ-9o-jza" secondAttribute="centerY" id="eXN-Iw-sJD"/>
+                            <constraint firstItem="wcR-i3-9OC" firstAttribute="leading" secondItem="b0c-Mm-Ipo" secondAttribute="leading" constant="4" id="gQp-sy-6pJ"/>
                             <constraint firstItem="b0c-Mm-Ipo" firstAttribute="trailing" secondItem="qUL-VU-kwe" secondAttribute="trailing" id="gba-de-CNW"/>
                             <constraint firstItem="b0c-Mm-Ipo" firstAttribute="trailing" secondItem="fOf-Wb-OQV" secondAttribute="trailing" constant="30" id="h4a-i5-8ot"/>
                             <constraint firstItem="fOf-Wb-OQV" firstAttribute="width" secondItem="PPJ-9o-jza" secondAttribute="width" id="j5l-aG-5FR"/>
+                            <constraint firstItem="b0c-Mm-Ipo" firstAttribute="trailing" secondItem="wcR-i3-9OC" secondAttribute="trailing" constant="16" id="zkf-7Z-Okd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0c-Mm-Ipo"/>
                     </view>
                     <navigationItem key="navigationItem" id="PiS-ny-n6k"/>
                     <connections>
                         <outlet property="containerView" destination="qUL-VU-kwe" id="4t5-Xo-ySU"/>
+                        <outlet property="finishButton" destination="wcR-i3-9OC" id="BhZ-5z-uKp"/>
+                        <outlet property="nextButton" destination="fOf-Wb-OQV" id="Yi8-Me-6YM"/>
+                        <outlet property="previousButton" destination="PPJ-9o-jza" id="zbY-V9-LyI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUL-7o-3Of" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1527" y="831"/>
-        </scene>
-        <!--Media PickerVC-->
-        <scene sceneID="744-qD-8N2">
-            <objects>
-                <viewController storyboardIdentifier="MediaPickerVC" id="bE6-ur-jK1" customClass="MediaPickerVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RAH-jV-zir">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="hxt-ao-srR"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BQa-91-I7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2310" y="831"/>
         </scene>
         <!--CategoriesVC-->
         <scene sceneID="WR9-go-z7B">
