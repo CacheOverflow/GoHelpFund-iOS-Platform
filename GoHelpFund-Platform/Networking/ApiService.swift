@@ -39,7 +39,7 @@ public enum API {
 }
 
 extension API: TargetType {
-    public var baseURL: URL { return URL(string: "http://api.gohelpfund.com:5555/v1/")! }
+    public var baseURL: URL { return URL(string: API_CONSTANTS.BASE_URL)! }
     
     public var path: String {
         switch self {

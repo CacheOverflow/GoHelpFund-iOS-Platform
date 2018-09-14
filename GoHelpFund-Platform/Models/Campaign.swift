@@ -179,10 +179,3 @@ struct Category: JSONable {
         case name, description
     }
 }
-
-enum Currency: String, Codable {
-    case dolar = "$"
-    case euro = "euro"
-    case eth = "eth"
-    case help = "help"
-}

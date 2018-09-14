@@ -1,6 +1,0 @@
-framework module Pods_GoHelpFund_Platform {
-  umbrella header "Pods-GoHelpFund-Platform-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_GoHelpFund_PlatformVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_GoHelpFund_PlatformVersionString[];
+FOUNDATION_EXPORT double Pods_Dep_GoHelpFund_Platform_DevVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Dep_GoHelpFund_Platform_DevVersionString[];
 

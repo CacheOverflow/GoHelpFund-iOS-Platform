@@ -24,12 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        GMSPlacesClient.provideAPIKey("AIzaSyAaa003esGMNtd1XsMy6B65HsqjCLQLVCA")
-        GMSServices.provideAPIKey("AIzaSyAaa003esGMNtd1XsMy6B65HsqjCLQLVCA")
+        GMSPlacesClient.provideAPIKey(GOOGLE_CONSTANTS.GOOGLE_KEY)
+        GMSServices.provideAPIKey(GOOGLE_CONSTANTS.GOOGLE_KEY)
         IQKeyboardManager.shared.enable = true
-
-        
         Fabric.with([Crashlytics.self])
+        
         return true
     }
 
