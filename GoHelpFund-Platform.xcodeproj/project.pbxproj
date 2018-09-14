@@ -20,6 +20,58 @@
 		5032D89520EE269400B259BA /* CampaignDetailedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D89320EE269400B259BA /* CampaignDetailedCell.xib */; };
 		5032D89820EE26B400B259BA /* AuthorDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D89620EE26B400B259BA /* AuthorDetailsCell.swift */; };
 		5032D89920EE26B400B259BA /* AuthorDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D89720EE26B400B259BA /* AuthorDetailsCell.xib */; };
+		50390E9321490ECE0083A13B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50390E9221490ECE0083A13B /* APIConstants.swift */; };
+		50390E97214927BC0083A13B /* GaleryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88320EE188A00B259BA /* GaleryVM.swift */; };
+		50390E98214927BC0083A13B /* CampaignNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E0CC8210234EA00827862 /* CampaignNavigation.swift */; };
+		50390E99214927BC0083A13B /* CampaignDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88520EE18A100B259BA /* CampaignDetailsVM.swift */; };
+		50390E9A214927BC0083A13B /* CreateCampaignStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */; };
+		50390E9B214927BC0083A13B /* CampaignDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88E20EE254000B259BA /* CampaignDescriptionCell.swift */; };
+		50390E9C214927BC0083A13B /* CreateCampaignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050CA3C211065C500015F31 /* CreateCampaignVC.swift */; };
+		50390E9D214927BC0083A13B /* AuthorDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D89620EE26B400B259BA /* AuthorDetailsCell.swift */; };
+		50390E9E214927BC0083A13B /* AuthorDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88720EE18AF00B259BA /* AuthorDetailsVM.swift */; };
+		50390E9F214927BC0083A13B /* CampaignListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47C220E62DEC005FF749 /* CampaignListVC.swift */; };
+		50390EA0214927BC0083A13B /* DashboardTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47C820E62F0D005FF749 /* DashboardTabController.swift */; };
+		50390EA1214927BC0083A13B /* CampaignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47B820E3DA7C005FF749 /* CampaignService.swift */; };
+		50390EA2214927BC0083A13B /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231962137DA4F00E202DA /* ColorExtensions.swift */; };
+		50390EA3214927BC0083A13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5040F0A920D7EA970030183D /* AppDelegate.swift */; };
+		50390EA4214927BC0083A13B /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C5E20EA463A0079575D /* HelpButton.swift */; };
+		50390EA5214927BC0083A13B /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BEE2114638300E2CF84 /* CategoriesVC.swift */; };
+		50390EA6214927BC0083A13B /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D020E631E9005FF749 /* BaseCell.swift */; };
+		50390EA7214927BC0083A13B /* CreateCampaignStep4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231982137F7A400E202DA /* CreateCampaignStep4.swift */; };
+		50390EA8214927BC0083A13B /* CreateCampaignVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */; };
+		50390EA9214927BC0083A13B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50390E9221490ECE0083A13B /* APIConstants.swift */; };
+		50390EAA214927BC0083A13B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D620E6735F005FF749 /* DateHelper.swift */; };
+		50390EAB214927BC0083A13B /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47BB20E4EE1B005FF749 /* Campaign.swift */; };
+		50390EAC214927BC0083A13B /* CampaignDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47C620E62EAC005FF749 /* CampaignDetailsVC.swift */; };
+		50390EAD214927BC0083A13B /* CampaignDetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D89220EE269400B259BA /* CampaignDetailedCell.swift */; };
+		50390EAE214927BC0083A13B /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BF02114656E00E2CF84 /* CategoriesVM.swift */; };
+		50390EAF214927BC0083A13B /* GaleryParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C6420EA49D50079575D /* GaleryParentVC.swift */; };
+		50390EB0214927BC0083A13B /* GaleryChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C6620EA4A660079575D /* GaleryChildVC.swift */; };
+		50390EB1214927BC0083A13B /* MediaPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505384792121AD1C00D12BE4 /* MediaPickerVC.swift */; };
+		50390EB2214927BC0083A13B /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88B20EE24C000B259BA /* GalleryCell.swift */; };
+		50390EB3214927BC0083A13B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084C8D92136E69B00B56720 /* StringExtensions.swift */; };
+		50390EB4214927BC0083A13B /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB4821146F9C00F7279E /* CategoryCell.swift */; };
+		50390EB5214927BC0083A13B /* CreateCampaignStep3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */; };
+		50390EB6214927BC0083A13B /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB4C211AFC7600F7279E /* NibView.swift */; };
+		50390EB7214927BC0083A13B /* CampaignListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47D220E6323D005FF749 /* CampaignListCell.swift */; };
+		50390EB8214927BC0083A13B /* UploadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019AD32213FC1D9009F07E3 /* UploadInfo.swift */; };
+		50390EB9214927BC0083A13B /* CreateCampaignStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB50211B028B00F7279E /* CreateCampaignStep1.swift */; };
+		50390EBA214927BC0083A13B /* HelpCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C5C20EA347F0079575D /* HelpCircleImageView.swift */; };
+		50390EBB214927BC0083A13B /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F47B620E3D4B8005FF749 /* ApiService.swift */; };
+		50390EBF214927BC0083A13B /* CreateCampaignStep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */; };
+		50390EC0214927BC0083A13B /* CampaignDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D88F20EE254000B259BA /* CampaignDescriptionCell.xib */; };
+		50390EC1214927BC0083A13B /* CreateCampaign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050CA392110652C00015F31 /* CreateCampaign.storyboard */; };
+		50390EC2214927BC0083A13B /* CreateCampaignStep3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB54211B0F1200F7279E /* CreateCampaignStep3.xib */; };
+		50390EC3214927BC0083A13B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0B220D7EA970030183D /* LaunchScreen.storyboard */; };
+		50390EC4214927BC0083A13B /* CampaignListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504F47D320E6323D005FF749 /* CampaignListCell.xib */; };
+		50390EC5214927BC0083A13B /* CreateCampaignStep1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB52211B02AF00F7279E /* CreateCampaignStep1.xib */; };
+		50390EC6214927BC0083A13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0B020D7EA970030183D /* Assets.xcassets */; };
+		50390EC7214927BC0083A13B /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB4921146F9C00F7279E /* CategoryCell.xib */; };
+		50390EC8214927BC0083A13B /* GalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D88A20EE24C000B259BA /* GalleryCell.xib */; };
+		50390EC9214927BC0083A13B /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5040F0AD20D7EA970030183D /* Dashboard.storyboard */; };
+		50390ECA214927BC0083A13B /* CampaignDetailedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D89320EE269400B259BA /* CampaignDetailedCell.xib */; };
+		50390ECB214927BC0083A13B /* CreateCampaignStep4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */; };
+		50390ECC214927BC0083A13B /* AuthorDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5032D89720EE26B400B259BA /* AuthorDetailsCell.xib */; };
 		50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C5C20EA347F0079575D /* HelpCircleImageView.swift */; };
 		50394C5F20EA463A0079575D /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C5E20EA463A0079575D /* HelpButton.swift */; };
 		50394C6520EA49D50079575D /* GaleryParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50394C6420EA49D50079575D /* GaleryParentVC.swift */; };
@@ -58,7 +110,8 @@
 		50E231972137DA4F00E202DA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231962137DA4F00E202DA /* ColorExtensions.swift */; };
 		50E231992137F7A400E202DA /* CreateCampaignStep4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231982137F7A400E202DA /* CreateCampaignStep4.swift */; };
 		50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */; };
-		802F8BD56057EFDE3678F6AE /* Pods_GoHelpFund_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */; };
+		B3835D90CB5CFC0F60B21CD7 /* Pods_Dep_GoHelpFund_Platform_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A49E54C65E472CAF6EB0274 /* Pods_Dep_GoHelpFund_Platform_Dev.framework */; };
+		CFC8E4CED40A58DCD736BD66 /* Pods_Dep_GoHelpFund_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAE2EA8824FC65AA999F0D4 /* Pods_Dep_GoHelpFund_Platform.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +125,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.release.xcconfig"; sourceTree = "<group>"; };
-		48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHelpFund-Platform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform.debug.xcconfig"; sourceTree = "<group>"; };
 		5019AD32213FC1D9009F07E3 /* UploadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadInfo.swift; sourceTree = "<group>"; };
 		502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignVM.swift; sourceTree = "<group>"; };
 		5032D88320EE188A00B259BA /* GaleryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryVM.swift; sourceTree = "<group>"; };
@@ -87,6 +138,9 @@
 		5032D89320EE269400B259BA /* CampaignDetailedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampaignDetailedCell.xib; sourceTree = "<group>"; };
 		5032D89620EE26B400B259BA /* AuthorDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsCell.swift; sourceTree = "<group>"; };
 		5032D89720EE26B400B259BA /* AuthorDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorDetailsCell.xib; sourceTree = "<group>"; };
+		50390E9221490ECE0083A13B /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		50390ED4214927BC0083A13B /* GoHelpFund-Platform-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoHelpFund-Platform-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50390ED5214927BC0083A13B /* GoHelpFund-Platform-Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoHelpFund-Platform-Dev-Info.plist"; path = "/Users/vladbatrinu/Documents/GoHelpFund-Platform/GoHelpFund-Platform/GoHelpFund-Platform-Dev-Info.plist"; sourceTree = "<absolute>"; };
 		50394C5C20EA347F0079575D /* HelpCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCircleImageView.swift; sourceTree = "<group>"; };
 		50394C5E20EA463A0079575D /* HelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
 		50394C6420EA49D50079575D /* GaleryParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryParentVC.swift; sourceTree = "<group>"; };
@@ -129,15 +183,28 @@
 		50E231962137DA4F00E202DA /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		50E231982137F7A400E202DA /* CreateCampaignStep4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep4.swift; sourceTree = "<group>"; };
 		50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep4.xib; sourceTree = "<group>"; };
-		77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoHelpFund_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56ED2270E8C2FD61D38C0303 /* Pods-Dep-GoHelpFund-Platform-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dep-GoHelpFund-Platform-Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform-Dev/Pods-Dep-GoHelpFund-Platform-Dev.release.xcconfig"; sourceTree = "<group>"; };
+		5A49E54C65E472CAF6EB0274 /* Pods_Dep_GoHelpFund_Platform_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dep_GoHelpFund_Platform_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6349588126B2C16272A51A4F /* Pods-Dep-GoHelpFund-Platform-Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dep-GoHelpFund-Platform-Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform-Dev/Pods-Dep-GoHelpFund-Platform-Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		D01EB5C095E966201E9D8D90 /* Pods-Dep-GoHelpFund-Platform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dep-GoHelpFund-Platform.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform/Pods-Dep-GoHelpFund-Platform.release.xcconfig"; sourceTree = "<group>"; };
+		EB2C6B4DF54F5B6C3620E5D6 /* Pods-Dep-GoHelpFund-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dep-GoHelpFund-Platform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform/Pods-Dep-GoHelpFund-Platform.debug.xcconfig"; sourceTree = "<group>"; };
+		EFAE2EA8824FC65AA999F0D4 /* Pods_Dep_GoHelpFund_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dep_GoHelpFund_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		50390EBC214927BC0083A13B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3835D90CB5CFC0F60B21CD7 /* Pods_Dep_GoHelpFund_Platform_Dev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5040F0A320D7EA970030183D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				802F8BD56057EFDE3678F6AE /* Pods_GoHelpFund_Platform.framework in Frameworks */,
+				CFC8E4CED40A58DCD736BD66 /* Pods_Dep_GoHelpFund_Platform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,15 +218,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D70AEA55216B6639F9B4E2C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */,
-				37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		5032D88220EE186A00B259BA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +248,9 @@
 			children = (
 				5040F0A820D7EA970030183D /* GoHelpFund-Platform */,
 				5040F0A720D7EA970030183D /* Products */,
-				0D70AEA55216B6639F9B4E2C /* Pods */,
-				D551E72CA4F45E813C0D462A /* Frameworks */,
+				50390ED5214927BC0083A13B /* GoHelpFund-Platform-Dev-Info.plist */,
+				63CA22623F7A57B1B7B5348F /* Pods */,
+				8EAE8CE3EAC93A44B9BDEA06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +259,7 @@
 			children = (
 				5040F0A620D7EA970030183D /* GoHelpFund-Platform.app */,
 				5040F0BA20D7EA970030183D /* GoHelpFund-PlatformTests.xctest */,
+				50390ED4214927BC0083A13B /* GoHelpFund-Platform-Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +404,7 @@
 			children = (
 				5084C8D82136E68D00B56720 /* Extensions */,
 				50394C5C20EA347F0079575D /* HelpCircleImageView.swift */,
+				50390E9221490ECE0083A13B /* APIConstants.swift */,
 				50CCDB4C211AFC7600F7279E /* NibView.swift */,
 				504F47D020E631E9005FF749 /* BaseCell.swift */,
 				504F47D620E6735F005FF749 /* DateHelper.swift */,
@@ -423,10 +484,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D551E72CA4F45E813C0D462A /* Frameworks */ = {
+		63CA22623F7A57B1B7B5348F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				77D5864B2DB28C5490725C52 /* Pods_GoHelpFund_Platform.framework */,
+				EB2C6B4DF54F5B6C3620E5D6 /* Pods-Dep-GoHelpFund-Platform.debug.xcconfig */,
+				D01EB5C095E966201E9D8D90 /* Pods-Dep-GoHelpFund-Platform.release.xcconfig */,
+				6349588126B2C16272A51A4F /* Pods-Dep-GoHelpFund-Platform-Dev.debug.xcconfig */,
+				56ED2270E8C2FD61D38C0303 /* Pods-Dep-GoHelpFund-Platform-Dev.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8EAE8CE3EAC93A44B9BDEA06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE2EA8824FC65AA999F0D4 /* Pods_Dep_GoHelpFund_Platform.framework */,
+				5A49E54C65E472CAF6EB0274 /* Pods_Dep_GoHelpFund_Platform_Dev.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -434,18 +507,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		50390E94214927BC0083A13B /* GoHelpFund-Platform-Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50390ED1214927BC0083A13B /* Build configuration list for PBXNativeTarget "GoHelpFund-Platform-Dev" */;
+			buildPhases = (
+				10478C3DF7D848AAAAA0837E /* [CP] Check Pods Manifest.lock */,
+				50390E96214927BC0083A13B /* Sources */,
+				50390EBC214927BC0083A13B /* Frameworks */,
+				50390EBE214927BC0083A13B /* Resources */,
+				50390ECF214927BC0083A13B /* ShellScript */,
+				50390ED0214927BC0083A13B /* ShellScript */,
+				8CB7A5F6874E380C8A21DF6A /* [CP] Embed Pods Frameworks */,
+				4781E06A5A87E3447177C2F0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GoHelpFund-Platform-Dev";
+			productName = "GoHelpFund-Platform";
+			productReference = 50390ED4214927BC0083A13B /* GoHelpFund-Platform-Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5040F0A520D7EA970030183D /* GoHelpFund-Platform */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5040F0C320D7EA970030183D /* Build configuration list for PBXNativeTarget "GoHelpFund-Platform" */;
 			buildPhases = (
-				30D62B19FE0EF067E2558591 /* [CP] Check Pods Manifest.lock */,
+				28466C010D742761449D5CCA /* [CP] Check Pods Manifest.lock */,
 				5040F0A220D7EA970030183D /* Sources */,
 				5040F0A320D7EA970030183D /* Frameworks */,
 				5040F0A420D7EA970030183D /* Resources */,
-				5CDF0387E3E27CA8A799C64F /* [CP] Embed Pods Frameworks */,
-				244B31A3CA276EE7309D62D0 /* [CP] Copy Pods Resources */,
 				5040F0C920D8F8920030183D /* ShellScript */,
 				50572BEC211428C200E2CF84 /* ShellScript */,
+				A797FC9EF5C0F3B498DDECBD /* [CP] Embed Pods Frameworks */,
+				2E55B4097385B166B95D2C2F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -484,6 +579,9 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = cacheOverflow;
 				TargetAttributes = {
+					50390E94214927BC0083A13B = {
+						ProvisioningStyle = Automatic;
+					};
 					5040F0A520D7EA970030183D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -510,11 +608,33 @@
 			targets = (
 				5040F0A520D7EA970030183D /* GoHelpFund-Platform */,
 				5040F0B920D7EA970030183D /* GoHelpFund-PlatformTests */,
+				50390E94214927BC0083A13B /* GoHelpFund-Platform-Dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		50390EBE214927BC0083A13B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50390EBF214927BC0083A13B /* CreateCampaignStep2.xib in Resources */,
+				50390EC0214927BC0083A13B /* CampaignDescriptionCell.xib in Resources */,
+				50390EC1214927BC0083A13B /* CreateCampaign.storyboard in Resources */,
+				50390EC2214927BC0083A13B /* CreateCampaignStep3.xib in Resources */,
+				50390EC3214927BC0083A13B /* LaunchScreen.storyboard in Resources */,
+				50390EC4214927BC0083A13B /* CampaignListCell.xib in Resources */,
+				50390EC5214927BC0083A13B /* CreateCampaignStep1.xib in Resources */,
+				50390EC6214927BC0083A13B /* Assets.xcassets in Resources */,
+				50390EC7214927BC0083A13B /* CategoryCell.xib in Resources */,
+				50390EC8214927BC0083A13B /* GalleryCell.xib in Resources */,
+				50390EC9214927BC0083A13B /* Dashboard.storyboard in Resources */,
+				50390ECA214927BC0083A13B /* CampaignDetailedCell.xib in Resources */,
+				50390ECB214927BC0083A13B /* CreateCampaignStep4.xib in Resources */,
+				50390ECC214927BC0083A13B /* AuthorDetailsCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5040F0A420D7EA970030183D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -546,27 +666,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		244B31A3CA276EE7309D62D0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30D62B19FE0EF067E2558591 /* [CP] Check Pods Manifest.lock */ = {
+		10478C3DF7D848AAAAA0837E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -577,12 +677,96 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GoHelpFund-Platform-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Dep-GoHelpFund-Platform-Dev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		28466C010D742761449D5CCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dep-GoHelpFund-Platform-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E55B4097385B166B95D2C2F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform/Pods-Dep-GoHelpFund-Platform-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform/Pods-Dep-GoHelpFund-Platform-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4781E06A5A87E3447177C2F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform-Dev/Pods-Dep-GoHelpFund-Platform-Dev-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform-Dev/Pods-Dep-GoHelpFund-Platform-Dev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50390ECF214927BC0083A13B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 42891bbf1bc6faa20fe4da4d1eadce19bba1c30d fe90748f6166fabed032c3908f2472961237bf193442fe759e4d65213ac31179";
+		};
+		50390ED0214927BC0083A13B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO|FIXME|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 		5040F0C920D8F8920030183D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -610,13 +794,13 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO|FIXME|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
-		5CDF0387E3E27CA8A799C64F /* [CP] Embed Pods Frameworks */ = {
+		8CB7A5F6874E380C8A21DF6A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform-Dev/Pods-Dep-GoHelpFund-Platform-Dev-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
@@ -665,12 +849,114 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoHelpFund-Platform/Pods-GoHelpFund-Platform-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform-Dev/Pods-Dep-GoHelpFund-Platform-Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A797FC9EF5C0F3B498DDECBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform/Pods-Dep-GoHelpFund-Platform-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONDecoder-Keypath/JSONDecoder_Keypath.framework",
+				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+				"${BUILT_PRODUCTS_DIR}/UIWindowTransitions/UIWindowTransitions.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONDecoder_Keypath.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIWindowTransitions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dep-GoHelpFund-Platform/Pods-Dep-GoHelpFund-Platform-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		50390E96214927BC0083A13B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50390E97214927BC0083A13B /* GaleryVM.swift in Sources */,
+				50390E98214927BC0083A13B /* CampaignNavigation.swift in Sources */,
+				50390E99214927BC0083A13B /* CampaignDetailsVM.swift in Sources */,
+				50390E9A214927BC0083A13B /* CreateCampaignStep2.swift in Sources */,
+				50390E9B214927BC0083A13B /* CampaignDescriptionCell.swift in Sources */,
+				50390E9C214927BC0083A13B /* CreateCampaignVC.swift in Sources */,
+				50390E9D214927BC0083A13B /* AuthorDetailsCell.swift in Sources */,
+				50390E9E214927BC0083A13B /* AuthorDetailsVM.swift in Sources */,
+				50390E9F214927BC0083A13B /* CampaignListVC.swift in Sources */,
+				50390EA0214927BC0083A13B /* DashboardTabController.swift in Sources */,
+				50390EA1214927BC0083A13B /* CampaignService.swift in Sources */,
+				50390EA2214927BC0083A13B /* ColorExtensions.swift in Sources */,
+				50390EA3214927BC0083A13B /* AppDelegate.swift in Sources */,
+				50390EA4214927BC0083A13B /* HelpButton.swift in Sources */,
+				50390EA5214927BC0083A13B /* CategoriesVC.swift in Sources */,
+				50390EA6214927BC0083A13B /* BaseCell.swift in Sources */,
+				50390EA7214927BC0083A13B /* CreateCampaignStep4.swift in Sources */,
+				50390EA8214927BC0083A13B /* CreateCampaignVM.swift in Sources */,
+				50390EA9214927BC0083A13B /* APIConstants.swift in Sources */,
+				50390EAA214927BC0083A13B /* DateHelper.swift in Sources */,
+				50390EAB214927BC0083A13B /* Campaign.swift in Sources */,
+				50390EAC214927BC0083A13B /* CampaignDetailsVC.swift in Sources */,
+				50390EAD214927BC0083A13B /* CampaignDetailedCell.swift in Sources */,
+				50390EAE214927BC0083A13B /* CategoriesVM.swift in Sources */,
+				50390EAF214927BC0083A13B /* GaleryParentVC.swift in Sources */,
+				50390EB0214927BC0083A13B /* GaleryChildVC.swift in Sources */,
+				50390EB1214927BC0083A13B /* MediaPickerVC.swift in Sources */,
+				50390EB2214927BC0083A13B /* GalleryCell.swift in Sources */,
+				50390EB3214927BC0083A13B /* StringExtensions.swift in Sources */,
+				50390EB4214927BC0083A13B /* CategoryCell.swift in Sources */,
+				50390EB5214927BC0083A13B /* CreateCampaignStep3.swift in Sources */,
+				50390EB6214927BC0083A13B /* NibView.swift in Sources */,
+				50390EB7214927BC0083A13B /* CampaignListCell.swift in Sources */,
+				50390EB8214927BC0083A13B /* UploadInfo.swift in Sources */,
+				50390EB9214927BC0083A13B /* CreateCampaignStep1.swift in Sources */,
+				50390EBA214927BC0083A13B /* HelpCircleImageView.swift in Sources */,
+				50390EBB214927BC0083A13B /* ApiService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5040F0A220D7EA970030183D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -693,6 +979,7 @@
 				504F47D120E631E9005FF749 /* BaseCell.swift in Sources */,
 				50E231992137F7A400E202DA /* CreateCampaignStep4.swift in Sources */,
 				502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */,
+				50390E9321490ECE0083A13B /* APIConstants.swift in Sources */,
 				504F47D720E6735F005FF749 /* DateHelper.swift in Sources */,
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
@@ -752,6 +1039,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		50390ED2214927BC0083A13B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6349588126B2C16272A51A4F /* Pods-Dep-GoHelpFund-Platform-Dev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = N5N9SFP2NP;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "GoHelpFund-Platform-Dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gohelpfund.GoHelpFund-Dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50390ED3214927BC0083A13B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56ED2270E8C2FD61D38C0303 /* Pods-Dep-GoHelpFund-Platform-Dev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N5N9SFP2NP;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "GoHelpFund-Platform-Dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gohelpfund.GoHelpFund-Dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5040F0C120D7EA970030183D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -861,7 +1185,7 @@
 		};
 		5040F0C420D7EA970030183D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48CF7A0513FF4D364A39C8F8 /* Pods-GoHelpFund-Platform.debug.xcconfig */;
+			baseConfigurationReference = EB2C6B4DF54F5B6C3620E5D6 /* Pods-Dep-GoHelpFund-Platform.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -870,6 +1194,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "GoHelpFund-Platform/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gohelpfund.GoHelpFund;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -879,7 +1204,7 @@
 		};
 		5040F0C520D7EA970030183D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37E8026CC73F39A45A199FC6 /* Pods-GoHelpFund-Platform.release.xcconfig */;
+			baseConfigurationReference = D01EB5C095E966201E9D8D90 /* Pods-Dep-GoHelpFund-Platform.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -887,6 +1212,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "GoHelpFund-Platform/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gohelpfund.GoHelpFund;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -931,6 +1257,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		50390ED1214927BC0083A13B /* Build configuration list for PBXNativeTarget "GoHelpFund-Platform-Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50390ED2214927BC0083A13B /* Debug */,
+				50390ED3214927BC0083A13B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5040F0A120D7EA970030183D /* Build configuration list for PBXProject "GoHelpFund-Platform" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

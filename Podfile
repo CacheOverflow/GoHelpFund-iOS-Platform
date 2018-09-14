@@ -1,4 +1,6 @@
-target 'GoHelpFund-Platform' do
+
+abstract_target 'Dep' do
+
   use_frameworks!
   pod 'Moya', '>= 9.0'
   pod 'SDWebImage'
@@ -25,5 +27,12 @@ target 'GoHelpFund-Platform' do
   pod 'AWSMobileClient', '~> 2.6.13'
   
   pod 'SwiftSpinner'
-end
+  
+  target 'GoHelpFund-Platform-Dev' do
+      end
+  
+  target 'GoHelpFund-Platform' do
+  end
+  
+  end
 

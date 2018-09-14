@@ -11,7 +11,7 @@ import Foundation
 public struct UploadInfo: JSONable {
     typealias Element = UploadInfo
     
-    let accessKeySecret, accessKeyID, endpointURL, bucketName: String
+    let accessKeySecret, accessKeyID, endpointURL, bucketName, signature, policy: String
     let bucketRegion: String
     
     enum CodingKeys: String, CodingKey {
@@ -20,5 +20,6 @@ public struct UploadInfo: JSONable {
         case endpointURL = "endpoint_url"
         case bucketName = "bucket_name"
         case bucketRegion = "bucket_region"
+        case signature, policy
     }
 }

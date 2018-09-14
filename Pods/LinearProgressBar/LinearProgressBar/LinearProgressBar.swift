@@ -39,7 +39,6 @@ open class LinearProgressBar: UIView {
         }
     }
     
-    public var lineCapStyle: CGLineCap = .butt
     open var barColorForValue: ((Float)->UIColor)?
     
     fileprivate var trackHeight: CGFloat {
@@ -75,13 +74,13 @@ open class LinearProgressBar: UIView {
     ///   - end: point to end drawing
     ///   - lineCap: lineCap style
     ///   - strokeColor: color of bar
-    func drawOn(context: CGContext, lineWidth: CGFloat, begin: CGPoint, end: CGPoint, lineCapStyle: CGLineCap, strokeColor: UIColor) {
+    func drawOn(context: CGContext, lineWidth: CGFloat, begin: CGPoint, end: CGPoint, lineCap: CGLineCap, strokeColor: UIColor) {
         context.setStrokeColor(strokeColor.cgColor)
         context.beginPath()
         context.setLineWidth(lineWidth)
         context.move(to: begin)
         context.addLine(to: end)
-        context.setLineCap(lineCapStyle)
+        context.setLineCap(.round)
         context.strokePath()
     }
 
@@ -97,7 +96,7 @@ open class LinearProgressBar: UIView {
             lineWidth: barThickness + trackPadding,
             begin: beginPoint,
             end: CGPoint(x: frame.size.width - barPadding - trackOffset, y: frame.size.height / 2),
-            lineCapStyle: lineCapStyle,
+            lineCap: .round,
             strokeColor: trackColor
         )
         
@@ -109,7 +108,7 @@ open class LinearProgressBar: UIView {
             lineWidth: barThickness,
             begin: beginPoint,
             end: CGPoint(x: barPadding + trackOffset + calculatePercentage(), y: frame.size.height / 2),
-            lineCapStyle: lineCapStyle,
+            lineCap: .round,
             strokeColor: colorForBar
         )
     }
