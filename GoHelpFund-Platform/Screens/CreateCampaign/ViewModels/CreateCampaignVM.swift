@@ -36,8 +36,7 @@ class CreateCampaignVM {
         self.locationDisplayed = location
     }
     
-    func updateForStep4(name: String, url: URL, type: String, format: String) {
-        let mediaResource = MediaResource(name: name, url: url.absoluteString, type: type, format: format)
+    func updateForStep4(mediaResource: MediaResource) {
         resourcesUrl.append(mediaResource)
     }
     
