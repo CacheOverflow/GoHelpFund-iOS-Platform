@@ -32,17 +32,13 @@ public struct CampaignService {
             switch result {
             case let .success(response):
                 do {
-                    
                     let campaigns : [Campaign] = try Campaign.fromJSONListData(data: response.data, keyPath: "content")
-                    
                     success(campaigns)
                 } catch let error {
                     failure()
                     
                 }
-                
             case .failure(let error):
-                
                 failure()
             }
         }
@@ -66,7 +62,7 @@ public struct CampaignService {
         }
     }
     
-    public func getMediaUploadData(success: @escaping (UploadInfo) -> (), failure: @escaping () -> ()) {
+    func getMediaUploadData(success: @escaping (UploadInfo) -> (), failure: @escaping () -> ()) {
         apiProvider.request(API.getMediaUploadInfo()) { (result) in
             switch result {
             case let .success(response):

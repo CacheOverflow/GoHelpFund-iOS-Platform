@@ -16,57 +16,49 @@ import SwiftSpinner
 
 
 class CreateCampaignVC: UIViewController {
-    let locationManager = CLLocationManager()
+    //vm for extracting data
     var vm = CreateCampaignVM()
-    var selectedImages = [YPMediaItem]()
     
+    //create Location Manager to handle the location
+    let locationManager = CLLocationManager()
+    
+    //media
+    var selectedImages = [YPMediaItem]()
+    var uploadInfo: UploadInfo! = nil
+    
+    //views
     @IBOutlet var containerView: UIView!
+    var loadedViews = [NibView]()
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var previousButton: UIButton!
     @IBOutlet var finishButton: HelpButton!
     
-    var loadedViews = [NibView]()
-    
-    var uploadInfo: UploadInfo! = nil
-    
+    //steps
     @objc dynamic var step: Int = 0
     var stepObserver: NSKeyValueObservation!
-    
     var nrSteps: Int = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        finishButton.isHidden = true
-        
-        getUploadData()
-        
-        navigationItem.hidesBackButton = true
-        self.previousButton.isEnabled = false
-        
+        setupNavigationBar()
+        setupSteps()
+        setupKVO()
         setupLocation()
         setupLoadedViews()
-        setupNavigationBar()
-        setupKVO()
         present(loadedView: loadedViews.first, viewToRemove: nil)
+    }
+    
+    func setupSteps() {
+        finishButton.isHidden = true
+        previousButton.isEnabled = false
     }
     
     func setupKVO() {
         stepObserver = observe(\.step, options: [.new, .old], changeHandler: { (_, change) in
-            if let nextStep = change.newValue {
-                if nextStep == self.nrSteps - 1 {
-                    self.nextButton.isEnabled = false
-                } else {
-                    self.nextButton.isEnabled = true
-                }
-                
-                if nextStep == 0 {
-                    self.previousButton.isEnabled = false
-                } else {
-                    self.previousButton.isEnabled = true
-                }
-            }
+            guard let nextStep = change.newValue else { return }
+            nextStep == self.nrSteps - 1 ? (self.nextButton.isEnabled = false) : (self.nextButton.isEnabled = true)
+            nextStep == 0                ? (self.previousButton.isEnabled = false) : (self.previousButton.isEnabled = true)
         })
     }
     
@@ -91,7 +83,6 @@ class CreateCampaignVC: UIViewController {
             loadedView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             ])
         
-        
         loadedView.alpha = 0
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             loadedView.alpha = 1
@@ -102,13 +93,14 @@ class CreateCampaignVC: UIViewController {
     }
     
     func setupNavigationBar() {
-        let barButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(tapBarButtons))
-        navigationItem.title = "CREATE CAMPAIGN"
+        navigationItem.hidesBackButton = true
         
+        let barButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(tapCancel))
+        navigationItem.title = "CREATE CAMPAIGN"
         navigationItem.leftBarButtonItems = [barButton]
     }
 
-    @objc func tapBarButtons() {
+    @objc func tapCancel() {
         presentDashboard()
     }
     
@@ -129,21 +121,12 @@ class CreateCampaignVC: UIViewController {
     }
     
     @IBAction func tapPrevious(_ sender: Any) {
-        if step == 0 {
-            return
-        }
-        
         step -= 1
         present(loadedView: loadedViews[step], viewToRemove: loadedViews[step + 1])
     }
     
     @IBAction func tapNext(_ sender: Any) {
         if !valid(at: step) { return }
-        
-        if step == nrSteps - 1 {
-            return
-        }
-        
         step += 1
         present(loadedView: loadedViews[step], viewToRemove: loadedViews[step - 1])
     }
@@ -194,15 +177,6 @@ class CreateCampaignVC: UIViewController {
         })
     }
     
-    func getUploadData() {
-        let service = CampaignService()
-        service.getMediaUploadData(success: { (uploadInfo) in
-            self.uploadInfo = uploadInfo
-        }) {
-            //handle error no upload info
-        }
-    }
-    
     @IBAction func tapFinish(_ sender: Any) {
         if selectedImages.count > 0 {
             SwiftSpinner.show("Uploading images and creating the campaign...")
@@ -249,49 +223,17 @@ class CreateCampaignVC: UIViewController {
         }
     }
     
-    func uploadVideo(video: URL, completed: () -> ()) {
-        
-    }
+    func uploadVideo(video: URL, completed: () -> ()) {}
     
     func uploadImage(image: UIImage, completed: @escaping () -> ()) {
-        let credentialsProvider = AWSStaticCredentialsProvider(accessKey: uploadInfo.accessKeyID, secretKey: uploadInfo.accessKeySecret)
-        
-        let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider:credentialsProvider)
-        AWSServiceManager.default().defaultServiceConfiguration = configuration
-        
-        let uuid = UUID().uuidString
-        let fileManager = FileManager.default
-        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(uuid).jpeg")
-        let imageData = UIImageJPEGRepresentation(image, 0)
-        fileManager.createFile(atPath: path as String, contents: imageData, attributes: nil)
-        
-        let fileUrl = NSURL(fileURLWithPath: path)
-        //let fileUrl =  URL(fileURLWithPath: NSTemporaryDirectory().appending("\(uuid).jpeg"))
-       
-        let uploadRequest = AWSS3TransferManagerUploadRequest()
-        uploadRequest?.bucket = uploadInfo.bucketName
-        uploadRequest?.key = "\(uuid).jpeg"
-        uploadRequest?.contentType = "image/jpeg"
-        uploadRequest?.body = fileUrl as URL!
-        uploadRequest?.acl = .publicRead
-        
-        uploadRequest?.uploadProgress = { (bytesSent, totalBytesSent, totalBytesExpectedToSend) -> Void in
-            DispatchQueue.main.async(execute: {
-            })
-        }
-        
-        let transferManager = AWSS3TransferManager.default()
-        transferManager.upload(uploadRequest!).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask<AnyObject>) -> Any? in
-            
-            if task.result != nil {
-                let url = AWSS3.default().configuration.endpoint.url
-                let publicURL = url?.appendingPathComponent((uploadRequest?.bucket!)!).appendingPathComponent((uploadRequest?.key!)!)
-                self.vm.updateForStep4(name: uploadRequest!.key!, url: publicURL!, type: "image", format: "jpeg")
-            }
-            
+        let awsService = AwsUploadService()
+        awsService.uploadImage(image: image, success: { (mediaResource) in
+            self.vm.updateForStep4(mediaResource: mediaResource)
             completed()
-            return nil
-        })
+        }) {
+            completed()
+            //handle failure
+        }
     }
 }
 
@@ -390,7 +332,6 @@ extension CreateCampaignVC: CreateCampaignStep4Delegate {
 }
 
 extension CreateCampaignVC: GMSAutocompleteViewControllerDelegate {
-    // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         if let address = place.formattedAddress {
             updateWithLocation(location: address)
@@ -398,22 +339,7 @@ extension CreateCampaignVC: GMSAutocompleteViewControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        // TODO: handle the error.
-        print("Error: ", error.localizedDescription)
-    }
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {}
     
-    // User canceled the operation.
-    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {}
 }

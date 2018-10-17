@@ -96,8 +96,10 @@
 		5053847A2121AD1C00D12BE4 /* MediaPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505384792121AD1C00D12BE4 /* MediaPickerVC.swift */; };
 		50572BEF2114638300E2CF84 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BEE2114638300E2CF84 /* CategoriesVC.swift */; };
 		50572BF12114656E00E2CF84 /* CategoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50572BF02114656E00E2CF84 /* CategoriesVM.swift */; };
+		507DFB082164E1260008407B /* AwsUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DFB072164E1260008407B /* AwsUploadService.swift */; };
 		5084C8DA2136E69B00B56720 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084C8D92136E69B00B56720 /* StringExtensions.swift */; };
 		509E0CC9210234EA00827862 /* CampaignNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E0CC8210234EA00827862 /* CampaignNavigation.swift */; };
+		50C3FB812164E71B00CC749E /* AwsUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DFB072164E1260008407B /* AwsUploadService.swift */; };
 		50CCDB4A21146F9D00F7279E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB4821146F9C00F7279E /* CategoryCell.swift */; };
 		50CCDB4B21146F9D00F7279E /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB4921146F9C00F7279E /* CategoryCell.xib */; };
 		50CCDB4D211AFC7600F7279E /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB4C211AFC7600F7279E /* NibView.swift */; };
@@ -169,6 +171,7 @@
 		505384792121AD1C00D12BE4 /* MediaPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaPickerVC.swift; path = "GoHelpFund-Platform/Screens/CreateCampaign/MediaPickerVC.swift"; sourceTree = SOURCE_ROOT; };
 		50572BEE2114638300E2CF84 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
 		50572BF02114656E00E2CF84 /* CategoriesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVM.swift; sourceTree = "<group>"; };
+		507DFB072164E1260008407B /* AwsUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwsUploadService.swift; sourceTree = "<group>"; };
 		5084C8D92136E69B00B56720 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		509E0CC8210234EA00827862 /* CampaignNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignNavigation.swift; sourceTree = "<group>"; };
 		50CCDB4821146F9C00F7279E /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				504F47B620E3D4B8005FF749 /* ApiService.swift */,
+				507DFB072164E1260008407B /* AwsUploadService.swift */,
 				504F47B820E3DA7C005FF749 /* CampaignService.swift */,
 			);
 			path = Networking;
@@ -923,6 +927,7 @@
 				50390E9A214927BC0083A13B /* CreateCampaignStep2.swift in Sources */,
 				50390E9B214927BC0083A13B /* CampaignDescriptionCell.swift in Sources */,
 				50390E9C214927BC0083A13B /* CreateCampaignVC.swift in Sources */,
+				50C3FB812164E71B00CC749E /* AwsUploadService.swift in Sources */,
 				50390E9D214927BC0083A13B /* AuthorDetailsCell.swift in Sources */,
 				50390E9E214927BC0083A13B /* AuthorDetailsVM.swift in Sources */,
 				50390E9F214927BC0083A13B /* CampaignListVC.swift in Sources */,
@@ -986,6 +991,7 @@
 				5032D89420EE269400B259BA /* CampaignDetailedCell.swift in Sources */,
 				50572BF12114656E00E2CF84 /* CategoriesVM.swift in Sources */,
 				50394C6520EA49D50079575D /* GaleryParentVC.swift in Sources */,
+				507DFB082164E1260008407B /* AwsUploadService.swift in Sources */,
 				50394C6720EA4A660079575D /* GaleryChildVC.swift in Sources */,
 				5053847A2121AD1C00D12BE4 /* MediaPickerVC.swift in Sources */,
 				5032D88D20EE24C000B259BA /* GalleryCell.swift in Sources */,
