@@ -106,9 +106,9 @@ Xcode 10.1, Swift 4.2.1, SDK iOS 12.1, macOS Mojave
 
 # Examples
 
-![alt text](https://user-images.githubusercontent.com/9149894/48145503-a0d6e600-e2bb-11e8-84ac-98ea428285d8.png)
-
 ![alt text](https://user-images.githubusercontent.com/9149894/48145505-a0d6e600-e2bb-11e8-8dc7-7fcfefa362bc.png)
+
+![alt text](https://user-images.githubusercontent.com/9149894/48145503-a0d6e600-e2bb-11e8-84ac-98ea428285d8.png)
 
 ![alt text](https://user-images.githubusercontent.com/9149894/48145506-a0d6e600-e2bb-11e8-9843-7b10e14a33ae.png)
 
