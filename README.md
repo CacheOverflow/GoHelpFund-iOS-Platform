@@ -49,19 +49,19 @@ To learn more about the GoHelpFund platform check out [this presentation video][
 # Components & Architecture
 
 We have a multy-layer structure: 
-- the *Data Layer* is formed by "dumb" models which confort to the Codable protocol for automatic mapping from and to JSON. 
+- the **Data Layer** is formed by "dumb" models which confort to the Codable protocol for automatic mapping from and to JSON. 
 
-- the *Networking Layer* is formed by an API Service which contains an API enum that conforms to Target Type protocol. The "micro-services" (AWSUploadService and CampaignService) use the MoyaProvider in order to make API requests, then they send the mapped responses to the view models using closures.
+- the **Networking Layer** is formed by an API Service which contains an API enum that conforms to Target Type protocol. The "micro-services" (AWSUploadService and CampaignService) use the MoyaProvider in order to make API requests, then they send the mapped responses to the view models using closures.
 
-- for the presentation layer, we use a combination between MVC and MVVM architecture. For the simpler views, like the campaign list screen, we use a flat MVC. On the other screens, like Categories, Campaign Details or Create Campaign Flow we use a Model-View-ViewModel architecture, with the posibility to add ViewModelDesigner components. The communication between the view (which represents the view controller and the smaller view classes) and the ViewModel is made using update methods, kvo and closures.
+- for the **Presentation layer**, we use a combination between MVC and MVVM architecture. For the simpler views, like the campaign list screen, we use a flat MVC. On the other screens, like Categories, Campaign Details or Create Campaign Flow we use a Model-View-ViewModel architecture, with the posibility to add ViewModelDesigner components. The communication between the view (which represents the view controller and the smaller view classes) and the ViewModel is made using update methods, kvo and closures.
 
-- the navigation layer is made using a coordinator called NavigationFactory, which provides the next view controller that needs to be presented.
+- the **Navigation layer** is made using a coordinator called NavigationFactory, which provides the next view controller that needs to be presented.
 
-- the user interface is implemented using autolayout and storyboards for small flows.
+- the **User Interface** is implemented using autolayout and storyboards for small flows.
 
-- our dependency management system is made using Pods
+- our **Dependency management** system is made using Pods
 
-- tests will be implemented using XCTest.
+- **Unit Testing** will be implemented using XCTest.
 
 ## Technologies
 
