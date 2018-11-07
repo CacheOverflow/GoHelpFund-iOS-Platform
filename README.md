@@ -27,7 +27,7 @@ To learn more about the GoHelpFund platform check out [this presentation video][
 # Table of Contents
 
    * [Features](#features)
-   * [Components](#components)
+   * [Components &amp; Architecture](#components--architecture)
       * [Technologies](#technologies)
       * [Directory Structure](#directory-structure)
       * [Third Parties](#third-parties)
@@ -48,12 +48,20 @@ To learn more about the GoHelpFund platform check out [this presentation video][
 
 # Components & Architecture
 
-We have a multy-layer structure, the *Data Layer* is formed by "dumb" models which confort to the Codable protocol for automatic mapping from and to JSON. The *Networking Layer* is formed by an API Service which contains an API enum that conforms to Target Type protocol. The "micro-services" (AWSUploadService and CampaignService) use the MoyaProvider in order to make API requests, then they send the mapped responses to the view models using closures.
-For the presentation layer, we use a combination between MVC and MVVM architecture. For the simpler views, like the campaign list screen, we use a flat MVC. On the other screens, like Categories, Campaign Details or Create Campaign Flow we use a Model-View-ViewModel architecture, with the posibility to add ViewModelDesigner components. The communication between the view (which represents the view controller and the smaller view classes) and the ViewModel is made using update methods, kvo and closures.
-The navigation layer is made using a coordinator called NavigationFactory, which provides the next view controller that needs to be presented.
-The user interface is implemented using autolayout and storyboards for small flows.
-Our dependency management system is made using Pods
-Tests will be implemented using XCTest.
+We have a multy-layer structure: 
+- the *Data Layer* is formed by "dumb" models which confort to the Codable protocol for automatic mapping from and to JSON. 
+
+- the *Networking Layer* is formed by an API Service which contains an API enum that conforms to Target Type protocol. The "micro-services" (AWSUploadService and CampaignService) use the MoyaProvider in order to make API requests, then they send the mapped responses to the view models using closures.
+
+- for the presentation layer, we use a combination between MVC and MVVM architecture. For the simpler views, like the campaign list screen, we use a flat MVC. On the other screens, like Categories, Campaign Details or Create Campaign Flow we use a Model-View-ViewModel architecture, with the posibility to add ViewModelDesigner components. The communication between the view (which represents the view controller and the smaller view classes) and the ViewModel is made using update methods, kvo and closures.
+
+- the navigation layer is made using a coordinator called NavigationFactory, which provides the next view controller that needs to be presented.
+
+- the user interface is implemented using autolayout and storyboards for small flows.
+
+- our dependency management system is made using Pods
+
+- tests will be implemented using XCTest.
 
 ## Technologies
 
@@ -70,7 +78,7 @@ Xcode 10.1, Swift 4.2.1, SDK iOS 12.1, macOS Mojave
         ├── Networking                # API communication
         ├── Screens                   # Tab structure & visual componenets
         ├── Storyboards               # Layout construction
-    ├── Pods/                       # dependencies
+    ├── Pods/                       # Dependencies
   
   
 ## Third Parties
@@ -92,18 +100,14 @@ Xcode 10.1, Swift 4.2.1, SDK iOS 12.1, macOS Mojave
 - SwiftSpinner - Custom cool spinner
 
 ## Design Patterns  
-Arhitectural: MVC, MVVM 
-Structural: Facade, Adapter, Decorator
-Creational: Factory Method, Singleton, Builder
-Behavioral: KVO, Delegate, Observer, Decorator
+
+- Arhitectural: MVC, MVVM 
+- Structural: Facade, Adapter, Decorator
+- Creational: Factory Method, Singleton, Builder
+- Behavioral: KVO, Delegate, Observer, Decorator
 
 # Examples
 
-
-
-## Configuration Files
-
-To be added
 
 # Contributing
 
@@ -112,7 +116,6 @@ To be added
 # Changelog
 
 To be added
-
 
 
 # Questions & Improvements
