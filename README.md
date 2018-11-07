@@ -33,8 +33,6 @@ To learn more about the GoHelpFund platform check out [this presentation video][
       * [Third Parties](#third-parties)
       * [Design Patterns](#design-patterns)
    * [Examples](#examples)
-   * [Contributing](#contributing)
-   * [Changelog](#changelog)
    * [Questions &amp; Improvements](#questions--improvements)
 
 # Features
@@ -108,14 +106,15 @@ Xcode 10.1, Swift 4.2.1, SDK iOS 12.1, macOS Mojave
 
 # Examples
 
+![alt text](https://user-images.githubusercontent.com/9149894/48145503-a0d6e600-e2bb-11e8-84ac-98ea428285d8.png)
 
-# Contributing
+![alt text](https://user-images.githubusercontent.com/9149894/48145505-a0d6e600-e2bb-11e8-8dc7-7fcfefa362bc.png)
 
-To be added
+![alt text](https://user-images.githubusercontent.com/9149894/48145506-a0d6e600-e2bb-11e8-9843-7b10e14a33ae.png)
 
-# Changelog
+![alt text](https://user-images.githubusercontent.com/9149894/48145496-a03e4f80-e2bb-11e8-8df8-edc5d5bd28f5.png)
 
-To be added
+![alt text](https://user-images.githubusercontent.com/9149894/48145497-a03e4f80-e2bb-11e8-9fe3-588c0962e142.png)
 
 
 # Questions & Improvements
