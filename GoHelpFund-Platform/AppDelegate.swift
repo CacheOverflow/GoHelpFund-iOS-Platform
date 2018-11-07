@@ -10,7 +10,6 @@ import UIKit
 import Fabric
 import Crashlytics
 
-import GoogleMaps
 import GooglePlaces
 
 import IQKeyboardManagerSwift
@@ -25,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         GMSPlacesClient.provideAPIKey(GOOGLE_CONSTANTS.KEY)
-        GMSServices.provideAPIKey(GOOGLE_CONSTANTS.KEY)
         IQKeyboardManager.shared.enable = true
         Fabric.with([Crashlytics.self])
         
