@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="654" y="1139"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Tab ContainerVC-->
         <scene sceneID="Jh8-PB-Hte">
             <objects>
-                <viewController id="eI9-hU-YqJ" sceneMemberID="viewController">
+                <viewController id="eI9-hU-YqJ" customClass="ProfileTabContainerVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aiy-Ep-daW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,6 +198,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zS-52-mDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="654" y="1818"/>
+        </scene>
+        <!--OnboardingVC-->
+        <scene sceneID="Rc5-sp-xfw">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingVC" id="iMC-c5-tAc" customClass="OnboardingVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sOW-Yo-5Io">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.40784313729999999" green="0.66666666669999997" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="rIo-kd-8IR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qm7-eQ-2R6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576" y="2250"/>
+        </scene>
+        <!--User ProfileVC-->
+        <scene sceneID="Fq0-9Q-lfd">
+            <objects>
+                <viewController storyboardIdentifier="UserProfileVC" id="RnV-K2-5VV" customClass="UserProfileVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KUT-lG-UFp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.0" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ugg-bd-hgL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMO-xb-YUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="1559"/>
         </scene>
         <!--Discover-->
         <scene sceneID="u3P-gT-b9O">
