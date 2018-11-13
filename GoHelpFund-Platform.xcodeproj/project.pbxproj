@@ -11,6 +11,12 @@
 		5004A5D2219AEBCD00C0B9FC /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5D0219AEBCD00C0B9FC /* OnboardingVM.swift */; };
 		5004A5D5219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */; };
 		5004A5D6219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */; };
+		5004A5D8219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */; };
+		5004A5D9219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */; };
+		5004A5DB219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */; };
+		5004A5DC219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */; };
+		5004A5DE219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */; };
+		5004A5DF219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */; };
 		5019AD33213FC1D9009F07E3 /* UploadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019AD32213FC1D9009F07E3 /* UploadInfo.swift */; };
 		502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */; };
 		5032D88420EE188A00B259BA /* GaleryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88320EE188A00B259BA /* GaleryVM.swift */; };
@@ -147,6 +153,9 @@
 /* Begin PBXFileReference section */
 		5004A5D0219AEBCD00C0B9FC /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepEmail.swift; sourceTree = "<group>"; };
+		5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingStepEmail.xib; sourceTree = "<group>"; };
+		5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingStepPassword.xib; sourceTree = "<group>"; };
+		5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepPassword.swift; sourceTree = "<group>"; };
 		5019AD32213FC1D9009F07E3 /* UploadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadInfo.swift; sourceTree = "<group>"; };
 		502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignVM.swift; sourceTree = "<group>"; };
 		5032D88320EE188A00B259BA /* GaleryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryVM.swift; sourceTree = "<group>"; };
@@ -260,6 +269,9 @@
 			isa = PBXGroup;
 			children = (
 				5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */,
+				5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */,
+				5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */,
+				5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -696,12 +708,14 @@
 				50390EC2214927BC0083A13B /* CreateCampaignStep3.xib in Resources */,
 				50390EC3214927BC0083A13B /* LaunchScreen.storyboard in Resources */,
 				50390EC4214927BC0083A13B /* CampaignListCell.xib in Resources */,
+				5004A5D9219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */,
 				50390EC5214927BC0083A13B /* CreateCampaignStep1.xib in Resources */,
 				50390EC6214927BC0083A13B /* Assets.xcassets in Resources */,
 				50390EC7214927BC0083A13B /* CategoryCell.xib in Resources */,
 				50390EC8214927BC0083A13B /* GalleryCell.xib in Resources */,
 				50390EC9214927BC0083A13B /* Dashboard.storyboard in Resources */,
 				50390ECA214927BC0083A13B /* CampaignDetailedCell.xib in Resources */,
+				5004A5DC219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */,
 				50390ECB214927BC0083A13B /* CreateCampaignStep4.xib in Resources */,
 				50390ECC214927BC0083A13B /* AuthorDetailsCell.xib in Resources */,
 			);
@@ -717,12 +731,14 @@
 				50CCDB55211B0F1200F7279E /* CreateCampaignStep3.xib in Resources */,
 				5040F0B420D7EA970030183D /* LaunchScreen.storyboard in Resources */,
 				504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */,
+				5004A5D8219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */,
 				50CCDB53211B02AF00F7279E /* CreateCampaignStep1.xib in Resources */,
 				5040F0B120D7EA970030183D /* Assets.xcassets in Resources */,
 				50CCDB4B21146F9D00F7279E /* CategoryCell.xib in Resources */,
 				5032D88C20EE24C000B259BA /* GalleryCell.xib in Resources */,
 				5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */,
 				5032D89520EE269400B259BA /* CampaignDetailedCell.xib in Resources */,
+				5004A5DB219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */,
 				50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */,
 				5032D89920EE26B400B259BA /* AuthorDetailsCell.xib in Resources */,
 			);
@@ -1014,6 +1030,7 @@
 				50390EA7214927BC0083A13B /* CreateCampaignStep4.swift in Sources */,
 				50390EA8214927BC0083A13B /* CreateCampaignVM.swift in Sources */,
 				50390EA9214927BC0083A13B /* APIConstants.swift in Sources */,
+				5004A5DF219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */,
 				5004A5D6219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */,
 				50390EAA214927BC0083A13B /* DateHelper.swift in Sources */,
 				50390EAB214927BC0083A13B /* Campaign.swift in Sources */,
@@ -1068,6 +1085,7 @@
 				502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */,
 				50390E9321490ECE0083A13B /* APIConstants.swift in Sources */,
 				504F47D720E6735F005FF749 /* DateHelper.swift in Sources */,
+				5004A5DE219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */,
 				5004A5D5219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */,
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,

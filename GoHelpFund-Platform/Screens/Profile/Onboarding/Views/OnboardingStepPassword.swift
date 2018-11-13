@@ -1,5 +1,5 @@
 //
-//  OnboardingStepEmail.swift
+//  OnboardingStepPassword.swift
 //  GoHelpFund-Platform
 //
 //  Created by Vlad Batrinu on 11/13/18.
@@ -9,11 +9,11 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class OnboardingStepEmail: NibView {
+class OnboardingStepPassword: NibView {
     var vm: OnboardingVM
     
-    @IBOutlet var EnterEmailMotivationLabel: UILabel!
-    @IBOutlet var emailTextField: SkyFloatingLabelTextField!
+    @IBOutlet var passwordTextField: SkyFloatingLabelTextFieldWithIcon!
+    @IBOutlet var passwordLabel: UILabel!
     
     init(vm: OnboardingVM) {
         self.vm = vm
@@ -27,8 +27,6 @@ class OnboardingStepEmail: NibView {
     }
     
     func setupLayout() {
-        emailTextField.placeholder = "Email"
-        emailTextField.lineColor = .white
-        emailTextField.selectedLineColor = .red
+        passwordTextField.placeholder = "Password"
     }
 }

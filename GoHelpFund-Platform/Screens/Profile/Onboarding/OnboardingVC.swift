@@ -23,14 +23,18 @@ class OnboardingVC: UIViewController {
     //steps
     @objc dynamic var step: Int = 0
     var stepObserver: NSKeyValueObservation!
-    var nrSteps: Int = 4
+    var nrSteps: Int = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSteps()
+        setupKVO()
+        setupLoadedViews()
+        present(loadedView: loadedViews.first, viewToRemove: nil)
     }
     
     func setupSteps() {
-        finishButton.isHidden = true
         previousButton.isEnabled = false
     }
     
@@ -41,6 +45,51 @@ class OnboardingVC: UIViewController {
             nextStep == 0                ? (self.previousButton.isEnabled = false) : (self.previousButton.isEnabled = true)
         })
     }
+    
+    func setupLoadedViews() {
+        let stepEmail = OnboardingStepEmail(vm: vm)
+        let stepPassword = OnboardingStepPassword(vm: vm)
+        
+        loadedViews = [stepEmail, stepPassword]
+    }
+    
+    func present(loadedView: UIView?, viewToRemove: UIView?) {
+        guard let loadedView = loadedView else { return }
+        containerView.addSubview(loadedView)
+        
+        loadedView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loadedView.leftAnchor.constraint(equalTo: containerView.leftAnchor),
+            loadedView.rightAnchor.constraint(equalTo: containerView.rightAnchor),
+            loadedView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            loadedView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            ])
+        
+        loadedView.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            loadedView.alpha = 1
+            viewToRemove?.alpha = 0
+        }, completion: { (completed: Bool) in
+            viewToRemove?.removeFromSuperview()
+        })
+    }
+    
+    @IBAction func tapNext(_ sender: Any) {
+        if !valid(at: step) { return }
+        step += 1
+        present(loadedView: loadedViews[step], viewToRemove: loadedViews[step - 1])
+    }
+    
+    @IBAction func tapBack(_ sender: Any) {
+        step -= 1
+        present(loadedView: loadedViews[step], viewToRemove: loadedViews[step + 1])
+    }
+    
+    func valid(at step: Int) -> Bool {
+        return loadedViews[step].isValidStep
+    }
+    
+    
     
     func login() {
         
