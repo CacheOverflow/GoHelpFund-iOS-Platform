@@ -108,15 +108,6 @@ Xcode 10.1, Swift 4.2.1, SDK iOS 12.1, macOS Mojave
 
 ![alt text](https://user-images.githubusercontent.com/9149894/48145505-a0d6e600-e2bb-11e8-8dc7-7fcfefa362bc.png)
 
-![alt text](https://user-images.githubusercontent.com/9149894/48145506-a0d6e600-e2bb-11e8-9843-7b10e14a33ae.png)
-
-![alt text](https://user-images.githubusercontent.com/9149894/48145496-a03e4f80-e2bb-11e8-8df8-edc5d5bd28f5.png)
-
-![alt text](https://user-images.githubusercontent.com/9149894/48145502-a0d6e600-e2bb-11e8-8826-4f102cf52d44.png)
-
-![alt text](https://user-images.githubusercontent.com/9149894/48145499-a03e4f80-e2bb-11e8-8ca2-b840b75e104f.png)
-
-
 # Questions & Improvements
 
 Ask us anything on telegram: https://t.me/gohelpfund
