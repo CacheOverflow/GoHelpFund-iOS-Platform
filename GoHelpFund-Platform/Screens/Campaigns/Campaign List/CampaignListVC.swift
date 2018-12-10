@@ -15,8 +15,17 @@ class CampaignListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTableView()
-        getCampaigns()
+        let authService = AuthService()
+        authService.authorizate(success: {
+            self.getCampaigns()
+            self.setupTableView()
+        }) {
+            self.setupNoData()
+        }
+    }
+    
+    func setupNoData() {
+        
     }
 
     func setupTableView() {

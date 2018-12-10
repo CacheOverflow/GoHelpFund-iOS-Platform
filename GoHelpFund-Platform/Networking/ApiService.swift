@@ -32,6 +32,9 @@ private extension String {
 }
 
 public enum API {
+    case signUp(username: String, password: String, fullName: String)
+    case login(username: String, password: String)
+    case authorizate()
     case getCampaigns()
     case getCategories()
     case getMediaUploadInfo()
@@ -43,12 +46,19 @@ extension API: TargetType {
     
     public var path: String {
         switch self {
+        case .authorizate():
+            return "auth/oauth/token"
+        case .signUp(_, _, _):
+            return "auth/signup"
+        case .login(_, _):
+            return "auth/oauth/token"
         case .getCampaigns, .createCampaign(_):
             return "campaigns"
         case .getCategories():
             return "categories"
         case .getMediaUploadInfo():
             return "upload"
+        
         }
     }
     public var method: Moya.Method {
@@ -66,6 +76,19 @@ extension API: TargetType {
     
     public var task: Task {
         switch self {
+        case .authorizate():
+            return .requestParameters(parameters: ["grant_type" : "client_credentials",
+                                                   "scope" : "mobile-client"], encoding: JSONEncoding.default)
+        case .signUp(let username, let password, let fullName):
+            return .requestParameters(parameters: ["username" : username,
+                                                   "password" : password,
+                                                   "full_name" : fullName,
+                                                   "scope" : "mobile-client"], encoding: JSONEncoding.default)
+        case .login(let username, let password):
+            return .requestParameters(parameters: ["grant_type": "password",
+                                                   "username" : username,
+                "password" : password,
+                "scope" : "mobile-client"], encoding: JSONEncoding.default)
         case .getCampaigns,
              .getCategories,
              .getMediaUploadInfo:
@@ -89,7 +112,17 @@ extension API: TargetType {
     }
     
     public var headers: [String: String]? {
-        return ["Accept": "application/json", "Accept-Language": "", "Content-Type": "application/json"]
+        return ["Accept": "application/json", "Accept-Language": "", "Content-Type": "application/json", "Authorization": token]
+    }
+    
+    var token: String {
+        switch self {
+        case .authorizate(), .login(_, _), .signUp(_, _, _):
+            return "Basic " + API_CONSTANTS.CLIENT_CREDENTIALS
+        default:
+            let token = UserDefaults.standard.string(forKey: "token") ?? ""
+            return "Bearer " + token
+        }
     }
     
 }

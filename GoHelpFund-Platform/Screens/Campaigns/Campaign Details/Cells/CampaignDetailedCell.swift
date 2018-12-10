@@ -35,7 +35,7 @@ class CampaignDetailedCell: BaseTableViewCell {
     func setupProgressBarLayout() {
         progressBar.barColorForValue = colorForProgress
         
-        progressBar.barColor = .green
+        progressBar.barColor = .greenHelp
         progressBar.trackColor = .lightGray
         progressBar.barThickness = 25
         progressBar.barPadding = -12
@@ -49,9 +49,9 @@ class CampaignDetailedCell: BaseTableViewCell {
         case 20..<60:
             return .yellow
         case 60...100:
-            return .green
+            return .greenHelp
         default:
-            return .green
+            return .greenHelp
         }
     }
     

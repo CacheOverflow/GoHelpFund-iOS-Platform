@@ -21,6 +21,7 @@ PODS:
     - GooglePlaces (= 2.7.0)
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - HGPlaceholders (0.3.0)
   - ImageScrollView (1.5)
   - IQKeyboardManagerSwift (6.1.0)
   - JSONDecoder-Keypath (0.1.0)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - HGPlaceholders
   - ImageScrollView
   - IQKeyboardManagerSwift
   - JSONDecoder-Keypath
@@ -79,6 +81,7 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
   ImageScrollView: 22b3ad3f215a227403eee376fd226559516390b4
   IQKeyboardManagerSwift: f5004f5860d9a8ed23a7ef7a156ae168828eb018
   JSONDecoder-Keypath: ab7a3cec83003a5f66455c28edecbf9110351818
@@ -95,6 +98,6 @@ SPEC CHECKSUMS:
   UIWindowTransitions: 95836d4d85b824227909ada40a2cbf885eb26c69
   YPImagePicker: b711992e87904056112795c3bc17af87e2585b71
 
-PODFILE CHECKSUM: 44021f3e929a7e8c8f16a9cfd1ac01d264f83867
+PODFILE CHECKSUM: 5e1848222da14fed6356b09e0baa428dfd6ca35f
 
 COCOAPODS: 1.3.1

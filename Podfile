@@ -17,6 +17,7 @@ abstract_target 'Dep' do
   pod 'AWSS3', '~> 2.6.13'   # For file transfers
   pod 'AWSMobileClient', '~> 2.6.13'
   pod 'SwiftSpinner'
+  pod 'HGPlaceholders'
   
   target 'GoHelpFund-Platform-Dev' do
       end
