@@ -32,7 +32,7 @@ private extension String {
 }
 
 public enum API {
-    case signUp(username: String, password: String)
+    case signUp(username: String, password: String, fullName: String)
     case login(username: String, password: String)
     case authorizate()
     case getCampaigns()
@@ -48,10 +48,10 @@ extension API: TargetType {
         switch self {
         case .authorizate():
             return "auth/oauth/token"
-        case .signUp(_, _):
+        case .signUp(_, _, _):
             return "auth/signup"
         case .login(_, _):
-            return ""
+            return "auth/oauth/token"
         case .getCampaigns, .createCampaign(_):
             return "campaigns"
         case .getCategories():
@@ -79,9 +79,10 @@ extension API: TargetType {
         case .authorizate():
             return .requestParameters(parameters: ["grant_type" : "client_credentials",
                                                    "scope" : "mobile-client"], encoding: JSONEncoding.default)
-        case .signUp(let username, let password):
+        case .signUp(let username, let password, let fullName):
             return .requestParameters(parameters: ["username" : username,
                                                    "password" : password,
+                                                   "full_name" : fullName,
                                                    "scope" : "mobile-client"], encoding: JSONEncoding.default)
         case .login(let username, let password):
             return .requestParameters(parameters: ["grant_type": "password",
@@ -116,7 +117,7 @@ extension API: TargetType {
     
     var token: String {
         switch self {
-        case .authorizate(), .login(_, _), .signUp(_, _):
+        case .authorizate(), .login(_, _), .signUp(_, _, _):
             return "Basic " + API_CONSTANTS.CLIENT_CREDENTIALS
         default:
             let token = UserDefaults.standard.string(forKey: "token") ?? ""

@@ -9,5 +9,19 @@
 import Foundation
 
 class OnboardingVM {
+    var email: String?
+    var password: String?
+    var fullName: String?
     
+    func updateWithEmail(email: String?) {
+        self.email = email
+    }
+    
+    func updateWithPassword(password: String?) {
+        self.password = password
+    }
+    
+    func updateWithFullName(fullName: String?) {
+        self.fullName = fullName
+    }
 }

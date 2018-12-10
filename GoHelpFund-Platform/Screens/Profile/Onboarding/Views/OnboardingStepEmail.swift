@@ -31,4 +31,9 @@ class OnboardingStepEmail: NibView {
         emailTextField.lineColor = .white
         emailTextField.selectedLineColor = .red
     }
+    
+    override var isValidStep: Bool {
+        vm.updateWithEmail(email: emailTextField.text)
+        return true
+    }
 }

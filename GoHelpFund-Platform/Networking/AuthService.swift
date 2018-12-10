@@ -29,8 +29,15 @@ public struct AuthService {
         }
     }
     
-    func signUp(email: String, password: String, success: @escaping () -> (), failure: @escaping () -> ()) {
-        apiProvider.request(API.signUp(username: email, password: password), completion: { (result) in
+    func signUp(email: String, password: String, fullName: String, success: @escaping () -> (), failure: @escaping () -> ()) {
+        apiProvider.request(API.signUp(username: email, password: password, fullName: fullName), completion: { (result) in
+            
+            
+        })
+    }
+    
+    func login(email: String, password: String, success: @escaping () -> (), failure: @escaping () -> ()) {
+        apiProvider.request(API.login(username: email, password: password), completion: { (result) in
             
             
         })

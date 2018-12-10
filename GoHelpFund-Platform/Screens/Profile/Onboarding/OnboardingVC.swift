@@ -8,7 +8,13 @@
 
 import UIKit
 
+enum OnboardingType {
+    case createAccount
+    case login
+}
+
 class OnboardingVC: UIViewController {
+    var onboardingType = OnboardingType.createAccount
     //vm for extracting data
     var vm = OnboardingVM()
 
@@ -16,10 +22,14 @@ class OnboardingVC: UIViewController {
     @IBOutlet var containerView: UIView!
     var loadedViews = [NibView]()
     
-    @IBOutlet var nextButton: UIButton!
     @IBOutlet var previousButton: UIButton!
     @IBOutlet var finishButton: HelpButton!
+    @IBOutlet var finishView: UIView!
     
+    @IBOutlet var nextView: UIView!
+    
+    @IBOutlet var loginView: UIView!
+    @IBOutlet var createAccountView: UIView!
     //steps
     @objc dynamic var step: Int = 0
     var stepObserver: NSKeyValueObservation!
@@ -28,21 +38,52 @@ class OnboardingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSteps()
+        setupInitialViews()
+        
         setupKVO()
         setupLoadedViews()
         present(loadedView: loadedViews.first, viewToRemove: nil)
     }
     
-    func setupSteps() {
-        previousButton.isEnabled = false
+    func setupInitialViews() {
+        createAccountView.isHidden = false
+        loginView.isHidden = false
+        finishView.isHidden = true
+        previousButton.isHidden = true
+        nextView.isHidden = true
+    }
+
+    fileprivate func setupViewForLastStep() {
+        previousButton.isHidden = false
+        finishView.isHidden = false
+        nextView.isHidden = true
+        createAccountView.isHidden = true
+        loginView.isHidden = true
+    }
+    
+    fileprivate func setupViewForMiddleStep() {
+        //middle
+        createAccountView.isHidden = true
+        loginView.isHidden = true
+        
+        previousButton.isHidden = false
+        nextView.isHidden = false
+        finishView.isHidden = true
     }
     
     func setupKVO() {
         stepObserver = observe(\.step, options: [.new, .old], changeHandler: { (_, change) in
             guard let nextStep = change.newValue else { return }
-            nextStep == self.nrSteps - 1 ? (self.nextButton.isEnabled = false) : (self.nextButton.isEnabled = true)
-            nextStep == 0                ? (self.previousButton.isEnabled = false) : (self.previousButton.isEnabled = true)
+            if  nextStep == self.nrSteps - 1 {
+                self.setupViewForLastStep()
+               // last
+            } else if nextStep == 0 {
+                //first
+                self.setupInitialViews()
+            } else {
+                self.setupViewForMiddleStep()
+            }
+
         })
     }
     
@@ -85,15 +126,68 @@ class OnboardingVC: UIViewController {
         present(loadedView: loadedViews[step], viewToRemove: loadedViews[step + 1])
     }
     
-    func valid(at step: Int) -> Bool {
-        return loadedViews[step].isValidStep
+    @IBAction func tapCreateAccount(_ sender: Any) {
+        //present only create account because
+        if !valid(at: step) { return }
+        
+        setupForCreateAccount()
+        
+        step += 1
+        present(loadedView: loadedViews[step], viewToRemove: loadedViews[step - 1])
     }
     
+    func setupForCreateAccount() {
+        onboardingType = .createAccount
+        nrSteps = 3
+        loadedViews.append(OnboardingStepFullName(vm: vm))
+        
+    }
     
+    @IBAction func tapLogin(_ sender: Any) {
+        setupForLogin()
+        
+        step += 1
+        present(loadedView: loadedViews[step], viewToRemove: loadedViews[step - 1])
+    }
+    
+    func setupForLogin() {
+        loadedViews.removeLast()
+
+        onboardingType = .login
+        nrSteps = 2
+    }
+    
+    @IBAction func tapFinish(_ sender: Any) {
+        if !valid(at: step) { return }
+        
+        if onboardingType == .login {
+            login()
+        } else {
+            signUp()
+        }
+    }
     
     func login() {
+        let onboardingService = AuthService()
+        onboardingService.login(email: vm.email!, password: vm.password!, success: {
+            //success
+        }) {
+        }
+    }
+    
+    func signUp() {
+        let onboardingService = AuthService()
+        onboardingService.signUp(email: vm.email!, password: vm.password!, fullName: vm.fullName!, success: {
+            //success
+        }) {
+            
+        }
         
     }
 
+    
+    func valid(at step: Int) -> Bool {
+        return loadedViews[step].isValidStep
+    }
 
 }
