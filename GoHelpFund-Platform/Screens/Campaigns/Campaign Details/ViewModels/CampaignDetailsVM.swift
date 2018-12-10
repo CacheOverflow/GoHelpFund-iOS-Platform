@@ -39,16 +39,15 @@ struct CampaignDetailsVM {
     }
     
     var raisedPercentageDisplayed: String {
-        return String(89) + "%" + " Raised"
+        return String(raisedPercentageProgress) + "%" + " Raised"
     }
     
     var raisedPercentageProgress : Double {
-        return 89
-        //return (campaign.raisedTotal / campaign.raisedGoal) * 100
+        return (campaign.raisedTotal / campaign.raisedGoal) * 100
     }
     
     var raisedTotalDisplayed: String {
-        return "$" + String(120) + " Raised"
+        return "$" + String(campaign.raisedTotal) + " Raised"
     }
     
     var description: String {
