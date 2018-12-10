@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -183,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="654" y="1139"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Tab ContainerVC-->
         <scene sceneID="Jh8-PB-Hte">
             <objects>
-                <viewController id="eI9-hU-YqJ" sceneMemberID="viewController">
+                <viewController id="eI9-hU-YqJ" customClass="ProfileTabContainerVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aiy-Ep-daW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,6 +199,161 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zS-52-mDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="654" y="1818"/>
+        </scene>
+        <!--OnboardingVC-->
+        <scene sceneID="Rc5-sp-xfw">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingVC" id="iMC-c5-tAc" customClass="OnboardingVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sOW-Yo-5Io">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="awesome" translatesAutoresizingMaskIntoConstraints="NO" id="3ms-hM-hhc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yk-EE-cNe" userLabel="Back">
+                                <rect key="frame" x="20" y="40" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2yk-EE-cNe" secondAttribute="height" id="Wah-Qr-Pyn"/>
+                                    <constraint firstAttribute="width" constant="40" id="kVS-Z9-dSt"/>
+                                </constraints>
+                                <state key="normal" image="left-arrow"/>
+                                <connections>
+                                    <action selector="tapBack:" destination="iMC-c5-tAc" eventType="touchUpInside" id="diY-0b-kIA"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eF8-AJ-bNf">
+                                <rect key="frame" x="0.0" y="120" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PXx-V3-3YJ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gki-VR-WAa" userLabel="Buttons stack">
+                                <rect key="frame" x="0.0" y="340" width="375" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKu-ft-cN3" userLabel="Create Account ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4d-Q3-t7x">
+                                                <rect key="frame" x="133.5" y="10" width="107" height="30"/>
+                                                <state key="normal" title="Create Account"/>
+                                                <connections>
+                                                    <action selector="tapCreateAccount:" destination="iMC-c5-tAc" eventType="touchUpInside" id="ink-Qz-2JG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="W4d-Q3-t7x" secondAttribute="bottom" constant="10" id="63h-Iu-iqe"/>
+                                            <constraint firstAttribute="height" constant="50" id="KZL-6w-iVo"/>
+                                            <constraint firstItem="W4d-Q3-t7x" firstAttribute="top" secondItem="oKu-ft-cN3" secondAttribute="top" constant="10" id="QmN-t8-gFV"/>
+                                            <constraint firstItem="W4d-Q3-t7x" firstAttribute="centerX" secondItem="oKu-ft-cN3" secondAttribute="centerX" id="fsb-nG-H8F"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-TR-IPM">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="728-FO-RuA">
+                                                <rect key="frame" x="168" y="10" width="38" height="30"/>
+                                                <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <action selector="tapLogin:" destination="iMC-c5-tAc" eventType="touchUpInside" id="njK-4G-mNm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="A6f-VA-rKv"/>
+                                            <constraint firstItem="728-FO-RuA" firstAttribute="top" secondItem="xuM-TR-IPM" secondAttribute="top" constant="10" id="ZWj-wd-5JC"/>
+                                            <constraint firstAttribute="bottom" secondItem="728-FO-RuA" secondAttribute="bottom" constant="10" id="ePL-Ti-gxC"/>
+                                            <constraint firstItem="728-FO-RuA" firstAttribute="centerX" secondItem="xuM-TR-IPM" secondAttribute="centerX" id="mHk-vI-nC0"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-D9-46e" userLabel="Finish">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evp-71-GvB">
+                                                <rect key="frame" x="166.5" y="10" width="41" height="30"/>
+                                                <state key="normal" title="Finish"/>
+                                                <connections>
+                                                    <action selector="tapFinish:" destination="iMC-c5-tAc" eventType="touchUpInside" id="lLM-6W-6bb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Bmb-lC-STT"/>
+                                            <constraint firstAttribute="bottom" secondItem="evp-71-GvB" secondAttribute="bottom" constant="10" id="D82-ib-g5E"/>
+                                            <constraint firstItem="evp-71-GvB" firstAttribute="top" secondItem="Crn-D9-46e" secondAttribute="top" constant="10" id="TQe-bO-Yty"/>
+                                            <constraint firstItem="evp-71-GvB" firstAttribute="centerX" secondItem="Crn-D9-46e" secondAttribute="centerX" id="frR-qW-7Zm"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBh-fS-3Fq" userLabel="Next">
+                                        <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUv-cK-19b">
+                                                <rect key="frame" x="171" y="10" width="32" height="30"/>
+                                                <state key="normal" title="Next"/>
+                                                <connections>
+                                                    <action selector="tapNext:" destination="iMC-c5-tAc" eventType="touchUpInside" id="wxd-AH-6cy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="jUv-cK-19b" firstAttribute="top" secondItem="KBh-fS-3Fq" secondAttribute="top" constant="10" id="8QU-fG-eSS"/>
+                                            <constraint firstItem="jUv-cK-19b" firstAttribute="centerX" secondItem="KBh-fS-3Fq" secondAttribute="centerX" id="eBR-M6-Lrj"/>
+                                            <constraint firstAttribute="bottom" secondItem="jUv-cK-19b" secondAttribute="bottom" constant="10" id="itv-CI-mNc"/>
+                                            <constraint firstAttribute="height" constant="50" id="zz4-e0-d2B"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="eF8-AJ-bNf" firstAttribute="leading" secondItem="rIo-kd-8IR" secondAttribute="leading" id="0Bj-ty-83C"/>
+                            <constraint firstItem="3ms-hM-hhc" firstAttribute="leading" secondItem="rIo-kd-8IR" secondAttribute="leading" id="0ez-rA-aED"/>
+                            <constraint firstItem="2yk-EE-cNe" firstAttribute="top" secondItem="rIo-kd-8IR" secondAttribute="top" constant="20" id="2MP-NJ-QB3"/>
+                            <constraint firstItem="3ms-hM-hhc" firstAttribute="top" secondItem="rIo-kd-8IR" secondAttribute="top" id="4Tm-4F-bCA"/>
+                            <constraint firstItem="2yk-EE-cNe" firstAttribute="leading" secondItem="rIo-kd-8IR" secondAttribute="leading" constant="20" id="FCg-mP-gRX"/>
+                            <constraint firstItem="gki-VR-WAa" firstAttribute="top" secondItem="eF8-AJ-bNf" secondAttribute="bottom" constant="20" id="FMB-gY-vsE"/>
+                            <constraint firstItem="rIo-kd-8IR" firstAttribute="trailing" secondItem="3ms-hM-hhc" secondAttribute="trailing" id="ROQ-TE-WML"/>
+                            <constraint firstItem="gki-VR-WAa" firstAttribute="leading" secondItem="rIo-kd-8IR" secondAttribute="leading" id="a4b-tp-A45"/>
+                            <constraint firstItem="2yk-EE-cNe" firstAttribute="width" secondItem="2yk-EE-cNe" secondAttribute="height" id="gIj-bX-sfZ"/>
+                            <constraint firstItem="rIo-kd-8IR" firstAttribute="trailing" secondItem="eF8-AJ-bNf" secondAttribute="trailing" id="hJ5-NJ-eob"/>
+                            <constraint firstItem="rIo-kd-8IR" firstAttribute="bottom" secondItem="3ms-hM-hhc" secondAttribute="bottom" id="pUP-FS-cI2"/>
+                            <constraint firstItem="eF8-AJ-bNf" firstAttribute="top" secondItem="rIo-kd-8IR" secondAttribute="top" constant="100" id="qho-ZW-fWq"/>
+                            <constraint firstItem="rIo-kd-8IR" firstAttribute="trailing" secondItem="gki-VR-WAa" secondAttribute="trailing" id="sDz-Bu-qbo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rIo-kd-8IR"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="eF8-AJ-bNf" id="Cqk-tr-cyF"/>
+                        <outlet property="createAccountView" destination="oKu-ft-cN3" id="IFx-j2-TH1"/>
+                        <outlet property="finishView" destination="Crn-D9-46e" id="BjF-TW-ySD"/>
+                        <outlet property="loginView" destination="xuM-TR-IPM" id="K9K-Dl-wsl"/>
+                        <outlet property="nextView" destination="KBh-fS-3Fq" id="lnx-Jm-6rH"/>
+                        <outlet property="previousButton" destination="2yk-EE-cNe" id="oL6-lh-7GL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qm7-eQ-2R6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576" y="2250"/>
+        </scene>
+        <!--User ProfileVC-->
+        <scene sceneID="Fq0-9Q-lfd">
+            <objects>
+                <viewController storyboardIdentifier="UserProfileVC" id="RnV-K2-5VV" customClass="UserProfileVC" customModule="GoHelpFund_Platform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KUT-lG-UFp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.0" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ugg-bd-hgL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMO-xb-YUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="1559"/>
         </scene>
         <!--Discover-->
         <scene sceneID="u3P-gT-b9O">
@@ -239,8 +395,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="awesome" width="1895" height="2653"/>
         <image name="campaign" width="32" height="32"/>
         <image name="funnel" width="32" height="32"/>
+        <image name="left-arrow" width="64" height="64"/>
         <image name="profile" width="32" height="32"/>
         <image name="trending" width="32" height="32"/>
     </resources>

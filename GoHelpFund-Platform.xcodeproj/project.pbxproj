@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5004A5D1219AEBCD00C0B9FC /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5D0219AEBCD00C0B9FC /* OnboardingVM.swift */; };
+		5004A5D2219AEBCD00C0B9FC /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5D0219AEBCD00C0B9FC /* OnboardingVM.swift */; };
+		5004A5D5219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */; };
+		5004A5D6219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */; };
+		5004A5D8219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */; };
+		5004A5D9219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */; };
+		5004A5DB219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */; };
+		5004A5DC219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */; };
+		5004A5DE219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */; };
+		5004A5DF219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */; };
+		5004A5E1219DA08800C0B9FC /* OnboardingStepFullName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5E0219DA08800C0B9FC /* OnboardingStepFullName.swift */; };
+		5004A5E2219DA08800C0B9FC /* OnboardingStepFullName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004A5E0219DA08800C0B9FC /* OnboardingStepFullName.swift */; };
+		5004A5E4219DA0A000C0B9FC /* OnboardingStepFullName.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5E3219DA0A000C0B9FC /* OnboardingStepFullName.xib */; };
+		5004A5E5219DA0A000C0B9FC /* OnboardingStepFullName.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5004A5E3219DA0A000C0B9FC /* OnboardingStepFullName.xib */; };
 		5019AD33213FC1D9009F07E3 /* UploadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019AD32213FC1D9009F07E3 /* UploadInfo.swift */; };
 		502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */; };
 		5032D88420EE188A00B259BA /* GaleryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D88320EE188A00B259BA /* GaleryVM.swift */; };
@@ -109,6 +123,20 @@
 		50CCDB57211B0F2700F7279E /* CreateCampaignStep3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */; };
 		50CCDB59211B2A8A00F7279E /* CreateCampaignStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */; };
 		50CCDB5B211B2A9700F7279E /* CreateCampaignStep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */; };
+		50E11F212195763A0019C4BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F202195763A0019C4BC /* AuthService.swift */; };
+		50E11F22219577840019C4BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F202195763A0019C4BC /* AuthService.swift */; };
+		50E11F2421959F720019C4BC /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2321959F720019C4BC /* AccessToken.swift */; };
+		50E11F2521959F720019C4BC /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2321959F720019C4BC /* AccessToken.swift */; };
+		50E11F2721997F900019C4BC /* ProfileTabContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2621997F900019C4BC /* ProfileTabContainerVC.swift */; };
+		50E11F2821997F900019C4BC /* ProfileTabContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2621997F900019C4BC /* ProfileTabContainerVC.swift */; };
+		50E11F2C219980A70019C4BC /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2B219980A70019C4BC /* OnboardingVC.swift */; };
+		50E11F2D219980A70019C4BC /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2B219980A70019C4BC /* OnboardingVC.swift */; };
+		50E11F2F219980B90019C4BC /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2E219980B90019C4BC /* UserProfileVC.swift */; };
+		50E11F30219980B90019C4BC /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F2E219980B90019C4BC /* UserProfileVC.swift */; };
+		50E11F322199824A0019C4BC /* ProfileContentStateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F312199824A0019C4BC /* ProfileContentStateVC.swift */; };
+		50E11F332199824A0019C4BC /* ProfileContentStateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F312199824A0019C4BC /* ProfileContentStateVC.swift */; };
+		50E11F35219984040019C4BC /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F34219984040019C4BC /* ViewControllerExtensions.swift */; };
+		50E11F36219984040019C4BC /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E11F34219984040019C4BC /* ViewControllerExtensions.swift */; };
 		50E231972137DA4F00E202DA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231962137DA4F00E202DA /* ColorExtensions.swift */; };
 		50E231992137F7A400E202DA /* CreateCampaignStep4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E231982137F7A400E202DA /* CreateCampaignStep4.swift */; };
 		50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */; };
@@ -127,6 +155,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5004A5D0219AEBCD00C0B9FC /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
+		5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepEmail.swift; sourceTree = "<group>"; };
+		5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingStepEmail.xib; sourceTree = "<group>"; };
+		5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingStepPassword.xib; sourceTree = "<group>"; };
+		5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepPassword.swift; sourceTree = "<group>"; };
+		5004A5E0219DA08800C0B9FC /* OnboardingStepFullName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepFullName.swift; sourceTree = "<group>"; };
+		5004A5E3219DA0A000C0B9FC /* OnboardingStepFullName.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingStepFullName.xib; sourceTree = "<group>"; };
 		5019AD32213FC1D9009F07E3 /* UploadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadInfo.swift; sourceTree = "<group>"; };
 		502211FD21384FEA00E57C90 /* CreateCampaignVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignVM.swift; sourceTree = "<group>"; };
 		5032D88320EE188A00B259BA /* GaleryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleryVM.swift; sourceTree = "<group>"; };
@@ -183,6 +218,13 @@
 		50CCDB56211B0F2700F7279E /* CreateCampaignStep3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep3.swift; sourceTree = "<group>"; };
 		50CCDB58211B2A8A00F7279E /* CreateCampaignStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep2.swift; sourceTree = "<group>"; };
 		50CCDB5A211B2A9700F7279E /* CreateCampaignStep2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep2.xib; sourceTree = "<group>"; };
+		50E11F202195763A0019C4BC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		50E11F2321959F720019C4BC /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		50E11F2621997F900019C4BC /* ProfileTabContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabContainerVC.swift; sourceTree = "<group>"; };
+		50E11F2B219980A70019C4BC /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		50E11F2E219980B90019C4BC /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		50E11F312199824A0019C4BC /* ProfileContentStateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentStateVC.swift; sourceTree = "<group>"; };
+		50E11F34219984040019C4BC /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		50E231962137DA4F00E202DA /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		50E231982137F7A400E202DA /* CreateCampaignStep4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCampaignStep4.swift; sourceTree = "<group>"; };
 		50E2319A2137F7B900E202DA /* CreateCampaignStep4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCampaignStep4.xib; sourceTree = "<group>"; };
@@ -221,6 +263,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5004A5CF219AEBB800C0B9FC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5004A5D0219AEBCD00C0B9FC /* OnboardingVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5004A5D3219B003D00C0B9FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5004A5E0219DA08800C0B9FC /* OnboardingStepFullName.swift */,
+				5004A5E3219DA0A000C0B9FC /* OnboardingStepFullName.xib */,
+				5004A5D4219B006C00C0B9FC /* OnboardingStepEmail.swift */,
+				5004A5D7219B018A00C0B9FC /* OnboardingStepEmail.xib */,
+				5004A5DD219B0AEF00C0B9FC /* OnboardingStepPassword.swift */,
+				5004A5DA219B0ACF00C0B9FC /* OnboardingStepPassword.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5032D88220EE186A00B259BA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				504F47B620E3D4B8005FF749 /* ApiService.swift */,
+				50E11F202195763A0019C4BC /* AuthService.swift */,
 				507DFB072164E1260008407B /* AwsUploadService.swift */,
 				504F47B820E3DA7C005FF749 /* CampaignService.swift */,
 			);
@@ -307,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				504F47BB20E4EE1B005FF749 /* Campaign.swift */,
+				50E11F2321959F720019C4BC /* AccessToken.swift */,
 				5019AD32213FC1D9009F07E3 /* UploadInfo.swift */,
 			);
 			path = Models;
@@ -374,6 +439,9 @@
 		504F47CB20E62FEB005FF749 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				50E11F292199800C0019C4BC /* Onboarding */,
+				50E11F2A2199800C0019C4BC /* UserProfile */,
+				50E11F2621997F900019C4BC /* ProfileTabContainerVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -442,6 +510,7 @@
 			children = (
 				5084C8D92136E69B00B56720 /* StringExtensions.swift */,
 				50E231962137DA4F00E202DA /* ColorExtensions.swift */,
+				50E11F34219984040019C4BC /* ViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -486,6 +555,25 @@
 				505384792121AD1C00D12BE4 /* MediaPickerVC.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		50E11F292199800C0019C4BC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5004A5D3219B003D00C0B9FC /* Views */,
+				5004A5CF219AEBB800C0B9FC /* ViewModels */,
+				50E11F2B219980A70019C4BC /* OnboardingVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		50E11F2A2199800C0019C4BC /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				50E11F2E219980B90019C4BC /* UserProfileVC.swift */,
+				50E11F312199824A0019C4BC /* ProfileContentStateVC.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		63CA22623F7A57B1B7B5348F /* Pods */ = {
@@ -628,13 +716,16 @@
 				50390EC2214927BC0083A13B /* CreateCampaignStep3.xib in Resources */,
 				50390EC3214927BC0083A13B /* LaunchScreen.storyboard in Resources */,
 				50390EC4214927BC0083A13B /* CampaignListCell.xib in Resources */,
+				5004A5D9219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */,
 				50390EC5214927BC0083A13B /* CreateCampaignStep1.xib in Resources */,
 				50390EC6214927BC0083A13B /* Assets.xcassets in Resources */,
 				50390EC7214927BC0083A13B /* CategoryCell.xib in Resources */,
 				50390EC8214927BC0083A13B /* GalleryCell.xib in Resources */,
 				50390EC9214927BC0083A13B /* Dashboard.storyboard in Resources */,
 				50390ECA214927BC0083A13B /* CampaignDetailedCell.xib in Resources */,
+				5004A5DC219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */,
 				50390ECB214927BC0083A13B /* CreateCampaignStep4.xib in Resources */,
+				5004A5E5219DA0A000C0B9FC /* OnboardingStepFullName.xib in Resources */,
 				50390ECC214927BC0083A13B /* AuthorDetailsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,13 +740,16 @@
 				50CCDB55211B0F1200F7279E /* CreateCampaignStep3.xib in Resources */,
 				5040F0B420D7EA970030183D /* LaunchScreen.storyboard in Resources */,
 				504F47D520E6323D005FF749 /* CampaignListCell.xib in Resources */,
+				5004A5D8219B018A00C0B9FC /* OnboardingStepEmail.xib in Resources */,
 				50CCDB53211B02AF00F7279E /* CreateCampaignStep1.xib in Resources */,
 				5040F0B120D7EA970030183D /* Assets.xcassets in Resources */,
 				50CCDB4B21146F9D00F7279E /* CategoryCell.xib in Resources */,
 				5032D88C20EE24C000B259BA /* GalleryCell.xib in Resources */,
 				5040F0AF20D7EA970030183D /* Dashboard.storyboard in Resources */,
 				5032D89520EE269400B259BA /* CampaignDetailedCell.xib in Resources */,
+				5004A5DB219B0ACF00C0B9FC /* OnboardingStepPassword.xib in Resources */,
 				50E2319B2137F7B900E202DA /* CreateCampaignStep4.xib in Resources */,
+				5004A5E4219DA0A000C0B9FC /* OnboardingStepFullName.xib in Resources */,
 				5032D89920EE26B400B259BA /* AuthorDetailsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,6 +905,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONDecoder-Keypath/JSONDecoder_Keypath.framework",
@@ -835,6 +930,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGPlaceholders.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONDecoder_Keypath.framework",
@@ -869,6 +965,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONDecoder-Keypath/JSONDecoder_Keypath.framework",
@@ -893,6 +990,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGPlaceholders.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONDecoder_Keypath.framework",
@@ -927,11 +1025,16 @@
 				50390E9A214927BC0083A13B /* CreateCampaignStep2.swift in Sources */,
 				50390E9B214927BC0083A13B /* CampaignDescriptionCell.swift in Sources */,
 				50390E9C214927BC0083A13B /* CreateCampaignVC.swift in Sources */,
+				50E11F22219577840019C4BC /* AuthService.swift in Sources */,
 				50C3FB812164E71B00CC749E /* AwsUploadService.swift in Sources */,
 				50390E9D214927BC0083A13B /* AuthorDetailsCell.swift in Sources */,
+				5004A5D2219AEBCD00C0B9FC /* OnboardingVM.swift in Sources */,
 				50390E9E214927BC0083A13B /* AuthorDetailsVM.swift in Sources */,
 				50390E9F214927BC0083A13B /* CampaignListVC.swift in Sources */,
 				50390EA0214927BC0083A13B /* DashboardTabController.swift in Sources */,
+				50E11F2821997F900019C4BC /* ProfileTabContainerVC.swift in Sources */,
+				50E11F30219980B90019C4BC /* UserProfileVC.swift in Sources */,
+				50E11F2D219980A70019C4BC /* OnboardingVC.swift in Sources */,
 				50390EA1214927BC0083A13B /* CampaignService.swift in Sources */,
 				50390EA2214927BC0083A13B /* ColorExtensions.swift in Sources */,
 				50390EA3214927BC0083A13B /* AppDelegate.swift in Sources */,
@@ -941,6 +1044,9 @@
 				50390EA7214927BC0083A13B /* CreateCampaignStep4.swift in Sources */,
 				50390EA8214927BC0083A13B /* CreateCampaignVM.swift in Sources */,
 				50390EA9214927BC0083A13B /* APIConstants.swift in Sources */,
+				5004A5E2219DA08800C0B9FC /* OnboardingStepFullName.swift in Sources */,
+				5004A5DF219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */,
+				5004A5D6219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */,
 				50390EAA214927BC0083A13B /* DateHelper.swift in Sources */,
 				50390EAB214927BC0083A13B /* Campaign.swift in Sources */,
 				50390EAC214927BC0083A13B /* CampaignDetailsVC.swift in Sources */,
@@ -957,8 +1063,11 @@
 				50390EB7214927BC0083A13B /* CampaignListCell.swift in Sources */,
 				50390EB8214927BC0083A13B /* UploadInfo.swift in Sources */,
 				50390EB9214927BC0083A13B /* CreateCampaignStep1.swift in Sources */,
+				50E11F332199824A0019C4BC /* ProfileContentStateVC.swift in Sources */,
 				50390EBA214927BC0083A13B /* HelpCircleImageView.swift in Sources */,
 				50390EBB214927BC0083A13B /* ApiService.swift in Sources */,
+				50E11F36219984040019C4BC /* ViewControllerExtensions.swift in Sources */,
+				50E11F2521959F720019C4BC /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,11 +1081,16 @@
 				50CCDB59211B2A8A00F7279E /* CreateCampaignStep2.swift in Sources */,
 				5032D89020EE254000B259BA /* CampaignDescriptionCell.swift in Sources */,
 				5050CA3D211065C500015F31 /* CreateCampaignVC.swift in Sources */,
+				50E11F212195763A0019C4BC /* AuthService.swift in Sources */,
 				5032D89820EE26B400B259BA /* AuthorDetailsCell.swift in Sources */,
 				5032D88820EE18AF00B259BA /* AuthorDetailsVM.swift in Sources */,
+				5004A5D1219AEBCD00C0B9FC /* OnboardingVM.swift in Sources */,
 				504F47C420E62DEC005FF749 /* CampaignListVC.swift in Sources */,
 				504F47C920E62F0D005FF749 /* DashboardTabController.swift in Sources */,
 				504F47B920E3DA7C005FF749 /* CampaignService.swift in Sources */,
+				50E11F2721997F900019C4BC /* ProfileTabContainerVC.swift in Sources */,
+				50E11F2F219980B90019C4BC /* UserProfileVC.swift in Sources */,
+				50E11F2C219980A70019C4BC /* OnboardingVC.swift in Sources */,
 				50E231972137DA4F00E202DA /* ColorExtensions.swift in Sources */,
 				5040F0AA20D7EA970030183D /* AppDelegate.swift in Sources */,
 				50394C5F20EA463A0079575D /* HelpButton.swift in Sources */,
@@ -986,6 +1100,9 @@
 				502211FE21384FEA00E57C90 /* CreateCampaignVM.swift in Sources */,
 				50390E9321490ECE0083A13B /* APIConstants.swift in Sources */,
 				504F47D720E6735F005FF749 /* DateHelper.swift in Sources */,
+				5004A5E1219DA08800C0B9FC /* OnboardingStepFullName.swift in Sources */,
+				5004A5DE219B0AEF00C0B9FC /* OnboardingStepPassword.swift in Sources */,
+				5004A5D5219B006C00C0B9FC /* OnboardingStepEmail.swift in Sources */,
 				504F47BC20E4EE1B005FF749 /* Campaign.swift in Sources */,
 				504F47C720E62EAC005FF749 /* CampaignDetailsVC.swift in Sources */,
 				5032D89420EE269400B259BA /* CampaignDetailedCell.swift in Sources */,
@@ -1002,8 +1119,11 @@
 				504F47D420E6323D005FF749 /* CampaignListCell.swift in Sources */,
 				5019AD33213FC1D9009F07E3 /* UploadInfo.swift in Sources */,
 				50CCDB51211B028B00F7279E /* CreateCampaignStep1.swift in Sources */,
+				50E11F322199824A0019C4BC /* ProfileContentStateVC.swift in Sources */,
 				50394C5D20EA347F0079575D /* HelpCircleImageView.swift in Sources */,
 				504F47B720E3D4B8005FF749 /* ApiService.swift in Sources */,
+				50E11F35219984040019C4BC /* ViewControllerExtensions.swift in Sources */,
+				50E11F2421959F720019C4BC /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
