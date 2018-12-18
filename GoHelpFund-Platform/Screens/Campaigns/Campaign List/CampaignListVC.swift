@@ -14,6 +14,8 @@ class CampaignListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigationBar()
 
         let authService = AuthService()
         authService.authorizate(success: {
@@ -22,6 +24,17 @@ class CampaignListVC: UIViewController {
         }) {
             self.setupNoData()
         }
+    }
+    
+    func setupNavigationBar() {
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo320")
+        imageView.image = image
+        logoContainer.addSubview(imageView)
+        navigationItem.titleView = logoContainer
     }
     
     func setupNoData() {
