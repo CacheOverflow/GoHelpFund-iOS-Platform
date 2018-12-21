@@ -15,7 +15,7 @@ class ProfileTabContainerVC: UIViewController {
         super.viewDidLoad()
         add(stateViewController)
         
-        self.showOnboarding()
+        showOnboarding()
         
     }
 

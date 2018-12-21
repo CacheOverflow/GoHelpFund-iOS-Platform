@@ -15,6 +15,8 @@ enum OnboardingType {
 
 class OnboardingVC: UIViewController {
     var onboardingType = OnboardingType.createAccount
+    weak var delegate: ProfileStateDelegate?
+    
     //vm for extracting data
     var vm = OnboardingVM()
 
@@ -151,7 +153,8 @@ class OnboardingVC: UIViewController {
     }
     
     func setupForLogin() {
-        loadedViews.removeLast()
+        //loadedViews.removeLast()
+        //setupLoadedViews()
 
         onboardingType = .login
         nrSteps = 2
@@ -168,21 +171,26 @@ class OnboardingVC: UIViewController {
     }
     
     func login() {
+        self.delegate?.didChangeLoginState(state: .loggedIn)
+        return
+        
         let onboardingService = AuthService()
         onboardingService.login(email: vm.email!, password: vm.password!, success: {
-            //success
+            self.delegate?.didChangeLoginState(state: .loggedIn)
         }) {
         }
     }
     
     func signUp() {
+        self.delegate?.didChangeLoginState(state: .loggedIn)
+        return
+        
         let onboardingService = AuthService()
         onboardingService.signUp(email: vm.email!, password: vm.password!, fullName: vm.fullName!, success: {
-            //success
+            self.delegate?.didChangeLoginState(state: .loggedIn)
         }) {
             
         }
-        
     }
 
     

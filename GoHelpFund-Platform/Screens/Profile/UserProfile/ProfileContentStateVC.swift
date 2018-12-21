@@ -8,8 +8,16 @@
 
 import UIKit
 
-class ProfileContentStateVC: UIViewController {
+enum LoginState {
+    case loggedIn
+    case loggedOut
+}
 
+protocol ProfileStateDelegate: class {
+    func didChangeLoginState(state: LoginState)
+}
+
+class ProfileContentStateVC: UIViewController {
     private var state: LoginState?
     private var shownViewController: UIViewController?
     
@@ -35,6 +43,7 @@ class ProfileContentStateVC: UIViewController {
         
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingVC
+        viewController.delegate = self
         
         return viewController
     }()
@@ -45,6 +54,7 @@ class ProfileContentStateVC: UIViewController {
         
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileVC
+        viewController.delegate = self
         
         return viewController
     }()
@@ -61,11 +71,9 @@ private extension ProfileContentStateVC {
     }
 }
 
-extension ProfileContentStateVC {
-    enum LoginState {
-        case loggedIn
-        case loggedOut
+extension ProfileContentStateVC: ProfileStateDelegate {
+    func didChangeLoginState(state: LoginState) {
+        transition(to: state)
     }
 }
-
 
