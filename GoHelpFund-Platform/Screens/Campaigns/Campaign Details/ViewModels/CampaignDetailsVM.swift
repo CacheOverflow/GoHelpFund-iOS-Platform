@@ -33,23 +33,21 @@ struct CampaignDetailsVM {
     var endDate: String {
         return "End: " + dateFormatter.string(from: campaign.endDate)
     }
-
+    
     var locationDisplayed: String {
         return "Location: " + (campaign.locationDisplayed ?? "Unknown Location")
     }
     
     var raisedPercentageDisplayed: String {
-        let randomInt = Int(arc4random_uniform(100) + 1)
-        return String(randomInt) + "%" + " Raised"
+        return String(raisedPercentageProgress) + "%" + " Raised"
     }
     
     var raisedPercentageProgress : Double {
-        return 89
-        //return (campaign.raisedTotal / campaign.raisedGoal) * 100
+        return (campaign.raisedTotal / campaign.raisedGoal) * 100
     }
     
     var raisedTotalDisplayed: String {
-        return "$" + String(120) + " Raised"
+        return "$" + String(campaign.raisedTotal) + " Raised"
     }
     
     var description: String {
@@ -76,14 +74,11 @@ struct CampaignDetailsVM {
     var remainingTime: String? {
         let currentDate = Date()
         guard let remainingDays = Calendar.current.dateComponents([.day], from: currentDate, to: campaign.endDate).day else { return nil }
-        
-        let randomInt = Int(arc4random_uniform(100) + 1)
-        return String(randomInt) + " days left"
+        return String(remainingDays) + " days left"
     }
     
     var displayedBackersCount: String {
-        let randomInt = Int(arc4random_uniform(100) + 1)
-        return String(randomInt)
-        //return String(campaign.backers)
+        return String(campaign.backers)
     }
 }
+
