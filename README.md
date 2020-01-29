@@ -8,7 +8,7 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/gohelpfund/gohelpfund-api.svg?style=flat-square&longCache=true)][github-pulls]
 [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/gohelpfund/gohelpfund-api.svg?style=flat-square&longCache=true)][github-pulls-closed]
 
-GoHelpFund is crowdfunding platform where people can donate and support campaigns like charity, medical, education, emergency and more. You can visit us at https://gohelpfund.com.
+GoHelpFund is crowdfunding platform where people can donate and support campaigns like charity, medical, education, emergency and more. You can visit us at https://gohelpfund.com. More about the architecture in this article https://blog.gohelpfund.com/ios-application/
 
 GoHelpFund is still in beta, so please submit any issues ([bug reports][github-bug-report] and [feature requests][github-feature-request]).
 
